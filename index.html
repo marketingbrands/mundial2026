@@ -124,7 +124,7 @@
         
         <!-- CABECERA -->
         <header id="app-header" class="flex items-center justify-between py-2 mb-1 w-full">
-            <div class="flex items-center gap-2">
+            <div onclick="navigate('setup')" class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
                 <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
                     <i class="fas fa-trophy text-lg"></i>
                 </div>
@@ -133,8 +133,8 @@
                     <p id="sub-header-plan" class="text-[6px] font-bold text-emerald-400 tracking-widest uppercase mt-0.5">EL DASHBOARD DEL COLECCIONISTA</p>
                 </div>
             </div>
-            <button onclick="handleReiniciar()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-400 flex items-center gap-1.5 text-[8px] font-bold uppercase hover:bg-slate-700 transition">
-                <i class="fas fa-redo-alt"></i> Reiniciar
+            <button onclick="navigate('setup')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-400 flex items-center gap-1.5 text-[8px] font-bold uppercase hover:bg-slate-700 transition">
+                <i class="fas fa-home"></i> Volver al Inicio
             </button>
         </header>
 
@@ -312,15 +312,7 @@
         <!-- ==================== TAB 1: ZONA PRO ==================== -->
         <section id="screen-pro" class="hidden fade-in pb-8">
             <h2 class="text-2xl font-black text-emerald-400 mb-1 uppercase tracking-tighter">ZONA PRO MUNDIALISTA</h2>
-            <p class="text-xs text-slate-400 mb-2 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas oficiales.</p>
-            
-            <!-- Contraseña Demo Banner -->
-            <div class="p-3 bg-emerald-950/40 border border-emerald-900/30 rounded-xl mb-4 text-center">
-                <p class="text-xs font-black text-emerald-300 uppercase tracking-wider">
-                    🔑 CONTRASEÑA DEMO PARA MUESTRAS: <span id="pwd-demo-display-pro" class="text-white bg-slate-900 px-2 py-1 rounded select-all ml-1">...</span>
-                </p>
-                <p class="text-[9px] text-slate-400 mt-1 uppercase font-bold">Ingresa esta clave en el DEMO (Si no entra pídelo al whatsapp)</p>
-            </div>
+            <p class="text-xs text-slate-400 mb-6 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas oficiales.</p>
 
             <div class="space-y-3">
                 <!-- ALBUM PANINI -->
@@ -430,14 +422,6 @@
             </div>
             
             <p class="text-[11px] text-slate-400 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
-            
-            <!-- Contraseña Demo Banner en El Bunker -->
-            <div class="p-3 bg-amber-950/40 border border-amber-900/30 rounded-xl mb-4 text-center">
-                <p class="text-xs font-black text-amber-300 uppercase tracking-wider">
-                    🔑 CONTRASEÑA DEMO PARA MUESTRAS: <span id="pwd-demo-display-premium" class="text-white bg-slate-900 px-2 py-1 rounded select-all ml-1">...</span>
-                </p>
-                <p class="text-[9px] text-slate-400 mt-1 uppercase font-bold">Ingresa esta clave en Fliplink (Cambia diariamente)</p>
-            </div>
 
             <div class="space-y-3">
                 <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
@@ -446,7 +430,7 @@
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-globe-americas"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro Mundialistas</h4>
-                            <p class="avail-text text-amber-400">QATAR, FRANCIA, BRASIL, SUDAFRICA Y MAS.</p>
+                            <p class="text-xs text-slate-200">Qatar, Francia, Brasil, Sudáfrica y más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -460,8 +444,8 @@
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-futbol"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
-                            <p class="avail-text text-amber-400">CLUBES PERUANOS Y SUDAMERICANOS, ALBUM FIFA 365, ETC.</p>
+                            <h4 class="font-bold text-xs text-amber-400 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
+                            <p class="text-xs text-slate-200">Clubes Peruanos y Sudamericanos, Álbum FIFA 365, etc.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -476,7 +460,7 @@
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+250 Álbumes de Todos los Tiempos (85GB)</h4>
-                            <p class="avail-text text-amber-400">DRAGON BALL, MAZINGER, CABALLEROS DEL ZODIACO, CANDY.</p>
+                            <p class="text-xs text-slate-200">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más de 70,000 Historietas digitalizadas (El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más).</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -485,28 +469,13 @@
                     </div>
                 </div>
 
-                <!-- 4. MAS DE 70,000 HISTORIETAS DIGITALIZADAS -->
-                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
-                    <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book"></i></div>
-                        <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+70,000 Historietas Digitalizadas</h4>
-                            <p class="avail-text text-amber-400">EL ZORRO, DR MORTIS, AGENTE 007, LA PEQUEÑA LULU Y MAS.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroHistorietas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroHistorietas')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
-                    </div>
-                </div>
-
-                <!-- 5. MAS DE 150 SERIES RETRO -->
+                <!-- 4. MAS DE 150 SERIES RETRO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+150 Series Retro de Todos los Tiempos</h4>
-                            <p class="avail-text text-amber-400">LOS AÑOS MARAVILLOSOS, SUPERMAN, DIAS FELICES, EL ZORRO, SALVADO POR LA CAMPANA, MI BELLA GENIO.</p>
+                            <p class="text-xs text-slate-200">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genia y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -515,13 +484,13 @@
                     </div>
                 </div>
 
-                <!-- 6. SERIES ANIMADAS DE TV -->
+                <!-- 5. SERIES ANIMADAS DE TV -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Series Animadas de TV</h4>
-                            <p class="avail-text text-amber-400">LOS PICAPIEDRA, TOM Y JERRY, X-MEN, LA PANTERA ROSA.</p>
+                            <p class="text-xs text-slate-200">Los Picapiedra, Tom y Jerry, X-Men, La Pantera Rosa y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -530,13 +499,13 @@
                     </div>
                 </div>
 
-                <!-- 7. PELICULAS RETRO CINE MEXICANO -->
+                <!-- 6. PELICULAS RETRO CINE MEXICANO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro: Cine Mexicano</h4>
-                            <p class="avail-text text-amber-400 font-extrabold">LO MEJOR DEL CINE MEXICANO DE ORO.</p>
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro: Lo mejor del Cine Mexicano</h4>
+                            <p class="text-xs text-slate-200">Lo mejor del Cine Mexicano de Oro.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -545,13 +514,13 @@
                     </div>
                 </div>
 
-                <!-- 8. PELICULAS WESTERN -->
+                <!-- 7. PELICULAS WESTERN -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Películas Western</h4>
-                            <p class="avail-text text-amber-400">LOS GRANDES CLASICOS DE VAQUEROS.</p>
+                            <p class="text-xs text-slate-200">Los grandes clásicos de vaqueros.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -609,7 +578,7 @@
     </div>
 
     <!-- MODALES DE FIXTURE / PARTIDOS DE HOY Y EN VIVO -->
-    <div id="modal-fixture" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
+    <div id="modal-fixture" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('fixture')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-calendar-day"></i> 🗓️ PARTIDOS DE HOY</h3>
@@ -711,7 +680,7 @@
     </div>
 
     <!-- MODAL DE DMCA Y CONTENIDO DE TERCEROS -->
-    <div id="modal-dmca" class="hidden fixed inset-0 z-[130] flex items-center justify-center bg-black/85 backdrop-blur-sm px-4 fade-in">
+    <div id="modal-dmca" class="hidden fixed inset-0 z-[130] flex items-center justify-center bg-black/85 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('dmca')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-amber-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-shield-alt"></i> DMCA y Contenido de Terceros</h3>
@@ -751,7 +720,7 @@
                 </div>
             </div>
             
-            <button onclick="closeModal('dmca')" class="w-full mt-4 py-2.5 bg-slate-800 hover:bg-slate-750 text-slate-200 font-bold rounded-xl text-center uppercase tracking-wider text-xs transition">Entendido</button>
+            <button onclick="closeModal('dmca')" class="w-full mt-4 py-2.5 bg-slate-800 hover:bg-slate-750 text-slate-200 font-bold rounded-xl text-center uppercase tracking-wider text-xs transition font-black">Entendido</button>
         </div>
     </div>
 
@@ -768,12 +737,19 @@
             <p class="text-[13px] text-slate-300 mb-4 font-medium leading-relaxed px-2" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
             
             <!-- CONTENEDOR DE SELECCION EXCLUSIVO PARA CUENTA DEMO -->
-            <div id="upgrade-options-selector" class="hidden space-y-2 mb-4">
-                <button id="btn-opt-full" class="w-full p-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
-                    👑 ACTIVA LA ZONA PREMIUM (TODO DESBLOQUEADO) - S/ 12
+            <div id="upgrade-options-selector" class="hidden space-y-3 mb-4 text-left">
+                <p class="text-xs text-slate-300 font-semibold mb-2 text-center">Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:</p>
+                
+                <!-- Opción PRO -->
+                <button class="w-full p-3.5 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-750 active:scale-95 transition flex flex-col text-left" onclick="seleccionarOpcionCobro(5, 'PRO')">
+                    <span class="font-black text-xs text-emerald-400 uppercase tracking-wider">⭐ ZONA PRO MUNDIALISTA - S/ 5</span>
+                    <span class="text-[10px] text-slate-300 mt-1 leading-tight font-medium">Álbumes Panini y 3 Reyes 2026, Álbum Especial Día del Padre, Álbum Parejas, Kit Mundialista KIDS, Excel de control.</span>
                 </button>
-                <button id="btn-opt-pro" class="w-full p-3 rounded-2xl bg-slate-800 text-slate-300 font-bold text-xs uppercase tracking-wider border border-slate-700 hover:bg-slate-750 active:scale-95 transition" onclick="seleccionarOpcionCobro(5, 'PRO')">
-                    ⭐ Pack PRO (Albumes 2026) - S/ 5
+                
+                <!-- Opción PREMIUM -->
+                <button class="w-full p-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black flex flex-col text-left hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
+                    <span class="font-black text-xs text-slate-950 uppercase tracking-wider">👑 ACTIVA LA ZONA PREMIUM - S/ 12 (incluye ACCESO A ZONA PRO)</span>
+                    <span class="text-[10px] text-slate-900 mt-1 leading-tight font-semibold">EL BUNKER DEL COLECCIONISTA: +500GB en Álbumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Películas Western y Cine Mexicano y más.</span>
                 </button>
             </div>
 
@@ -782,11 +758,11 @@
                 <div class="w-40 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
                     <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain">
                 </div>
-                <p class="text-xs text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">943833945</span> - <span id="yape-name-txt">Jesus B.</span></p>
-                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black">Pago unico: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+                <p class="text-xs text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
+                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black font-sans">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
             </div>
 
-            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition">
+            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black">
                 <i class="fab fa-whatsapp text-xl"></i> Enviar Captura de Pago
             </button>
         </div>
@@ -857,7 +833,7 @@
 
         const CONFIG_TEXTS = {
             mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones del Día del Padre, Parejas y el kit infantil de juegos!",
-            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (85GB de Álbumes de todos los tiempos, Series, Historietas y Películas)!"
+            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (85GB de Álbumes de todos los tiempos, Series, Historietas y Películas) - (incluye ACCESO A ZONA PRO)!"
         };
 
         // ======================================================================== //
@@ -906,9 +882,9 @@
                 a: 0
             },
             {
-                q: "¿En qué país sudamericano se celebró el primer mundial de la historia de la FIFA en 1930?",
-                o: ["Uruguay", "Argentina", "Brasil"],
-                a: 0
+                q: "De que material precioso esta fabricada la Copa Mundial?",
+                o: ["Plata maciza", "Bronce bañado", "Oro de 18 quilates"],
+                a: 2
             },
             {
                 q: "¿En qué histórico coloso mexicano se jugará el partido inaugural del Mundial el 11 de junio de 2026?",
@@ -962,12 +938,6 @@
             document.getElementById("yape-num-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NUMERO;
             document.getElementById("yape-name-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NOMBRE;
             document.getElementById("yape-price-txt").innerText = MUNDIALISTA_CONFIG.YAPE.PRECIO;
-            
-            // Render de contraseña demo dinámica
-            const displayPro = document.getElementById("pwd-demo-display-pro");
-            const displayPremium = document.getElementById("pwd-demo-display-premium");
-            if (displayPro) displayPro.innerText = MUNDIALISTA_CONFIG.CONTRASEÑA_DEMO;
-            if (displayPremium) displayPremium.innerText = MUNDIALISTA_CONFIG.CONTRASEÑA_DEMO;
         }
 
         function cambiarPlanViaAdmin(nuevoPlan) {
@@ -1008,7 +978,7 @@
                     priceLabel.innerText = "S/ 5 SOLES";
                 } else if (tier === "PREMIUM") {
                     title.innerText = "ACTIVA LA ZONA PREMIUM";
-                    text.innerText = "Estás intentando acceder al Búnker del Coleccionista. Para evitar confusiones, selecciona tu plan para Yapear:";
+                    text.innerText = "Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:";
                     optionsSelector.classList.remove("hidden");
                     qrContainer.classList.add("hidden");
                 }
@@ -1102,11 +1072,8 @@
         }
 
         function handleReiniciar() {
-            if (activePlan === "DEMO") {
-                openUpgradeModal("PRO");
-            } else {
-                location.reload();
-            }
+            // Se actualizó para redirigir directamente al setup de inicio
+            navigate("setup");
         }
 
         function showMessage(text) {
@@ -1122,6 +1089,7 @@
             document.getElementById("custom-modal").classList.add("hidden");
         }
 
+        // Abre el modal solicitado
         function openModal(id) {
             document.getElementById(`modal-${id}`).classList.remove("hidden");
         }
