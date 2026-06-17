@@ -118,7 +118,6 @@
 </head>
 <body class="flex flex-col items-center relative">
 
-    <!-- Canvas de Confeti -->
     <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-[120] w-full h-full"></canvas>
 
     <main class="main-content p-4">
@@ -159,40 +158,40 @@
         <section id="screen-setup" class="glass-card p-5 fade-in mt-2">
             <div class="mt-2 mb-5 text-center">
                 <h2 class="text-3xl font-black text-emerald-400 uppercase tracking-tighter leading-none mb-1">MUNDIALISTA PRO</h2>
-                <p class="text-[9px] font-bold text-slate-400 tracking-wider uppercase mb-3">La experiencia interactiva de coleccionismo</p>
+                <p class="text-[9px] font-bold text-slate-400 tracking-wider uppercase mb-3">La experiencia de coleccionismo</p>
                 <div class="h-1 w-20 bg-emerald-500 mx-auto rounded-full shadow-sm"></div>
             </div>
             
             <div class="space-y-4 pt-1">
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre Mundialista:</label>
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre de Entrenador:</label>
                     <input type="text" id="user-name" placeholder="Ejemplo: Jesus" class="w-full p-3 rounded-xl border-2 border-slate-800 bg-slate-900 text-base font-bold outline-none focus:border-emerald-500 transition text-slate-100 placeholder-slate-500">
                 </div>
 
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1.5 block tracking-wider">¿Cual es tu nivel de Hincha hoy?</label>
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1.5 block tracking-wider">¿Cual es tu nivel de coleccionista?</label>
                     <div class="grid grid-cols-3 gap-1.5">
                         <button onclick="selectChoice('level', 'Basico')" id="level-Basico" class="toggle-btn py-3 text-[9px] font-black uppercase active">Aficionado</button>
-                        <button onclick="selectChoice('level', 'Intermedio')" id="level-Intermedio" class="toggle-btn py-3 text-[9px] font-black uppercase">Hincha Mundial</button>
+                        <button onclick="selectChoice('level', 'Intermedio')" id="level-Intermedio" class="toggle-btn py-3 text-[9px] font-black uppercase">Hincha del Mundial</button>
                         <button onclick="selectChoice('level', 'Avanzado')" id="level-Avanzado" class="toggle-btn py-3 text-[9px] font-black uppercase">Mundialista Experto</button>
                     </div>
                 </div>
 
-                <!-- SECCION DE SELECCION DE RECURSOS CLAVE (PARTIDOS DE HOY & TRANSMISIONES) -->
+                <!-- SECCION DE PARTIDOS DE HOY & TRANSMISIONES -->
                 <div class="pt-3 border-t border-slate-800 space-y-2">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Guias Rapidas del Mundial 2026</p>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Guias de Acceso Rapido</p>
                     <div class="grid grid-cols-2 gap-2">
                         <button onclick="openModal('fixture')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition">
                             <i class="fas fa-calendar-alt text-sm"></i> PARTIDOS DE HOY
                         </button>
                         <button onclick="openModal('canales1')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition">
-                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 1
+                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 1
                         </button>
                         <button onclick="openModal('canales2')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 2
+                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 2
                         </button>
                         <button onclick="openModal('canales3')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 3
+                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 3
                         </button>
                     </div>
                 </div>
@@ -203,26 +202,27 @@
                         <span class="text-xl">🤝💖</span>
                         <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
                         <p class="text-[10px] text-slate-300 mt-2 leading-relaxed px-1">
-                            Tu aporte voluntario nos ayuda un monton a mantener estable el sistema de transmisiones de partidos en vivo y de servidores para toda la comunidad.
+                            Tu aporte voluntario nos ayuda a mantener estables y activos los servidores de descarga y enlaces de transmision en vivo para toda la comunidad mundialista.
                         </p>
                         
-                        <!-- CONTENEDOR DEL QR EN PANTALLA PRINCIPAL -->
                         <div class="w-36 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-2 mt-3 shadow-lg shadow-emerald-500/5">
                             <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-32 object-contain">
                             <span class="text-[7px] font-black text-slate-800 uppercase leading-none mt-1 tracking-widest">YAPE VOLUNTARIO</span>
                         </div>
                         <p class="text-xs text-slate-200 mt-2.5 font-black">Yape: 943833945 - Jesus B.</p>
-                        <p class="text-[9px] text-slate-500 mt-0.5 uppercase tracking-wide">¡Gracias por mantener activa la pasion!</p>
+                        
+                        <!-- BOTON ADICIONAL DE CAPTURA WHATSAPP -->
+                        <button onclick="enviarSoporteWhatsAppPago()" class="w-full mt-3 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-sm"></i> ENVIAR CAPTURA O ACTIVAR ACCESO
+                        </button>
                     </div>
                 </div>
 
                 <div class="pt-3 text-center border-t border-slate-800">
-                    <!-- INICIAR TRIVIA DIRECTAMENTE -->
                     <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 rounded-xl font-black text-sm shadow-lg shadow-emerald-500/20 uppercase tracking-widest flex items-center justify-center gap-2">
                         ⚽ Iniciar Trivia Mundialista
                     </button>
                     
-                    <!-- ENLACE AL DRIVE DE MATERIAL MUNDIALISTA -->
                     <button onclick="navigate('pro')" class="w-full py-3.5 mt-2.5 bg-amber-500 hover:bg-amber-600 transition text-slate-950 rounded-xl font-black text-xs shadow-md uppercase tracking-widest flex items-center justify-center gap-2">
                         <i class="fas fa-folder-open text-sm"></i> Material Descargable Mundialista
                     </button>
@@ -258,7 +258,7 @@
                 <i class="fas fa-trophy text-4xl text-amber-400 animate-bounce"></i>
             </div>
             <h2 class="text-3xl font-black text-emerald-400 mb-2 uppercase leading-none text-center tracking-tighter" id="finished-title">¡TRIVIA COMPLETADA!</h2>
-            <p class="text-xs text-slate-400 mb-8 font-medium italic text-center leading-relaxed px-1">"La constancia llena el álbum. Sigue jugando para desbloquear más estadísticas y entrenar a tu mente con pasión mundialista."</p>
+            <p class="text-xs text-slate-400 mb-8 font-medium italic text-center leading-relaxed px-1">"La constancia llena el álbum. Sigue jugando para de-bloquear más estadísticas y entrenar a tu mente con pasión mundialista."</p>
             
             <div class="grid grid-cols-2 gap-3 mb-8">
                 <div class="glass-card p-4 border-b-[4px] border-emerald-500 shadow-sm bg-slate-950">
@@ -279,7 +279,7 @@
                     <i class="fas fa-star text-yellow-300 text-base"></i> Deja tu reseña
                 </button>
                 <button onclick="handleReiniciar()" class="w-full py-3.5 bg-slate-900 text-emerald-400 rounded-xl font-black text-xs shadow-sm uppercase tracking-widest border border-slate-800 hover:bg-slate-800 transition">
-                    Reiniciar Entrenamiento
+                    Reiniciar Trivia
                 </button>
             </div>
         </section>
@@ -382,45 +382,90 @@
             </div>
         </section>
 
-        <!-- ==================== TAB 2: ZONA PREMIUM (TEMPLO DE LA NOSTALGIA) ==================== -->
+        <!-- ==================== TAB 2: EL BUNKER DEL COLECCIONISTA (ZONA RETRO PREMIUM) ==================== -->
         <section id="screen-premium" class="hidden fade-in pb-8">
             <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-6 mt-2 shadow-lg shadow-amber-500/5">
                 <div class="flex items-center gap-2">
                     <span class="text-2xl animate-bounce">👑</span>
                     <div>
                         <h3 class="text-lg font-black text-amber-400 tracking-tight uppercase leading-none">
-                            ZONA RETRO PREMIUM
+                            EL BUNKER DEL COLECCIONISTA
                         </h3>
-                        <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider mt-1">EL TEMPLO DE LA NOSTALGIA: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
+                        <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider mt-1">ZONA RETRO PREMIUM: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
                     </div>
                 </div>
             </div>
             
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">¡Sacia tu sed de coleccionista y tu niño interior! Desbloquea de forma ilimitada la biblioteca retro y de nostalgia más grande del continente. Todo en Ultra HD listo para descargar.</p>
+            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
             
             <div class="space-y-3">
-                <!-- 1. ALBUMES RETRO DE COLECCION -->
+                <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-globe-americas"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro Mundialistas</h4>
+                            <p class="avail-text text-amber-400">QATAR, FRANCIA, BRASIL, SUDAFRICA Y MAS.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroMundial')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroMundial')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 2. ALBUMES TODO FUTBOL -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-futbol"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
+                            <p class="avail-text text-amber-400">CLUBES PERUANOS Y SUDAMERICANOS, ALBUM FIFA 365, ETC.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroFutbol')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroFutbol')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 3. MAS DE 250 ALBUMES DE TODOS LOS TIEMPOS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro de Colección</h4>
-                            <p class="avail-text text-amber-400">MUNDIALES HISTÓRICOS, ÁNIMES Y CULTO.</p>
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+250 Álbumes de Todos los Tiempos (85GB)</h4>
+                            <p class="avail-text text-amber-400">DRAGON BALL, MAZINGER, CABALLEROS DEL ZODIACO, CANDY.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetro')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroTodos')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroTodos')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
-                <!-- 2. SERIES RETRO -->
+                <!-- 4. MAS DE 70,000 HISTORIETAS DIGITALIZADAS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-gamepad"></i></div>
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Series Retro & Club Nintendo</h4>
-                            <p class="avail-text text-amber-400 font-extrabold">REVISTAS HISTÓRICAS Y CAPÍTULOS DE CULTO.</p>
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+70,000 Historietas Digitalizadas</h4>
+                            <p class="avail-text text-amber-400">EL ZORRO, DR MORTIS, AGENTE 007, LA PEQUEÑA LULU Y MAS.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroHistorietas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroHistorietas')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 5. MAS DE 150 SERIES RETRO -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+150 Series Retro de Todos los Tiempos</h4>
+                            <p class="avail-text text-amber-400">LOS AÑOS MARAVILLOSOS, SUPERMAN, DIAS FELICES, EL ZORRO, SALVADO POR LA CAMPANA, MI BELLA GENIO.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -429,18 +474,48 @@
                     </div>
                 </div>
 
-                <!-- 3. PELICULAS RETRO -->
+                <!-- 6. SERIES ANIMADAS DE TV -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Series Animadas de TV</h4>
+                            <p class="avail-text text-amber-400">LOS PICAPIEDRA, TOM Y JERRY, X-MEN, LA PANTERA ROSA.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroAnimadas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroAnimadas')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 7. PELICULAS RETRO CINE MEXICANO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro de Culto</h4>
-                            <p class="avail-text text-amber-400 font-extrabold">CINE RETRO CLÁSICO Y PELÍCULAS INFANTILES.</p>
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro: Cine Mexicano</h4>
+                            <p class="avail-text text-amber-400 font-extrabold">LO MEJOR DEL CINE MEXICANO DE ORO.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroPelis')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroPelis')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraCineMex')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaCineMex')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 8. PELICULAS WESTERN -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Películas Western</h4>
+                            <p class="avail-text text-amber-400">LOS GRANDES CLASICOS DE VAQUEROS.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraWestern')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaWestern')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
             </div>
@@ -449,7 +524,7 @@
         <!-- ==================== TAB 3: TRIVIA, HISTORIAL & STATS ==================== -->
         <section id="screen-stats" class="hidden fade-in mt-2 pb-8">
             <h2 class="text-2xl font-black text-emerald-400 mb-2 uppercase tracking-tighter text-center">Habilidades del Coleccionista</h2>
-            <p class="text-xs text-slate-400 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas.</p>
+            <p class="text-xs text-slate-400 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas hoy.</p>
             
             <div class="glass-card p-5 mb-6 text-center border border-emerald-500/20 bg-slate-950">
                 <h3 class="text-sm font-bold text-slate-100 uppercase mb-3">¿Eres un Verdadero Fan de los Mundiales?</h3>
@@ -558,7 +633,7 @@
                     <ul class="list-disc pl-4 space-y-1 text-slate-400">
                         <li>Transmision oficial de radio y streaming.</li>
                         <li>Resumenes oficiales inmediatos de la jornada.</li>
-                        <li>Debates, analisis tactico y entrevistas en vivo.</li>
+                        <li>Debates, analisis tactico y interviews en vivo.</li>
                     </ul>
                 </div>
                 <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Ver Canal Digital Alternativo</button>
@@ -653,8 +728,8 @@
             
             <!-- CONTENEDOR DE SELECCION EXCLUSIVO PARA CUENTA DEMO -->
             <div id="upgrade-options-selector" class="hidden space-y-2 mb-4">
-                <button id="btn-opt-full" class="w-full p-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(10, 'PREMIUM')">
-                    👑 Pack Completo PREMIUM (TODO DESBLOQUEADO) - S/ 10
+                <button id="btn-opt-full" class="w-full p-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
+                    👑 ACTIVA LA ZONA PREMIUM (TODO DESBLOQUEADO) - S/ 12
                 </button>
                 <button id="btn-opt-pro" class="w-full p-3 rounded-2xl bg-slate-800 text-slate-300 font-bold text-xs uppercase tracking-wider border border-slate-700 hover:bg-slate-750 active:scale-95 transition" onclick="seleccionarOpcionCobro(5, 'PRO')">
                     ⭐ Pack PRO (Albumes 2026) - S/ 5
@@ -696,18 +771,23 @@
             ENLACES: {
                 whatsappSoporte: "https://wa.me/51943833945?text=Hola%20Jes%C3%BAs,%20quiero%20mejorar%20mi%20cuenta%20Mundialista%20PRO%20para%20desbloquear%20todo%20el%20material.",
                 planillaExcel: "https://docs.google.com/spreadsheets/d/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr/edit?usp=sharing",
-                facebookReview: "https://www.facebook.com/share/p/1CkEnmqFDb/",
+                facebookReview: "https://www.facebook.com/share/p/",
                 driveFolderGeneral: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
 
                 // ENLACES PARA "VER MUESTRA"
                 muestraPanini: "https://mundial2026.aglobalpacks.com/muestrasdealbum",
-                muestraReyes: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraReyes: "https://drive.google.com/drive/folders/1eI8KWxhMj63pUNAbU8VOxrG3kM74X7H0?usp=sharing",
                 muestraDiaPadre: "https://mundial2026.aglobalpacks.com/juliosanchez",
                 muestraParejas: "https://mundial2026.aglobalpacks.com/albumdepareja",
                 muestraPequeños: "https://mundial2026.aglobalpacks.com/pequemundialistas",
-                muestraRetro: "https://drive.google.com/drive/folders/12D0gAyYfIZPjo-_pBkSUGQOg7RNP0Evp?usp=sharing",
+                muestraRetroMundial: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraRetroFutbol: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraRetroTodos: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraRetroHistorietas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
                 muestraRetroSeries: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                muestraRetroPelis: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraRetroAnimadas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraCineMex: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraWestern: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
 
                 // ENLACES PARA "DESCARGAR"
                 descargaPanini: "https://drive.google.com/drive/folders/12F7EqrURIpsDEUzkg-3Lkt5FG0EkSDyQ?usp=sharing",
@@ -716,10 +796,14 @@
                 descargaParejas: "https://canva.link/30jgsby5s25y0ff",
                 descargaPequeños: "https://drive.google.com/drive/folders/1hXtvU8Pof1Rmm40Lm9zgmBt3dQQVjThM?usp=sharing",
                 
-                // Zona Retro Premium Descargas
-                descargaRetro: "https://drive.google.com/drive/folders/16mzEg9UkWqlLZ9M4ZQD-Q5MrAqB63gzv?usp=sharing",
+                descargaRetroMundial: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaRetroFutbol: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaRetroTodos: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaRetroHistorietas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
                 descargaRetroSeries: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                descargaRetroPelis: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaRetroAnimadas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaCineMex: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaWestern: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
 
                 // CANALES DE TRANSMISION EN VIVO
                 envivo1: "https://tvgo.americatv.com.pe/",
@@ -730,7 +814,7 @@
 
         const CONFIG_TEXTS = {
             mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones del Día del Padre, Parejas y el kit infantil de juegos!",
-            mensajePremium: "¡Activa tu Plan PREMIUM para desbloquear la Zona Retro Premium: El Templo de la Nostalgia (85GB de Álbumes de todos los tiempos, Series y Películas)!"
+            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (85GB de Álbumes de todos los tiempos, Series, Historietas y Películas)!"
         };
 
         // ======================================================================== //
@@ -794,7 +878,7 @@
                 a: 1
             },
             {
-                q: "¿Por qué señal de televisión abierta se podrán ver gratis los partidos clave de 2026 en Perú?",
+                q: "¿Por qué señal de televisión abierta se podrán ver gratis los partidos de hoy clave en Perú?",
                 o: ["América Televisión", "Latina", "ATV"],
                 a: 0
             },
@@ -886,16 +970,16 @@
                     text.innerText = CONFIG_TEXTS.mensajePro;
                     priceLabel.innerText = "S/ 5 SOLES";
                 } else if (tier === "PREMIUM") {
-                    title.innerText = "ACTIVA TU PLAN DE ACCESO";
-                    text.innerText = "Estas intentando acceder a la Zona Retro. Para evitar confusiones, selecciona tu plan para Yapear:";
+                    title.innerText = "ACTIVA LA ZONA PREMIUM";
+                    text.innerText = "Estas intentando acceder al Bunker del Coleccionista. Para evitar confusiones, selecciona tu plan para Yapear:";
                     optionsSelector.classList.remove("hidden");
                     qrContainer.classList.add("hidden");
                 }
             } else if (activePlan === "PRO") {
                 if (tier === "PREMIUM") {
-                    title.innerText = "ACTUALIZAR A PREMIUM";
-                    text.innerText = "Como ya cuentas con el Plan PRO, solo paga la diferencia de S/ 5 soles adicionales para desbloquear de inmediato el Templo Retro de 85GB.";
-                    priceLabel.innerText = "S/ 5 SOLES (Diferencia)";
+                    title.innerText = "ACTIVA LA ZONA PREMIUM";
+                    text.innerText = "Como ya cuentas con el Plan PRO, solo paga la diferencia de S/ 7 soles adicionales para desbloquear de inmediato el Bunker del Coleccionista de 85GB.";
+                    priceLabel.innerText = "S/ 7 SOLES (Diferencia)";
                 }
             }
 
@@ -997,6 +1081,7 @@
             }
         }
 
+        // Cierra el modal principal de ayuda
         function closeMessage() {
             document.getElementById("custom-modal").classList.add("hidden");
         }
@@ -1127,7 +1212,7 @@
             const activeScreen = document.getElementById(`screen-${screen}`);
             if(activeScreen) activeScreen.classList.remove("hidden");
             
-            const navButtons = document.querySelectorAll(".nav-btn");
+            const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(b => { if(b) b.classList.remove("active"); });
             const activeNav = document.querySelector(`.nav-btn[data-screen="${screen}"]`);
             if(activeNav) activeNav.classList.add("active");
@@ -1161,7 +1246,7 @@
                 options: { 
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: { r: { suggestedMin: 0, suggestedMax: 100, grid: { color: "rgba(255, 255, 255, 0.08)" }, angleLines: { color: "rgba(255, 255, 255, 0.08)" }, ticks: { display: false }, pointLabels: { font: { size: 11, weight: "bold", family: "Outfit" }, color: "#94a3b8" } } },
+                    scales: { r: { suggestedMin: 0, suggestedMax: 100, grid: { color: "rgba(255, 255, 255, 0.08)" }, angleLines: { color: "rgba(255, 255, 255, 0.08)" }, ticks: { display: false }, pointLabels: { font: { size: 11, weight: 'bold', family: "Outfit" } }} },
                     plugins: { legend: { display: false } }
                 }
             });
