@@ -76,9 +76,9 @@
 
         /* Menú Superior */
         .nav-btn i { font-size: 1.3rem; transition: 0.2s; margin-bottom: 2px; }
-        .nav-btn[data-screen="plan"] i { color: #10b981; }
+        .nav-btn[data-screen="pro"] i { color: #10b981; }
+        .nav-btn[data-screen="premium"] i { color: #f59e0b; }
         .nav-btn[data-screen="stats"] i { color: #3b82f6; }
-        .nav-btn[data-screen="library"] i { color: #f59e0b; }
         
         .nav-btn.active { transform: translateY(2px); font-weight: 800; }
         .nav-btn.active span { border-bottom: 2px solid currentColor; }
@@ -144,17 +144,17 @@
 
         <!-- NAVEGACIÓN PRINCIPAL (STICKY) -->
         <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2 flex justify-around z-50 shadow-xl rounded-2xl mb-4 hidden">
-            <button onclick="navigate('plan')" class="nav-btn flex flex-col items-center w-20 py-1" data-screen="plan">
-                <i class="fas fa-running"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-emerald-400">Misiones</span>
+            <button onclick="navigate('pro')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="pro">
+                <i class="fas fa-star"></i>
+                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
             </button>
-            <button onclick="navigate('stats')" class="nav-btn flex flex-col items-center w-20 py-1" data-screen="stats">
-                <i class="fas fa-chart-pie"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-blue-400">Habilidades</span>
+            <button onclick="navigate('premium')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="premium">
+                <i class="fas fa-crown"></i>
+                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
             </button>
-            <button onclick="navigate('library')" class="nav-btn flex flex-col items-center w-20 py-1" data-screen="library">
-                <i class="fas fa-archive"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-amber-400">Materiales</span>
+            <button onclick="navigate('stats')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="stats">
+                <i class="fas fa-gamepad"></i>
+                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
             </button>
         </nav>
 
@@ -168,7 +168,7 @@
             
             <div class="space-y-4 pt-1">
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre de Entrenador:</label>
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre Mundialista:</label>
                     <input type="text" id="user-name" placeholder="Ejemplo: Jesús" class="w-full p-3 rounded-xl border-2 border-slate-800 bg-slate-900 text-base font-bold outline-none focus:border-emerald-500 transition text-slate-100 placeholder-slate-500">
                 </div>
 
@@ -181,21 +181,21 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN DE SELECCIÓN DE RECURSOS CLAVE (FIXTURE & TRANSMISIONES) -->
+                <!-- SECCIÓN DE SELECCIÓN DE RECURSOS CLAVE (PARTIDOS DE HOY & TRANSMISIONES) -->
                 <div class="pt-3 border-t border-slate-800 space-y-2">
                     <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Guías Rápidas del Mundial 2026</p>
                     <div class="grid grid-cols-2 gap-2">
                         <button onclick="openModal('fixture')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition">
-                            <i class="fas fa-calendar-alt text-sm"></i> FIXTURE / SEDES
+                            <i class="fas fa-calendar-alt text-sm"></i> 🗓️ PARTIDOS DE HOY
                         </button>
                         <button onclick="openModal('canales1')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition">
-                            <i class="fas fa-tv text-sm"></i> VER EN VIVO 1
+                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 1
                         </button>
                         <button onclick="openModal('canales2')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> VER EN VIVO 2
+                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 2
                         </button>
                         <button onclick="openModal('canales3')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-emerald-400 flex items-center justify-center gap-1.5 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> VER EN VIVO 3
+                            <i class="fas fa-tv text-sm"></i> MUNDIAL EN VIVO 3
                         </button>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                         <span class="text-xl">🤝💖</span>
                         <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
                         <p class="text-[10px] text-slate-300 mt-2 leading-relaxed px-1">
-                            Tu aporte voluntario nos ayuda un montón a financiar servidores de descarga en alta velocidad, mantener links estables y costear la señal activa de las transmisiones en vivo del Mundial para toda la comunidad.
+                            Tu aporte voluntario nos ayuda un montón a mantener estable el sistema de transmisiones de partidos en vivo y de servidores.
                         </p>
                         
                         <!-- CONTENEDOR DEL QR EN PANTALLA PRINCIPAL -->
@@ -226,32 +226,10 @@
                     </button>
                     
                     <!-- ENLACE AL DRIVE DE MATERIAL MUNDIALISTA -->
-                    <button onclick="navigate('library')" class="w-full py-3.5 mt-2.5 bg-amber-500 hover:bg-amber-600 transition text-slate-950 rounded-xl font-black text-xs shadow-md uppercase tracking-widest flex items-center justify-center gap-2">
-                        <i class="fas fa-folder-open text-sm"></i> Material Mundialista
+                    <button onclick="navigate('pro')" class="w-full py-3.5 mt-2.5 bg-amber-500 hover:bg-amber-600 transition text-slate-950 rounded-xl font-black text-xs shadow-md uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fas fa-folder-open text-sm"></i> Material Descargable Mundialista
                     </button>
                 </div>
-            </div>
-        </section>
-
-        <!-- PANTALLA DASHBOARD RUTINA -->
-        <section id="screen-plan" class="hidden fade-in">
-            <div id="plan-header" class="mb-4">
-                <h2 id="welcome-txt" class="text-2xl font-black text-emerald-400 leading-tight">¡Hola!</h2>
-                <p id="welcome-sub" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Tus misiones de hoy:</p>
-            </div>
-
-            <div id="task-list" class="space-y-3 mb-6"></div>
-            
-            <div class="glass-card p-4 text-center border-b-[3px] border-emerald-500 bg-slate-950">
-                <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden mb-2 shadow-inner">
-                    <div id="session-bar" class="bg-emerald-500 h-full rounded-full transition-all duration-700" style="width: 0%"></div>
-                </div>
-                <p id="session-percent" class="text-[9px] font-black text-emerald-400 uppercase tracking-widest">0% COMPLETADO</p>
-            </div>
-
-            <div id="session-done-overlay" class="hidden mt-6 text-center fade-in bg-emerald-950/20 p-6 rounded-xl border border-emerald-900/40 shadow-sm">
-                <p class="text-emerald-400 font-black text-lg mb-3 uppercase tracking-tighter">¡Día Completado! ⚽🏆</p>
-                <button onclick="navigate('finished')" class="btn-primary w-full py-4 rounded-xl font-black uppercase text-xs shadow-md tracking-widest">Ver mi Reporte Final</button>
             </div>
         </section>
 
@@ -277,36 +255,6 @@
             </div>
         </section>
 
-        <!-- PANTALLA PRÁCTICA MANUAL (PDFs) -->
-        <section id="screen-print" class="hidden fade-in">
-            <div class="glass-card p-6 text-center border-t-[8px] border-emerald-500 shadow-xl mt-2 bg-slate-950">
-                <div class="w-14 h-14 bg-emerald-950/50 rounded-xl flex items-center justify-center mx-auto mb-4 border border-emerald-900/40">
-                    <i class="fas fa-file-pdf text-3xl text-emerald-400"></i>
-                </div>
-                
-                <p class="text-[9px] text-slate-400 font-black uppercase tracking-[0.2em] mb-1">PROGRAMA DE IMPRESIÓN MUNDIAL</p>
-                <h3 id="print-hability-title" class="text-xl font-black text-slate-100 mb-6 uppercase tracking-tight leading-none text-center"></h3>
-                
-                <div id="print-instr" class="mb-6 text-left"></div>
-                
-                <div class="space-y-3">
-                    <button id="btn-open-pdf" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 rounded-xl font-black text-sm shadow-md flex items-center justify-center gap-2 uppercase tracking-widest">
-                        <i class="fas fa-cloud-download-alt text-lg"></i> Abrir en Google Drive
-                    </button>
-                    <button id="btn-view-video" class="w-full py-3 bg-slate-900 text-slate-200 rounded-xl font-black text-xs hidden uppercase border border-slate-800 hover:bg-slate-800 transition shadow-sm flex justify-center items-center gap-1.5">
-                        <i class="fas fa-play-circle text-base text-red-500"></i> Ver Ejemplo de Montaje
-                    </button>
-                    <button id="btn-show-sol-manual" class="w-full py-3 bg-slate-900 text-slate-300 rounded-xl font-black text-xs hidden uppercase border border-slate-800 shadow-sm hover:bg-slate-800 transition">
-                        Ver Guía de Montaje
-                    </button>
-                </div>
-                
-                <button onclick="taskDone()" class="w-full py-4 mt-8 bg-emerald-600 hover:bg-emerald-500 transition text-slate-950 rounded-xl font-black text-sm shadow-lg uppercase tracking-widest">
-                    ¡MISIÓN COMPLETADA! <i class="fas fa-check-circle ml-1"></i>
-                </button>
-            </div>
-        </section>
-
         <!-- PANTALLA SESIÓN COMPLETADA -->
         <section id="screen-finished" class="hidden fade-in text-center py-8 px-4">
             <div class="w-20 h-20 bg-amber-950/40 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg shadow-amber-500/10">
@@ -327,8 +275,8 @@
             </div>
 
             <div class="space-y-3">
-                <button onclick="navigate('library')" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 transition rounded-xl font-black text-sm shadow-md uppercase tracking-widest flex justify-center items-center gap-2">
-                    <i class="fas fa-folder-open text-base"></i> Abrir El Baúl de Descargas
+                <button onclick="navigate('pro')" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 transition rounded-xl font-black text-sm shadow-md uppercase tracking-widest flex justify-center items-center gap-2">
+                    <i class="fas fa-folder-open text-base"></i> Abrir Catálogo Zona PRO
                 </button>
                 <button onclick="abrirResena()" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-black text-xs shadow-sm uppercase tracking-widest flex items-center justify-center gap-2">
                     <i class="fas fa-star text-yellow-300 text-base"></i> Deja tu reseña
@@ -339,109 +287,90 @@
             </div>
         </section>
 
-        <!-- PANTALLA BIBLIOTECA PREMIUM / MATERIAL MUNDIALISTA -->
-        <section id="screen-library" class="hidden fade-in pb-8">
-            <h2 class="text-2xl font-black text-emerald-400 mb-1 uppercase tracking-tighter">MATERIAL MUNDIALISTA</h2>
-            <p class="text-xs text-slate-400 mb-6 font-medium italic">Acceso ilimitado a tus recursos y descargas oficiales.</p>
+        <!-- ==================== TAB 1: ZONA PRO ==================== -->
+        <section id="screen-pro" class="hidden fade-in pb-8">
+            <h2 class="text-2xl font-black text-emerald-400 mb-1 uppercase tracking-tighter">ZONA PRO MUNDIALISTA</h2>
+            <p class="text-xs text-slate-400 mb-6 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas.</p>
             
-            <div class="mb-6">
-                <!-- PANEL DEL CREADOR (DESARROLLADOR) -->
-                <div class="p-4 rounded-2xl bg-slate-900 border border-amber-500/20 mb-6">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-black text-amber-400 uppercase tracking-wider"><i class="fas fa-tools mr-1"></i> PANEL DEL CREADOR (Test de Roles)</span>
-                        <span class="text-[9px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-bold uppercase">ADMIN</span>
+            <div class="space-y-3">
+                <!-- ALBUM PANINI -->
+                <div class="premium-card shadow-sm">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book-open"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Panini Oficial 2026</h4>
+                            <p class="avail-text">LÁMINAS VECTORIZADAS HD.</p>
+                        </div>
                     </div>
-                    <p class="text-[10px] text-slate-400 mb-3">Utiliza esta barra para simular de inmediato cómo visualiza la app un usuario según su estado de pago:</p>
-                    <div class="grid grid-cols-3 gap-2">
-                        <button onclick="cambiarPlanViaAdmin('DEMO')" id="admin-plan-DEMO" class="py-2 text-[10px] font-black uppercase rounded-lg border border-slate-800 bg-slate-950 transition text-slate-300">DEMO</button>
-                        <button onclick="cambiarPlanViaAdmin('PRO')" id="admin-plan-PRO" class="py-2 text-[10px] font-black uppercase rounded-lg border border-slate-800 bg-slate-950 transition text-slate-300">PRO</button>
-                        <button onclick="cambiarPlanViaAdmin('PREMIUM')" id="admin-plan-PREMIUM" class="py-2 text-[10px] font-black uppercase rounded-lg border border-slate-800 bg-slate-950 transition text-slate-300">PREMIUM</button>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraPanini')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaPanini')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
-                <div class="lib-section-title">DESCARGAS 2026 EN ULTRA HD & BONOS</div>
-                <div class="space-y-3">
-                    
-                    <!-- ALBUM PANINI -->
-                    <div class="premium-card shadow-sm">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book-open"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Panini Oficial 2026</h4>
-                                <p class="avail-text">LÁMINAS VECTORIZADAS HD.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraPanini')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPro('descargaPanini')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- ALBUM 3 REYES -->
+                <div class="premium-card shadow-sm">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-trophy"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Edición 3 Reyes 2026</h4>
+                            <p class="avail-text">VERSIÓN SUDAMÉRICA.</p>
                         </div>
                     </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraReyes')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaReyes')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
 
-                    <!-- ALBUM 3 REYES -->
-                    <div class="premium-card shadow-sm">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-trophy"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Edición 3 Reyes 2026</h4>
-                                <p class="avail-text">VERSIÓN SUDAMÉRICA.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraReyes')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPro('descargaReyes')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- ALBUM DIA DEL PADRE -->
+                <div class="premium-card shadow-sm border border-yellow-500/20 bg-yellow-950/5">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-user-tie"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-yellow-300 uppercase leading-none mb-1">Álbum Mundial "Día del Padre"</h4>
+                            <p class="avail-text text-yellow-400 font-extrabold">¡EDICIÓN ESPECIAL REGALO!</p>
                         </div>
                     </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraDiaPadre')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaDiaPadre')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
 
-                    <!-- ALBUM DIA DEL PADRE -->
-                    <div class="premium-card shadow-sm border border-yellow-500/20 bg-yellow-950/5">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-user-tie"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-yellow-300 uppercase leading-none mb-1">Álbum Mundial "Día del Padre"</h4>
-                                <p class="avail-text text-yellow-400 font-extrabold">¡EDICIÓN ESPECIAL REGALO!</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraDiaPadre')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPro('descargaDiaPadre')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- ALBUM PARA PAREJAS -->
+                <div class="premium-card shadow-sm border border-red-500/20 bg-red-950/5">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-heart"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-red-300 uppercase leading-none mb-1">Álbum Mundial "Para Parejas"</h4>
+                            <p class="avail-text text-red-400 font-extrabold">¡COLECCIÓN DE AMOR Y FÚTBOL!</p>
                         </div>
                     </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraParejas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaParejas')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
 
-                    <!-- ALBUM PARA PAREJAS -->
-                    <div class="premium-card shadow-sm border border-red-500/20 bg-red-950/5">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-heart"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-red-300 uppercase leading-none mb-1">Álbum Mundial "Para Parejas"</h4>
-                                <p class="avail-text text-red-400 font-extrabold">¡COLECCIÓN DE AMOR Y FÚTBOL!</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraParejas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPro('descargaParejas')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- PEQUEÑOS MUNDIALISTAS -->
+                <div class="premium-card shadow-sm">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-blue-950/50 text-blue-400 border border-blue-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-child"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-tight mb-1 truncate">Kit Pequeños Mundialistas</h4>
+                            <p class="avail-text">+50 RETOS DIDÁCTICOS.</p>
                         </div>
                     </div>
-
-                    <!-- PEQUEÑOS MUNDIALISTAS -->
-                    <div class="premium-card shadow-sm">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-blue-950/50 text-blue-400 border border-blue-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-child"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-slate-100 uppercase leading-tight mb-1 truncate">Kit Pequeños Mundialistas</h4>
-                                <p class="avail-text">+50 RETOS DIDÁCTICOS.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraPequeños')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPro('descargaPequeños')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
-                        </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraPequeños')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaPequeños')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
-
                 </div>
             </div>
 
             <!-- ENLACE DIRECTO A LA PLANILLA DE EXCEL -->
-            <div class="mb-6">
+            <div class="mt-6">
                 <div class="lib-section-title">Planilla de Control Oficial</div>
                 <div class="glass-card p-5 bg-slate-950 mt-2 text-center border border-emerald-950">
                     <div class="w-12 h-12 bg-emerald-950/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-emerald-900/40">
@@ -454,80 +383,88 @@
                     </button>
                 </div>
             </div>
+        </section>
 
-            <!-- SECCIÓN NUEVA: ZONA RETRO PREMIUM -->
-            <div class="mb-6">
-                <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-4 mt-8 shadow-lg shadow-amber-500/5">
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl animate-bounce">👑</span>
-                        <div>
-                            <h3 class="text-lg font-black text-amber-400 tracking-tight uppercase leading-none">
-                                ZONA RETRO PREMIUM
-                            </h3>
-                            <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider mt-1">EL TEMPLO DE LA NOSTALGIA: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
-                        </div>
+        <!-- ==================== TAB 2: ZONA PREMIUM (TEMPLO DE LA NOSTALGIA) ==================== -->
+        <section id="screen-premium" class="hidden fade-in pb-8">
+            <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-6 mt-2 shadow-lg shadow-amber-500/5 animate-pulse">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">👑</span>
+                    <div>
+                        <h3 class="text-lg font-black text-amber-400 tracking-tight uppercase leading-none">
+                            ZONA RETRO PREMIUM
+                        </h3>
+                        <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider mt-1">EL TEMPLO DE LA NOSTALGIA: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
                     </div>
                 </div>
-                
-                <p class="text-[11px] text-slate-400 mb-4 leading-relaxed">¡Sacia tu sed de coleccionista! Desbloquea de forma ilimitada la biblioteca retro más grande del continente. Todo digitalizado en alta resolución listo para descargar.</p>
-                
-                <div class="space-y-3">
-                    
-                    <!-- 1. ALBUMES RETRO DE COLECCIÓN -->
-                    <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro de Colección</h4>
-                                <p class="avail-text text-amber-400">MUNDIALES HISTÓRICOS, ÁNIMES Y CULTO.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraRetro')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+            </div>
+            
+            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">¡Sacia tu sed de coleccionista y niño interior! Desbloquea de forma ilimitada la biblioteca retro y de nostalgia más grande del continente. Todo en Ultra HD listo para descargar.</p>
+            
+            <div class="space-y-3">
+                <!-- 1. ALBUMES RETRO DE COLECCIÓN -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro de Colección</h4>
+                            <p class="avail-text text-amber-400">MUNDIALES HISTÓRICOS, ÁNIMES Y CULTO.</p>
                         </div>
                     </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetro')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
 
-                    <!-- 2. SERIES RETRO -->
-                    <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-gamepad"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Series Retro & Club Nintendo</h4>
-                                <p class="avail-text text-amber-400 font-extrabold">REVISTAS HISTÓRICAS Y CAPÍTULOS DE CULTO.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraRetroSeries')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPremium('descargaRetroSeries')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- 2. SERIES RETRO -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-gamepad"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Series Retro & Club Nintendo</h4>
+                            <p class="avail-text text-amber-400 font-extrabold">REVISTAS HISTÓRICAS Y CAPÍTULOS DE CULTO.</p>
                         </div>
                     </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroSeries')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroSeries')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
 
-                    <!-- 3. PELICULAS RETRO -->
-                    <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
-                        <div class="flex items-center gap-3 w-full">
-                            <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro de Culto</h4>
-                                <p class="avail-text text-amber-400 font-extrabold">CINE RETRO CLÁSICO Y PELÍCULAS INFANTILES.</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                            <button onclick="abrirMuestra('muestraRetroPelis')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                            <button onclick="ejecutarDescargaPremium('descargaRetroPelis')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                <!-- 3. PELICULAS RETRO -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro de Culto</h4>
+                            <p class="avail-text text-amber-400 font-extrabold">CINE RETRO CLÁSICO Y PELÍCULAS INFANTILES.</p>
                         </div>
                     </div>
-
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroPelis')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroPelis')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- PANTALLA PROGRESO -->
-        <section id="screen-stats" class="hidden fade-in mt-2">
-            <h2 class="text-2xl font-black text-emerald-400 mb-6 uppercase tracking-tighter text-center">Habilidades del Coleccionista</h2>
+        <!-- ==================== TAB 3: TRIVIA, HISTORIAL & STATS ==================== -->
+        <section id="screen-stats" class="hidden fade-in mt-2 pb-8">
+            <h2 class="text-2xl font-black text-emerald-400 mb-2 uppercase tracking-tighter text-center">Habilidades del Coleccionista</h2>
+            <p class="text-xs text-slate-400 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas.</p>
+            
+            <div class="glass-card p-5 mb-6 text-center border border-emerald-500/20 bg-slate-950">
+                <h3 class="text-sm font-bold text-slate-100 uppercase mb-3">¿Eres un Verdadero Fan de los Mundiales?</h3>
+                <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition rounded-xl font-black text-xs uppercase tracking-widest shadow-md">
+                    ⚽ Jugar Trivia Mundialista
+                </button>
+            </div>
+
             <div class="glass-card p-4 mb-6 border-l-[6px] border-emerald-500 shadow-xl bg-slate-950">
                 <canvas id="statsChart" height="260"></canvas>
             </div>
+
             <div class="grid grid-cols-2 gap-4">
                 <div class="glass-card p-5 text-center border border-slate-800 bg-slate-950">
                     <p class="text-4xl font-black text-emerald-400" id="stat-count">0</p>
@@ -558,28 +495,32 @@
         </div>
     </div>
 
-    <!-- MODALES DE FIXTURE Y VER EN VIVO (OPCIONES 1, 2 Y 3) -->
+    <!-- MODALES DE FIXTURE / PARTIDOS DE HOY Y EN VIVO -->
     <div id="modal-fixture" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('fixture')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-calendar-day"></i> Fixture y Sedes 2026</h3>
+            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-calendar-day"></i> 🗓️ PARTIDOS DE HOY</h3>
             <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
-                <p class="font-bold text-slate-200">El torneo más grande de la historia arranca el jueves 11 de Junio de 2026 y culmina el 19 de Julio de 2026.</p>
-                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-2">
-                    <div>
-                        <span class="text-emerald-400 font-bold block">🇲🇽 Partido Inaugural:</span>
-                        Estadio Azteca (Ciudad de México) - 11 de Junio.
+                <p class="font-bold text-slate-200">Sigue en tiempo real los encuentros de la fecha del Mundial de hoy:</p>
+                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3 font-semibold text-slate-100">
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                        <span>🇵🇹 Portugal vs. 🇨🇬 R. Congo</span>
+                        <span class="text-emerald-400 font-extrabold">12:00 PM</span>
                     </div>
-                    <div>
-                        <span class="text-emerald-400 font-bold block">🇺🇸 Gran Final:</span>
-                        Estadio de Nueva York / Nueva Jersey - 19 de Julio.
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                        <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra vs. 🇭🇷 Croacia</span>
+                        <span class="text-emerald-400 font-extrabold">3:00 PM</span>
                     </div>
-                    <div>
-                        <span class="text-emerald-400 font-bold block">🇨🇦 Sedes Canadá:</span>
-                        BC Place Vancouver, Toronto Stadium.
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                        <span>🇬🇭 Ghana vs. 🇵🇦 Panamá</span>
+                        <span class="text-emerald-400 font-extrabold">6:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>🇺🇿 Uzbekistán vs. 🇨🇴 Colombia</span>
+                        <span class="text-emerald-400 font-extrabold">9:00 PM</span>
                     </div>
                 </div>
-                <p>Un total de 48 selecciones nacionales competirán en un total de 104 electrizantes partidos para definir al campeón absoluto del balompié global.</p>
+                <p class="text-[10px] text-slate-400 italic">Los horarios corresponden a la hora local de Lima, Perú. Revisa los canales de transmisión a continuación.</p>
             </div>
         </div>
     </div>
@@ -599,7 +540,7 @@
                         <li>Sigue en señal abierta toda la Fase Eliminatoria Final.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo1')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition">Ir a América TV GO</button>
+                <button onclick="abrirStreamCanal('envivo1')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Ir a América TV GO</button>
                 
                 <!-- BOTÓN DE DMCA Y CONTENIDO DE TERCEROS -->
                 <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
@@ -612,7 +553,8 @@
     <!-- TRANSMISIÓN OPCIÓN 2 (ATV Y LATINA ONLINE) -->
     <div id="modal-canales2" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opción 2</h3>
+            <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
+            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opción 2</h3>
             <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
                     <span class="text-emerald-400 font-bold block text-sm mb-1">🌐 Plataformas Libres Alternativas</span>
@@ -623,7 +565,7 @@
                         <li>Debates, análisis táctico y entrevistas en vivo.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition">Ver Canal Digital Alternativo</button>
+                <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Ver Canal Digital Alternativo</button>
                 
                 <!-- BOTÓN DE DMCA Y CONTENIDO DE TERCEROS -->
                 <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
@@ -648,7 +590,7 @@
                         <li>Estadísticas de jugadores en tiempo real.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition">Acceder a Cobertura Global</button>
+                <button onclick="abrirStreamCanal('envivo3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Acceder a Cobertura Global</button>
                 
                 <!-- BOTÓN DE DMCA Y CONTENIDO DE TERCEROS -->
                 <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
@@ -664,12 +606,12 @@
             <button onclick="closeModal('dmca')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-amber-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-shield-alt"></i> DMCA y Contenido de Terceros</h3>
             
-            <div class="space-y-3 text-xs text-slate-300 max-h-[360px] overflow-y-auto pr-1 leading-relaxed">
-                <p class="text-[10px] text-slate-500 italic">Última actualización: 11 de junio de 2026</p>
+            <div class="space-y-3 text-xs text-slate-300 max-h-[360px] overflow-y-auto pr-1 leading-relaxed text-left">
+                <p class="text-[10px] text-slate-500 italic text-center">Última actualización: 11 de junio de 2026</p>
                 
                 <!-- RECOMENDACIÓN DE CORREO GMAIL ALTERNATIVO -->
                 <div class="bg-blue-950/40 p-3 rounded-xl border border-blue-900/50 text-blue-300 font-bold flex flex-col gap-1.5 shadow-sm">
-                    <span class="text-[11px] tracking-wide uppercase"><i class="fas fa-envelope-open text-blue-400 mr-1"></i> RECOMENDACIÓN DE SEGURIDAD:</span>
+                    <span class="text-[11px] tracking-wide uppercase text-center"><i class="fas fa-envelope-open text-blue-400 mr-1"></i> RECOMENDACIÓN DE SEGURIDAD:</span>
                     <span class="font-normal text-slate-200">Recomendamos firmemente utilizar una <strong>cuenta de correo electrónico de Gmail alternativa (secundaria)</strong> para registrarte o acceder a cualquier plataforma o enlace de terceros, protegiendo así tu correo personal principal contra spam o riesgos de seguridad.</span>
                 </div>
 
@@ -691,6 +633,7 @@
                         <li>Identificación del material cuestionado y la URL donde aparece.</li>
                         <li>Datos de contacto del reclamante.</li>
                         <li>Declaración de buena fe sobre la falta de autorización.</li>
+                        <li>Declaración de veracidad y firma (física o electrónica).</li>
                     </ul>
                     Al recibir una notificación completa y válida, evaluaremos la solicitud y podremos deshabilitar el acceso al contenido señalado.
                 </div>
@@ -704,8 +647,8 @@
         </div>
     </div>
 
-    <!-- MODAL DE PAGO / UPGRADE -->
-    <div id="upgrade-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4 fade-in">
+    <!-- MODAL DE PAGO / UPGRADE MULTI-OPCIONES (CERO CONFUSIÓN) -->
+    <div id="upgrade-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border-2 border-amber-500/30 max-w-sm w-full text-center relative">
             <button onclick="closeUpgradeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             
@@ -713,19 +656,29 @@
                 <i class="fas fa-crown text-3xl text-amber-400"></i>
             </div>
             
-            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight" id="upgrade-title">DESBLOQUEAR PACK COMPLETO</h3>
-            <p class="text-[13px] text-slate-300 mb-5 font-medium leading-relaxed px-2" id="upgrade-text">Texto dinámico</p>
+            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
+            <p class="text-[13px] text-slate-300 mb-4 font-medium leading-relaxed px-2" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
             
-            <div class="bg-slate-950 p-4 rounded-2xl mb-5 border border-slate-800">
-                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">YAPE PARA ACTIVACIÓN INSTANTÁNEA</p>
-                <div class="w-44 h-44 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
-                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Código QR Yape" class="w-full h-full object-contain">
-                </div>
-                <p class="text-[11px] text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">943833945</span> - <span id="yape-name-txt">Jesús B.</span></p>
-                <p class="text-[9px] text-slate-400 mt-1 uppercase font-bold">PRECIO EXCLUSIVO: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+            <!-- CONTENEDOR DE SELECCIÓN EXCLUSIVO PARA CUENTA DEMO TRATANDO DE ACCEDER A PREMIUM -->
+            <div id="upgrade-options-selector" class="hidden space-y-2 mb-4">
+                <button id="btn-opt-full" class="w-full p-3 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(10, 'PREMIUM')">
+                    👑 Pack Completo PREMIUM (TODO DESBLOQUEADO) - S/ 9
+                </button>
+                <button id="btn-opt-pro" class="w-full p-3 rounded-2xl bg-slate-800 text-slate-300 font-bold text-xs uppercase tracking-wider border border-slate-700 hover:bg-slate-750 active:scale-95 transition" onclick="seleccionarOpcionCobro(5, 'PRO')">
+                    ⭐ Pack PRO (Álbumes 2026 + Bonos: Dia del Padre, Parejas, Mundial Kids) - S/ 5
+                </button>
             </div>
 
-            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2">
+            <div class="bg-slate-950 p-4 rounded-2xl mb-5 border border-slate-800" id="yape-qr-container">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3" id="yape-instructions-label">YAPE PARA ACTIVACIÓN INSTANTÁNEA</p>
+                <div class="w-40 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Código QR Yape" class="w-full h-full object-contain">
+                </div>
+                <p class="text-xs text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">943833945</span> - <span id="yape-name-txt">Jesús B.</span></p>
+                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black">Pago único: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+            </div>
+
+            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition">
                 <i class="fab fa-whatsapp text-xl"></i> Enviar Captura de Pago
             </button>
         </div>
@@ -739,7 +692,7 @@
         const MUNDIALISTA_CONFIG = {
             // VERSIÓN ACTIVA PREDETERMINADA: 'DEMO', 'PRO' o 'PREMIUM'
             // 'DEMO'    -> Descargas bloqueadas. Links de Templo Nostalgia bloqueados.
-            // 'PRO'     -> Descargas libres. El Templo de la Nostalgia de 85GB bloqueado.
+            // 'PRO'     -> Descargas PRO habilitadas. Templo Nostalgia de 85GB bloqueado.
             // 'PREMIUM' -> Todo absolutamente desbloqueado.
             PLAN_POR_DEFECTO: 'DEMO',
 
@@ -747,7 +700,7 @@
             YAPE: {
                 NUMERO: "943833945",
                 NOMBRE: "Jesús B.",
-                PRECIO: "S/ 5 soles" // Ajustado a S/ 5 soles
+                PRECIO: "S/ 5 soles"
             },
 
             // ENLACES EXTERNOS A LOS RECURSOS MUNDIALISTAS (GOOGLE DRIVE / EXCEL)
@@ -756,7 +709,6 @@
                 planillaExcel: "https://docs.google.com/spreadsheets/d/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr/edit?usp=sharing",
                 facebookReview: "https://www.facebook.com/share/p/1CkEnmqFDb/",
                 driveFolderGeneral: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                tutorialVideo: "https://www.youtube.com/watch?v=VW-Fc-O_U-U", // Videotutorial de montaje en YouTube
 
                 // ENLACES PARA "VER MUESTRA" (Muestras de libre acceso)
                 muestraPanini: "https://mundial2026.aglobalpacks.com/muestrasdealbum",
@@ -768,7 +720,7 @@
                 muestraRetroSeries: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
                 muestraRetroPelis: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
 
-                // ENLACES PARA "DESCARGAR" (Archivos Completos Premium)
+                // ENLACES PARA "DESCARGAR" (Archivos Completos Premium / Pro)
                 descargaPanini: "https://drive.google.com/drive/folders/12F7EqrURIpsDEUzkg-3Lkt5FG0EkSDyQ?usp=sharing",
                 descargaReyes: "https://drive.google.com/drive/folders/12F7EqrURIpsDEUzkg-3Lkt5FG0EkSDyQ?usp=sharing",
                 descargaDiaPadre: "https://canva.link/7i9par8btlu1cqh",
@@ -788,8 +740,8 @@
         };
 
         const CONFIG_TEXTS = {
-            mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones de parejas, del Día del Padre y el kit infantil de juegos!",
-            mensajePremium: "¡Activa tu Plan PREMIUM por solo S/ 5 para desbloquear la Zona Retro Premium: El Templo de la Nostalgia (85GB de Álbumes de todos los tiempos, Series y Películas)!"
+            mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones del Día del Padre, Parejas y el kit infantil de juegos!",
+            mensajePremium: "¡Activa tu Plan PREMIUM para desbloquear el Templo de la Nostalgia Retro (85GB de Álbumes de todos los tiempos, +500gb en Series y Películas)!"
         };
 
         // ======================================================================== //
@@ -936,24 +888,51 @@
             }
         }
 
-        // CONTROL DE MODALES DE COMPRA INTERACTIVOS CON DETECCIÓN DE TIER
+        // CONTROL DE MODALES DE COMPRA INTERACTIVOS CON DETECCIÓN DE TIER (CERO CONFUSIÓN)
         function openUpgradeModal(tier = 'PRO') {
             const modal = document.getElementById('upgrade-modal');
             const title = document.getElementById('upgrade-title');
             const text = document.getElementById('upgrade-text');
             const priceLabel = document.getElementById('yape-price-txt');
-            
-            if (tier === 'PRO') {
-                title.innerText = "ACTIVA TU PLAN PRO";
-                text.innerText = CONFIG_TEXTS.mensajePro;
-                priceLabel.innerText = "S/ 5 SOLES";
-            } else {
-                title.innerText = "ACTIVA TU PLAN PREMIUM";
-                text.innerText = CONFIG_TEXTS.mensajePremium;
-                priceLabel.innerText = "S/ 5 SOLES";
+            const optionsSelector = document.getElementById('upgrade-options-selector');
+            const qrContainer = document.getElementById('yape-qr-container');
+
+            // Resetear vistas iniciales
+            optionsSelector.classList.add('hidden');
+            qrContainer.classList.remove('hidden');
+
+            if (activePlan === 'DEMO') {
+                if (tier === 'PRO') {
+                    title.innerText = "ACTIVA TU PLAN PRO";
+                    text.innerText = CONFIG_TEXTS.mensajePro;
+                    priceLabel.innerText = "S/ 5 SOLES";
+                } else if (tier === 'PREMIUM') {
+                    // Evitar confusión: El usuario en DEMO que pulsa en PREMIUM ve un selector de precios
+                    title.innerText = "ACTIVA TU PLAN DE ACCESO";
+                    text.innerText = "Estás intentando acceder a la Zona Retro. Para evitar confusiones, selecciona tu plan para Yapear:";
+                    optionsSelector.classList.remove('hidden');
+                    qrContainer.classList.add('hidden'); // Ocultar el QR hasta que elija una opción para no confundir
+                }
+            } else if (activePlan === 'PRO') {
+                if (tier === 'PREMIUM') {
+                    title.innerText = "ACTUALIZAR A PREMIUM";
+                    text.innerText = "Como ya cuentas con el Plan PRO, solo paga la diferencia de S/ 5 soles adicionales para desbloquear de inmediato el Templo Retro de 85GB.";
+                    priceLabel.innerText = "S/ 5 SOLES (Diferencia)";
+                }
             }
 
             modal.classList.remove('hidden');
+        }
+
+        // Selecciona la opción de pago directamente desde los botones del modal y actualiza el QR
+        function seleccionarOpcionCobro(precio, tier) {
+            const qrContainer = document.getElementById('yape-qr-container');
+            const priceLabel = document.getElementById('yape-price-txt');
+            const text = document.getElementById('upgrade-text');
+            
+            qrContainer.classList.remove('hidden');
+            priceLabel.innerText = `S/ ${precio} SOLES`;
+            text.innerText = tier === 'PREMIUM' ? CONFIG_TEXTS.mensajePremium : CONFIG_TEXTS.mensajePro;
         }
 
         function closeUpgradeModal() {
@@ -1067,7 +1046,7 @@
 
         function startTraining() {
             state.name = document.getElementById('user-name').value || "MUNDIALISTA";
-            navigate('library');
+            navigate('pro');
         }
 
         function abrirResena() {
@@ -1163,7 +1142,7 @@
             }, 1800);
         }
 
-        // SISTEMA DE NAVEGACIÓN Y ENRUTAMIENTO GENERAL
+        // SISTEMA DE NAVEGACIÓN Y ENRUTAMIENTO GENERAL (MISIONES ELIMINADAS)
         function navigate(screen) {
             const floatBtn = document.getElementById('btn-upgrade-float');
             if (screen !== 'setup') {
@@ -1178,7 +1157,7 @@
                 screen = 'finished';
             }
 
-            const scrs = ['setup', 'plan', 'game', 'print', 'stats', 'library', 'finished'];
+            const scrs = ['setup', 'pro', 'premium', 'game', 'print', 'stats', 'finished'];
             scrs.forEach(s => {
                 const el = document.getElementById(`screen-${s}`);
                 if(el) el.classList.add('hidden');
