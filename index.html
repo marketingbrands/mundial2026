@@ -200,6 +200,25 @@
                     </div>
                 </div>
 
+                <!-- SECCIÓN INTEGRADA: APOYA AL PROYECTO CON QR -->
+                <div class="pt-4 border-t border-slate-800">
+                    <div class="p-4 rounded-2xl bg-gradient-to-tr from-emerald-950/45 to-slate-900 border border-emerald-500/20 text-center">
+                        <span class="text-xl">🤝💖</span>
+                        <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
+                        <p class="text-[10px] text-slate-300 mt-2 leading-relaxed px-1">
+                            Tu aporte voluntario nos ayuda un montón a financiar servidores de descarga en alta velocidad, mantener links estables y costear la señal activa de las transmisiones en vivo del Mundial para toda la comunidad.
+                        </p>
+                        
+                        <!-- CONTENEDOR DEL QR EN PANTALLA PRINCIPAL -->
+                        <div class="w-36 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-2 mt-3 shadow-lg shadow-emerald-500/5">
+                            <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Código QR Yape" class="w-full h-32 object-contain">
+                            <span class="text-[7px] font-black text-slate-800 uppercase leading-none mt-1 tracking-widest">YAPE VOLUNTARIO</span>
+                        </div>
+                        <p class="text-xs text-slate-200 mt-2.5 font-black">Yape: 943833945 - Jesús B.</p>
+                        <p class="text-[9px] text-slate-500 mt-0.5 uppercase tracking-wide">¡Gracias por mantener activa la pasión!</p>
+                    </div>
+                </div>
+
                 <div class="pt-3 text-center border-t border-slate-800">
                     <!-- INICIAR TRIVIA DIRECTAMENTE -->
                     <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 rounded-xl font-black text-sm shadow-lg shadow-emerald-500/20 uppercase tracking-widest flex items-center justify-center gap-2">
@@ -593,8 +612,7 @@
     <!-- TRANSMISIÓN OPCIÓN 2 (ATV Y LATINA ONLINE) -->
     <div id="modal-canales2" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opción 2</h3>
+            <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opción 2</h3>
             <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
                     <span class="text-emerald-400 font-bold block text-sm mb-1">🌐 Plataformas Libres Alternativas</span>
@@ -673,7 +691,6 @@
                         <li>Identificación del material cuestionado y la URL donde aparece.</li>
                         <li>Datos de contacto del reclamante.</li>
                         <li>Declaración de buena fe sobre la falta de autorización.</li>
-                        <li>Declaración de veracidad y firma (física o electrónica).</li>
                     </ul>
                     Al recibir una notificación completa y válida, evaluaremos la solicitud y podremos deshabilitar el acceso al contenido señalado.
                 </div>
@@ -730,7 +747,7 @@
             YAPE: {
                 NUMERO: "943833945",
                 NOMBRE: "Jesús B.",
-                PRECIO: "S/ 5 soles" // Ajustado a S/ 5 soles como solicitado
+                PRECIO: "S/ 5 soles" // Ajustado a S/ 5 soles
             },
 
             // ENLACES EXTERNOS A LOS RECURSOS MUNDIALISTAS (GOOGLE DRIVE / EXCEL)
@@ -739,6 +756,7 @@
                 planillaExcel: "https://docs.google.com/spreadsheets/d/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr/edit?usp=sharing",
                 facebookReview: "https://www.facebook.com/share/p/1CkEnmqFDb/",
                 driveFolderGeneral: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                tutorialVideo: "https://www.youtube.com/watch?v=VW-Fc-O_U-U", // Videotutorial de montaje en YouTube
 
                 // ENLACES PARA "VER MUESTRA" (Muestras de libre acceso)
                 muestraPanini: "https://mundial2026.aglobalpacks.com/muestrasdealbum",
@@ -1005,6 +1023,7 @@
             }
         }
 
+        // Envía el mensaje preestablecido para contactar por Yapeos
         function enviarSoporteWhatsAppPago() {
             window.open(MUNDIALISTA_CONFIG.ENLACES.whatsappSoporte, '_blank');
         }
