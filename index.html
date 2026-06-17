@@ -287,8 +287,16 @@
         <!-- ==================== TAB 1: ZONA PRO ==================== -->
         <section id="screen-pro" class="hidden fade-in pb-8">
             <h2 class="text-2xl font-black text-emerald-400 mb-1 uppercase tracking-tighter">ZONA PRO MUNDIALISTA</h2>
-            <p class="text-xs text-slate-400 mb-6 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas oficiales.</p>
+            <p class="text-xs text-slate-400 mb-2 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas oficiales.</p>
             
+            <!-- Contraseña Demo Banner -->
+            <div class="p-3 bg-emerald-950/40 border border-emerald-900/30 rounded-xl mb-4 text-center">
+                <p class="text-xs font-black text-emerald-300 uppercase tracking-wider">
+                    🔑 CONTRASEÑA DEMO PARA MUESTRAS: <span id="pwd-demo-display-pro" class="text-white bg-slate-900 px-2 py-1 rounded select-all ml-1">...</span>
+                </p>
+                <p class="text-[9px] text-slate-400 mt-1 uppercase font-bold">Ingresa esta clave en el DEMO (Si no entra pídelo al whatsapp)</p>
+            </div>
+
             <div class="space-y-3">
                 <!-- ALBUM PANINI -->
                 <div class="premium-card shadow-sm">
@@ -375,7 +383,7 @@
                     </div>
                     <h4 class="text-sm font-bold text-slate-100 uppercase mb-1">Planilla Excel de Control Mundial 2026</h4>
                     <p class="text-[11px] text-slate-400 mb-4 px-2">Lleva el control de tus láminas repetidas y faltantes con nuestro Excel automatizado en la nube.</p>
-                    <button onclick="abrirProExcel()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider transition">
+                    <button onclick="abrirProExcel()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider transition font-black">
                         <i class="fas fa-external-link-alt mr-1"></i> Abrir Excel en Drive
                     </button>
                 </div>
@@ -384,7 +392,7 @@
 
         <!-- ==================== TAB 2: EL BUNKER DEL COLECCIONISTA (ZONA RETRO PREMIUM) ==================== -->
         <section id="screen-premium" class="hidden fade-in pb-8">
-            <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-6 mt-2 shadow-lg shadow-amber-500/5">
+            <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-4 mt-2 shadow-lg shadow-amber-500/5">
                 <div class="flex items-center gap-2">
                     <span class="text-2xl animate-bounce">👑</span>
                     <div>
@@ -396,8 +404,16 @@
                 </div>
             </div>
             
-            <p class="text-[11px] text-slate-400 mb-6 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
+            <p class="text-[11px] text-slate-400 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
             
+            <!-- Contraseña Demo Banner en El Bunker -->
+            <div class="p-3 bg-amber-950/40 border border-amber-900/30 rounded-xl mb-4 text-center">
+                <p class="text-xs font-black text-amber-300 uppercase tracking-wider">
+                    🔑 CONTRASEÑA DEMO PARA MUESTRAS: <span id="pwd-demo-display-premium" class="text-white bg-slate-900 px-2 py-1 rounded select-all ml-1">...</span>
+                </p>
+                <p class="text-[9px] text-slate-400 mt-1 uppercase font-bold">Ingresa esta clave en Fliplink (Cambia diariamente)</p>
+            </div>
+
             <div class="space-y-3">
                 <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
@@ -410,7 +426,7 @@
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraRetroMundial')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroMundial')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
@@ -759,6 +775,7 @@
         const MUNDIALISTA_CONFIG = {
             // VERSION ACTIVA PREDETERMINADA: 'DEMO', 'PRO' o 'PREMIUM'
             PLAN_POR_DEFECTO: "DEMO",
+            CONTRASEÑA_DEMO: "messi3goles", // Contraseña para Fliplink de muestras diarias
 
             // DATOS DE YAPE Y SOPORTE
             YAPE: {
@@ -769,7 +786,7 @@
 
             // ENLACES EXTERNOS A LOS RECURSOS MUNDIALISTAS (GOOGLE DRIVE / EXCEL)
             ENLACES: {
-                whatsappSoporte: "https://wa.me/51983356373?text=Hola%20Jes%C3%BAs,%20quiero%20mejorar%20mi%20cuenta%20Mundialista%20PRO%20para%20desbloquear%20todo%20el%20material.",
+                whatsappSoporte: "https://wa.me/51983356373?text=Hola%20Jesus,%20envio%20mi%20captura%20de%20pago%20para%20activar%20mi%20acceso%20Pro-Premium.",
                 planillaExcel: "https://docs.google.com/spreadsheets/d/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr/edit?usp=sharing",
                 facebookReview: "https://www.facebook.com/share/p/",
                 driveFolderGeneral: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
@@ -919,6 +936,12 @@
             document.getElementById("yape-num-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NUMERO;
             document.getElementById("yape-name-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NOMBRE;
             document.getElementById("yape-price-txt").innerText = MUNDIALISTA_CONFIG.YAPE.PRECIO;
+            
+            // Render de contraseña demo dinámica
+            const displayPro = document.getElementById("pwd-demo-display-pro");
+            const displayPremium = document.getElementById("pwd-demo-display-premium");
+            if (displayPro) displayPro.innerText = MUNDIALISTA_CONFIG.CONTRASEÑA_DEMO;
+            if (displayPremium) displayPremium.innerText = MUNDIALISTA_CONFIG.CONTRASEÑA_DEMO;
         }
 
         function cambiarPlanViaAdmin(nuevoPlan) {
@@ -1081,7 +1104,6 @@
             }
         }
 
-        // Cierra el modal principal de ayuda
         function closeMessage() {
             document.getElementById("custom-modal").classList.add("hidden");
         }
