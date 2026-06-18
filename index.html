@@ -57,7 +57,7 @@
             font-weight: 700;
             border-radius: 12px;
             padding: 10px 4px;
-            font-size: 12px;
+            font-size: 11px;
             display: flex;
             align-items: center; justify-content: center;
             cursor: pointer;
@@ -74,7 +74,7 @@
         .ans-btn.correct-highlight { background-color: rgba(16, 185, 129, 0.2) !important; border-color: #10b981 !important; color: #34d399 !important; }
         .ans-btn.wrong-highlight { background-color: rgba(239, 68, 68, 0.2) !important; border-color: #ef4444 !important; color: #fca5a5 !important; }
 
-        .nav-btn i { font-size: 1.4rem; transition: 0.2s; margin-bottom: 2px; }
+        .nav-btn i { font-size: 1.5rem; transition: 0.2s; margin-bottom: 2px; }
         .nav-btn[data-screen="pro"] i { color: #10b981; }
         .nav-btn[data-screen="premium"] i { color: #f59e0b; }
         .nav-btn[data-screen="stats"] i { color: #3b82f6; }
@@ -82,7 +82,7 @@
         .nav-btn.active { transform: translateY(2px); font-weight: 800; }
         .nav-btn.active span { border-bottom: 2px solid currentColor; }
 
-        .lib-section-title { font-weight: 800; font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; margin-top: 18px; border-left: 3px solid var(--primary); padding-left: 10px; }
+        .lib-section-title { font-weight: 800; font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; margin-top: 18px; border-left: 3px solid var(--primary); padding-left: 10px; }
         .premium-card {
             background: #111827;
             border-radius: 14px;
@@ -110,10 +110,10 @@
             cursor: pointer;
         }
         .ent-card:active { transform: scale(0.95); }
-        .ent-card i { font-size: 1.4rem; }
-        .ent-card h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: #e2e8f0; }
+        .ent-card i { font-size: 1.5rem; }
+        .ent-card h4 { font-size: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: #e2e8f0; }
 
-        .avail-text { font-size: 12px; font-weight: 900; color: #10b981; text-transform: uppercase; letter-spacing: 0.01em; }
+        .avail-text { font-size: 13px; font-weight: 900; color: #10b981; text-transform: uppercase; letter-spacing: 0.01em; }
     </style>
 </head>
 <body class="flex flex-col items-center relative">
@@ -123,18 +123,18 @@
     <main class="main-content p-4">
         
         <!-- CABECERA -->
-        <header id="app-header" class="flex items-center justify-between py-2 mb-1.5 w-full border-b border-slate-800/40">
+        <header id="app-header" class="flex items-center justify-between py-2 mb-2 w-full border-b border-slate-800/40">
             <div onclick="navigate('setup')" class="flex items-center gap-2.5 cursor-pointer active:scale-95 transition-transform">
                 <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
                     <i class="fas fa-trophy text-xl"></i>
                 </div>
                 <div>
                     <h1 class="text-base font-black text-slate-100 leading-none uppercase tracking-tighter">MUNDIALISTA PRO</h1>
-                    <p id="sub-header-plan" class="text-[9px] font-bold text-emerald-400 tracking-widest uppercase mt-1">EL DASHBOARD DEL COLECCIONISTA</p>
+                    <p id="sub-header-plan" class="text-xs font-bold text-emerald-400 tracking-widest uppercase mt-1">EL DASHBOARD DEL COLECCIONISTA</p>
                 </div>
             </div>
-            <button onclick="navigate('setup')" class="px-3 py-2 rounded-lg bg-slate-800 text-slate-300 flex items-center gap-1.5 text-xs font-black uppercase hover:bg-slate-700 transition">
-                <i class="fas fa-home"></i> INICIO
+            <button onclick="navigate('setup')" class="px-3.5 py-2.5 rounded-lg bg-slate-800 text-slate-300 flex items-center gap-1.5 text-xs font-black uppercase hover:bg-slate-700 transition">
+                <i class="fas fa-home"></i> VOLVER AL INICIO
             </button>
         </header>
 
@@ -142,15 +142,15 @@
         <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2.5 flex justify-around z-50 shadow-xl rounded-2xl mb-4 hidden">
             <button onclick="navigate('pro')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="pro">
                 <i class="fas fa-star"></i>
-                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
             </button>
             <button onclick="navigate('premium')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="premium">
                 <i class="fas fa-crown"></i>
-                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
             </button>
             <button onclick="navigate('stats')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="stats">
                 <i class="fas fa-gamepad"></i>
-                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
             </button>
         </nav>
 
@@ -186,7 +186,7 @@
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 bg-emerald-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-star"></i></div>
                             <div class="text-left flex-1 min-w-0">
-                                <h4 class="font-black text-base text-emerald-400 uppercase leading-none">ZONA PRO MUNDIALISTA</h4>
+                                <h4 class="font-black text-sm text-emerald-400 uppercase leading-none">ZONA PRO MUNDIALISTA</h4>
                                 <p class="text-xs text-slate-300 mt-1.5 leading-normal">Álbumes 2026, Especial Día del Padre, Parejas, Kit de Juegos y Excel.</p>
                             </div>
                             <i class="fas fa-chevron-right text-emerald-400 text-lg"></i>
@@ -198,7 +198,7 @@
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-crown"></i></div>
                             <div class="text-left flex-1 min-w-0">
-                                <h4 class="font-black text-base text-amber-400 uppercase leading-none">EL BUNKER DEL COLECCIONISTA</h4>
+                                <h4 class="font-black text-sm text-amber-400 uppercase leading-none">EL BUNKER DEL COLECCIONISTA</h4>
                                 <p class="text-xs text-slate-300 mt-1.5 leading-normal">85GB Retro: Álbumes históricos, 70,000 Historietas, Series Retro y Cine Mexicano.</p>
                             </div>
                             <i class="fas fa-chevron-right text-amber-400 text-lg"></i>
@@ -210,7 +210,7 @@
                 <div class="pt-4 border-t border-slate-800">
                     <div class="p-4 rounded-2xl bg-gradient-to-tr from-emerald-950/20 to-slate-900 border border-emerald-500/10 text-center">
                         <span class="text-2xl">🤝💖</span>
-                        <h4 class="text-sm font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
+                        <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
                         <p class="text-xs text-slate-300 mt-2 leading-relaxed px-1">
                             Tu aporte voluntario nos ayuda a mantener estables y activos los servidores de descarga y enlaces de transmisión en vivo para toda la comunidad mundialista.
                         </p>
@@ -248,7 +248,7 @@
                 </div>
 
                 <div class="pt-3 text-center">
-                    <button onclick="startTriviaGame()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-950 transition rounded-xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+                    <button onclick="startTriviaGame()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-950 transition rounded-xl font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2">
                         ⚽ Jugar Trivia Mundialista
                     </button>
                 </div>
@@ -283,7 +283,7 @@
                 <i class="fas fa-trophy text-4xl text-amber-400 animate-bounce"></i>
             </div>
             <h2 class="text-3xl font-black text-emerald-400 mb-2 uppercase leading-none text-center tracking-tighter" id="finished-title">¡TRIVIA COMPLETADA!</h2>
-            <p class="text-xs text-slate-400 mb-8 font-medium italic text-center leading-relaxed px-1">"La constancia llena el álbum. Sigue jugando para de-bloquear más estadísticas y entrenar a tu mente con pasión mundialista."</p>
+            <p class="text-xs text-slate-400 mb-8 font-medium italic text-center leading-relaxed px-1">"La constancia llena el álbum. Sigue jugando para desbloquear más estadísticas y entrenar a tu mente con pasión mundialista."</p>
             
             <div class="grid grid-cols-2 gap-3 mb-8">
                 <div class="glass-card p-4 border-b-[4px] border-emerald-500 shadow-sm bg-slate-950">
@@ -396,7 +396,7 @@
                 <div class="lib-section-title">Planilla de Control Oficial</div>
                 <div class="glass-card p-5 bg-slate-950 mt-2 text-center border border-emerald-950">
                     <div class="w-12 h-12 bg-emerald-950/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-emerald-900/40">
-                        <i class="fas fa-file-excel text-3xl text-emerald-400"></i>
+                        <i class="fas fa-file-excel text-2xl text-emerald-400"></i>
                     </div>
                     <h4 class="text-base font-bold text-slate-100 uppercase mb-1">Planilla Excel de Control Mundial 2026</h4>
                     <p class="text-xs text-slate-300 mb-4 px-2">Lleva el control de tus láminas repetidas y faltantes con nuestro Excel automatizado en la nube.</p>
@@ -421,7 +421,7 @@
                 </div>
             </div>
             
-            <p class="text-xs text-slate-300 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
+            <p class="text-sm text-slate-200 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
 
             <div class="space-y-3">
                 <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
@@ -429,13 +429,13 @@
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-globe-americas"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Álbumes Retro Mundialistas</h4>
-                            <p class="text-xs text-slate-200">Qatar, Francia, Brasil, Sudáfrica y más.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">1. Álbumes Retro Mundialistas</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Qatar, Francia, Brasil, Sudáfrica y más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraRetroMundial')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroMundial')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
@@ -444,8 +444,8 @@
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-futbol"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
-                            <p class="text-xs text-slate-200">Clubes Peruanos y Sudamericanos, Álbum FIFA 365, etc.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">2. Álbumes Todo Fútbol</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Clubes Peruanos y Sudamericanos, Álbum FIFA 365, etc.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -459,8 +459,8 @@
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">+250 Álbumes de Todos los Tiempos (85GB)</h4>
-                            <p class="text-xs text-slate-200">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más de 70,000 Historietas digitalizadas (El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más).</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">3. +250 Álbumes de Todos los Tiempos (85GB)</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -469,13 +469,28 @@
                     </div>
                 </div>
 
-                <!-- 4. MAS DE 150 SERIES RETRO -->
+                <!-- 4. MAS DE 70,000 HISTORIETAS DIGITALIZADAS -->
+                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">4. +70,000 Historietas Digitalizadas</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                        <button onclick="abrirMuestra('muestraRetroHistorietas')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroHistorietas')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                    </div>
+                </div>
+
+                <!-- 5. MAS DE 150 SERIES RETRO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">+150 Series Retro de Todos los Tiempos</h4>
-                            <p class="text-xs text-slate-200">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genia y muchos más.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">5. +150 Series Retro de Todos los Tiempos</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genio y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -484,13 +499,13 @@
                     </div>
                 </div>
 
-                <!-- 5. SERIES ANIMADAS DE TV -->
+                <!-- 6. SERIES ANIMADAS DE TV -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Colección de Series Animadas de TV</h4>
-                            <p class="text-xs text-slate-200">Los Picapiedra, Tom y Jerry, X-Men, La Pantera Rosa y muchos más.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">6. Colección de Series Animadas de TV</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los Picapiedra, Tom y Jerry, X-Men, La Pantera Rosa y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -499,13 +514,13 @@
                     </div>
                 </div>
 
-                <!-- 6. PELICULAS RETRO CINE MEXICANO -->
+                <!-- 7. PELICULAS RETRO CINE MEXICANO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Películas Retro: Lo mejor del Cine Mexicano</h4>
-                            <p class="text-xs text-slate-200">Lo mejor del Cine Mexicano de Oro.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">7. Películas Retro: Lo mejor del Cine Mexicano</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Lo mejor del Cine Mexicano de Oro.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -514,13 +529,13 @@
                     </div>
                 </div>
 
-                <!-- 7. PELICULAS WESTERN -->
+                <!-- 8. PELICULAS WESTERN -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Colección de Películas Western</h4>
-                            <p class="text-xs text-slate-200">Los grandes clásicos de vaqueros.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">8. Colección de Películas Western</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los grandes clásicos de vaqueros.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -528,6 +543,21 @@
                         <button onclick="ejecutarDescargaPremium('descargaWestern')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
+            </div>
+            
+            <!-- SECCIÓN: APOYO VOLUNTARIO EXCLUSIVA PREMIUM -->
+            <div class="p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6">
+                <span class="text-2xl animate-pulse">💖🏆</span>
+                <h4 class="text-sm font-black text-amber-400 uppercase tracking-widest mt-1.5 font-sans">Mantenimiento de Transmisiones</h4>
+                <p class="text-xs text-slate-200 mt-2 leading-relaxed px-1">
+                    Mundialista PRO se financia mediante un <strong>pago único de por vida (sin membresías ni suscripciones mensuales)</strong>. 
+                    Por ello, dependemos directamente de los aportes voluntarios de nuestra comunidad de coleccionistas VIP para mantener en línea los servidores de alta velocidad, links de Drive y las señales en vivo del mundial. ¡Muchas gracias por tu apoyo!
+                </p>
+                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-3 shadow-md">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR" class="w-full h-28 object-contain">
+                    <span class="text-[7px] font-black text-slate-800 uppercase leading-none tracking-widest mt-1">YAPE DONACION</span>
+                </div>
+                <p class="text-xs text-slate-100 mt-2 font-black">Yape: 983356373 - Jesus B.</p>
             </div>
         </section>
 
@@ -561,18 +591,18 @@
 
     </main>
 
-    <!-- BOTON FLOTANTE: MEJORAR -->
+    <!-- BOTON FLOTANTE: MEJORAR / DONAR -->
     <button id="btn-upgrade-float" onclick="openUpgradeModal()" class="hidden fixed bottom-6 right-4 z-40 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 font-black text-xs uppercase tracking-widest border-2 border-amber-300">
         <i class="fas fa-crown text-base"></i> <span id="float-btn-text">Mejorar</span>
     </button>
 
     <!-- MODAL DE MENSAJES -->
-    <div id="custom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 fade-in">
+    <div id="custom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-2xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full text-center">
             <div class="w-16 h-16 bg-emerald-950/50 border border-emerald-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i class="fas fa-info-circle text-3xl text-emerald-400"></i>
             </div>
-            <p id="modal-text" class="text-sm font-bold text-slate-300 mb-6 leading-relaxed"></p>
+            <p id="modal-text" class="text-sm font-bold text-slate-300 mb-6 leading-relaxed text-left"></p>
             <button onclick="closeMessage()" class="w-full bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition py-3 rounded-xl font-bold uppercase text-xs tracking-widest shadow-md">Entendido</button>
         </div>
     </div>
@@ -602,13 +632,13 @@
                         <span class="text-emerald-400 font-extrabold">9:00 PM</span>
                     </div>
                 </div>
-                <p class="text-[10px] text-slate-400 italic">Los horarios corresponden a la hora de Lima, Peru. Revisa los canales de transmision a continuacion.</p>
+                <p class="text-[10px] text-slate-400 italic text-center">Los horarios corresponden a la hora de Lima, Peru. Revisa los canales de transmision a continuacion.</p>
             </div>
         </div>
     </div>
 
     <!-- TRANSMISION OPCION 1 -->
-    <div id="modal-canales1" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
+    <div id="modal-canales1" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('canales1')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 1</h3>
@@ -616,15 +646,15 @@
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
                     <span class="text-emerald-400 font-bold block text-sm mb-1">📺 America Television (Canal 4)</span>
                     <p class="mb-2">La senal oficial abierta y gratuita mas importante en el Peru para disfrutar la Copa del Mundo.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400">
+                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
                         <li>Transmision en directo del Partido Inaugural.</li>
                         <li>Partidos clave de Fase de Grupos.</li>
                         <li>Sigue en senal abierta toda la Fase Eliminatoria Final.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo1')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Ir a America TV GO</button>
+                <button onclick="abrirStreamCanal('envivo1')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Ir a America TV GO</button>
                 
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
+                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
                     <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
                 </button>
             </div>
@@ -632,7 +662,7 @@
     </div>
 
     <!-- TRANSMISION OPCION 2 -->
-    <div id="modal-canales2" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
+    <div id="modal-canales2" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 2</h3>
@@ -640,15 +670,15 @@
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
                     <span class="text-emerald-400 font-bold block text-sm mb-1">🌐 Plataformas Libres Alternativas</span>
                     <p class="mb-2">Canales alternativos autorizados para la cobertura de estadisticas, resumenes y emisiones digitales en alta definicion.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400">
+                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
                         <li>Transmision oficial de radio y streaming.</li>
                         <li>Resumenes oficiales inmediatos de la jornada.</li>
                         <li>Debates, analisis tactico y interviews en vivo.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Ver Canal Digital Alternativo</button>
+                <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Ver Canal Digital Alternativo</button>
                 
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
+                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
                     <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
                 </button>
             </div>
@@ -656,7 +686,7 @@
     </div>
 
     <!-- TRANSMISION OPCION 3 -->
-    <div id="modal-canales3" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in">
+    <div id="modal-canales3" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
         <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
             <button onclick="closeModal('canales3')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 3</h3>
@@ -664,15 +694,15 @@
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
                     <span class="text-emerald-400 font-bold block text-sm mb-1">🌎 Coberturas Satelitales e Internacionales</span>
                     <p class="mb-2">Acceso a las transmisiones internacionales de cadenas premium sudamericanas.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400">
+                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
                         <li>Senales de alta definicion.</li>
                         <li>Repeticiones de jugadas interactivas.</li>
                         <li>Estadisticas de jugadores en tiempo real.</li>
                     </ul>
                 </div>
-                <button onclick="abrirStreamCanal('envivo3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black">Acceder a Cobertura Global</button>
+                <button onclick="abrirStreamCanal('envivo3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Acceder a Cobertura Global</button>
                 
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5">
+                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
                     <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
                 </button>
             </div>
@@ -685,28 +715,28 @@
             <button onclick="closeModal('dmca')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             <h3 class="text-lg font-black text-amber-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-shield-alt"></i> DMCA y Contenido de Terceros</h3>
             
-            <div class="space-y-3 text-xs text-slate-300 max-h-[360px] overflow-y-auto pr-1 leading-relaxed text-left">
+            <div class="space-y-3 text-xs text-slate-300 max-h-[360px] overflow-y-auto pr-1 leading-relaxed text-left font-sans">
                 <p class="text-[10px] text-slate-500 italic text-center">Ultima actualizacion: 11 de junio de 2026</p>
                 
-                <div class="bg-blue-950/40 p-3 rounded-xl border border-blue-900/50 text-blue-300 font-bold flex flex-col gap-1.5 shadow-sm">
-                    <span class="text-[11px] tracking-wide uppercase text-center"><i class="fas fa-envelope-open text-blue-400 mr-1"></i> RECOMENDACION DE SEGURIDAD:</span>
+                <div class="bg-blue-950/40 p-3 rounded-xl border border-blue-900/50 text-blue-300 font-bold flex flex-col gap-1.5 shadow-sm font-sans">
+                    <span class="text-[11px] tracking-wide uppercase text-center font-bold"><i class="fas fa-envelope-open text-blue-400 mr-1 font-sans"></i> RECOMENDACION DE SEGURIDAD:</span>
                     <span class="font-normal text-slate-200">Recomendamos firmemente utilizar una <strong>cuenta de correo electronico de Gmail alternativa (secundaria)</strong> para registrarte o acceder a cualquier plataforma de terceros, protegiendo asi tu correo personal principal.</span>
                 </div>
 
                 <p>Mundialito funciona como una plataforma de entretenimiento. En algunas secciones puede mostrar enlaces o contenido embebido mediante iframe desde servidores de terceros.</p>
                 
                 <div>
-                    <span class="text-emerald-400 font-bold block">1. Sin alojamiento directo</span>
+                    <span class="text-emerald-400 font-bold block font-sans">1. Sin alojamiento directo</span>
                     Mundialito no aloja ni transmite directamente el contenido audiovisual de terceros mostrado por enlace o iframe. Dicho contenido es servido por proveedores externos bajo su propia responsabilidad.
                 </div>
                 <div>
-                    <span class="text-emerald-400 font-bold block">2. Uso referencial</span>
+                    <span class="text-emerald-400 font-bold block font-sans">2. Uso referencial</span>
                     Cualquier marca, logo o nombre comercial mostrado junto al contenido embebido se usa de forma descriptiva y referencial, y pertenece a sus titulares legitimos.
                 </div>
                 <div>
-                    <span class="text-emerald-400 font-bold block">3. Notificacion de infraccion (DMCA)</span>
+                    <span class="text-emerald-400 font-bold block font-sans">3. Notificacion de infraccion (DMCA)</span>
                     Si eres titular de derechos de autor y consideras que un contenido infringido esta enlazado, envianos una notificacion con:
-                    <ul class="list-disc pl-4 mt-1 space-y-1 text-slate-400">
+                    <ul class="list-disc pl-4 mt-1 space-y-1 text-slate-400 text-xs font-semibold font-sans">
                         <li>Identificacion de la obra protegida.</li>
                         <li>Identificacion del material cuestionado y la URL.</li>
                         <li>Datos de contacto del reclamante.</li>
@@ -715,54 +745,54 @@
                     </ul>
                 </div>
                 <div>
-                    <span class="text-emerald-400 font-bold block">4. Uso del usuario</span>
+                    <span class="text-emerald-400 font-bold block font-sans">4. Uso del usuario</span>
                     El acceso y uso del contenido embebido es responsabilidad del usuario. Debes cumplir las leyes aplicables en tu jurisdiccion.
                 </div>
             </div>
             
-            <button onclick="closeModal('dmca')" class="w-full mt-4 py-2.5 bg-slate-800 hover:bg-slate-750 text-slate-200 font-bold rounded-xl text-center uppercase tracking-wider text-xs transition font-black">Entendido</button>
+            <button onclick="closeModal('dmca')" class="w-full mt-4 py-2.5 bg-slate-800 hover:bg-slate-750 text-slate-200 font-bold rounded-xl text-center uppercase tracking-wider text-xs transition">Entendido</button>
         </div>
     </div>
 
     <!-- MODAL DE PAGO / UPGRADE MULTI-OPCIONES (CERO CONFUSION) -->
     <div id="upgrade-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border-2 border-amber-500/30 max-w-sm w-full text-center relative">
-            <button onclick="closeUpgradeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
+        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border-2 border-amber-500/30 max-w-sm w-full text-center relative font-sans">
+            <button onclick="closeUpgradeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center font-sans"><i class="fas fa-times"></i></button>
             
-            <div class="w-16 h-16 bg-amber-950/50 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
-                <i class="fas fa-crown text-3xl text-amber-400"></i>
+            <div class="w-16 h-16 bg-amber-950/50 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner font-sans">
+                <i class="fas fa-crown text-3xl text-amber-400 font-sans"></i>
             </div>
             
-            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight text-center" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
-            <p class="text-xs text-slate-300 mb-4 font-medium leading-relaxed px-2 text-center" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
+            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight text-center font-sans" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
+            <p class="text-xs text-slate-300 mb-4 font-semibold leading-relaxed px-2 text-center font-sans" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
             
             <!-- CONTENEDOR DE SELECCION EXCLUSIVO PARA CUENTA DEMO -->
-            <div id="upgrade-options-selector" class="hidden space-y-3 mb-4 text-left">
-                <p class="text-xs text-slate-300 font-semibold mb-2 text-center">Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:</p>
+            <div id="upgrade-options-selector" class="hidden space-y-3 mb-4 text-left font-sans">
+                <p class="text-xs text-slate-200 font-bold mb-2 text-center leading-normal font-sans">Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:</p>
                 
                 <!-- Opción PRO -->
-                <button class="w-full p-3.5 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-750 active:scale-95 transition flex flex-col text-left" onclick="seleccionarOpcionCobro(5, 'PRO')">
-                    <span class="font-black text-xs text-emerald-400 uppercase tracking-wider">⭐ ZONA PRO MUNDIALISTA - S/ 5</span>
-                    <span class="text-xs text-slate-300 mt-1 leading-tight font-medium">Álbumes Panini y 3 Reyes 2026, Álbum Especial Día del Padre, Álbum Parejas, Kit Mundialista KIDS, Excel de control.</span>
+                <button class="w-full p-4 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-750 active:scale-95 transition flex flex-col text-left font-sans" onclick="seleccionarOpcionCobro(5, 'PRO')">
+                    <span class="font-black text-xs text-emerald-400 uppercase tracking-wider font-sans">⭐ ZONA PRO MUNDIALISTA - S/ 5</span>
+                    <span class="text-xs text-slate-200 mt-1.5 leading-normal font-bold font-sans">Álbumes Panini y 3 Reyes 2026, Album Especial Día del Padre, Album Parejas, Kit Mundialista KIDS, Excel de control.</span>
                 </button>
                 
                 <!-- Opción PREMIUM -->
-                <button class="w-full p-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black flex flex-col text-left hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
-                    <span class="font-black text-xs text-slate-950 uppercase tracking-wider">👑 ACTIVA LA ZONA PREMIUM - S/ 12 (incluye ACCESO A ZONA PRO)</span>
-                    <span class="text-xs text-slate-900 mt-1 leading-tight font-semibold">EL BUNKER DEL COLECCIONISTA: +500GB en Álbumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Películas Western y Cine Mexicano y más.</span>
+                <button class="w-full p-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black flex flex-col text-left hover:brightness-110 active:scale-95 transition font-sans" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
+                    <span class="font-black text-xs text-slate-950 uppercase tracking-wider font-sans">👑 ACTIVA LA ZONA PREMIUM - S/ 12 (incluye ACCESO A ZONA PRO)</span>
+                    <span class="text-xs text-slate-900 mt-1.5 leading-normal font-extrabold font-sans">EL BUNKER DEL COLECCIONISTA: +500gb en Albumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Peliculas Western y Cine Mexicano, y más.</span>
                 </button>
             </div>
 
             <div class="bg-slate-950 p-4 rounded-2xl mb-5 border border-slate-800" id="yape-qr-container">
-                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3" id="yape-instructions-label">YAPE PARA ACTIVACION INSTANTANEA</p>
+                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 font-sans" id="yape-instructions-label">YAPE PARA ACTIVACION INSTANTANEA</p>
                 <div class="w-40 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
-                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain font-sans">
                 </div>
-                <p class="text-sm text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
-                <p class="text-xs text-amber-400 mt-1.5 uppercase font-black">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+                <p class="text-sm text-slate-200 mt-3 font-black font-sans">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
+                <p class="text-[10px] text-amber-400 mt-1.5 uppercase font-black font-sans">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
             </div>
 
-            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black">
+            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black font-sans">
                 <i class="fab fa-whatsapp text-xl"></i> Enviar Captura de Pago
             </button>
         </div>
@@ -800,9 +830,9 @@
                 muestraPequeños: "https://mundial2026.aglobalpacks.com/pequemundialistas",
                 
                 muestraRetroMundial: "https://mundial2026.aglobalpacks.com/mundiales",
-                muestraRetroFutbol: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                muestraRetroTodos: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                muestraRetroHistorietas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                muestraRetroFutbol: "https://drive.google.com/drive/folders/19CaQIv9BHnrqWkRB2koP4_IjakUr0KHS?usp=sharing",
+                muestraRetroTodos: "https://drive.google.com/drive/folders/16rGsgFB_LBTX0ORnzwFuYPrfOyUORs5h?usp=sharing",
+                muestraRetroHistorietas: "https://mundial2026.aglobalpacks.com/historietasretro",
                 muestraRetroSeries: "https://drive.google.com/drive/folders/1EHl6FzILt5OiMKLz1LCAErizeWqnJKOZ?usp=sharing",
                 muestraRetroAnimadas: "https://drive.google.com/drive/folders/1ORpnXjHe_a2gTo6O7j7u6IEZiply5sB3?usp=sharing",
                 muestraCineMex: "https://drive.google.com/drive/folders/1ymXkpdB8Mmz-9wMcCzqSOhazNFAEn7RW?usp=sharing",
@@ -815,12 +845,12 @@
                 descargaParejas: "https://canva.link/30jgsby5s25y0ff",
                 descargaPequeños: "https://drive.google.com/drive/folders/1hXtvU8Pof1Rmm40Lm9zgmBt3dQQVjThM?usp=sharing",
                 
-                descargaRetroMundial: "https://drive.google.com/drive/folders/1OcRZyeZK7iuYcwsGlEbz4wwvp69OsYFG?usp=drive_link",
-                descargaRetroFutbol: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                descargaRetroTodos: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
+                descargaRetroMundial: "https://drive.google.com/drive/folders/1OcRZyeZK7iuYcwsGlEbz4wwvp69OsYFG?usp=sharing",
+                descargaRetroFutbol: "https://drive.google.com/drive/folders/133bQASNuVEPN71xW9DnlJU2_hvduSjT6?usp=drive_link",
+                descargaRetroTodos: "https://drive.google.com/drive/folders/1TBIzvTqKNpd7gCmMPYwEdfltF-Tp2Qpb?usp=drive_link",
                 descargaRetroHistorietas: "https://drive.google.com/drive/folders/1Gny7qO30-nCP76IXi6iwZ5lLmEEehz3L?usp=drive_link",
-                descargaRetroSeries: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
-                descargaRetroAnimadas: "https://drive.google.com/drive/folders/1ORpnXjHe_a2gTo6O7j7u6IEZiply5sB3?usp=sharing",
+                descargaRetroSeries: "https://drive.google.com/drive/folders/1dR_AvAgnBh75Hw6tnBiPqrls4cZ8YzVO?usp=drive_link",
+                descargaRetroAnimadas: "https://drive.google.com/drive/folders/1bMuYrRwwcRJjmSv3geagF2Zi3G2dfStU",
                 descargaCineMex: "https://drive.google.com/drive/folders/1QXeVRiDNdW_siGl9VVGKiR10uLVY3Zas?usp=drive_link",
                 descargaWestern: "https://drive.google.com/drive/folders/1L--8kTODkcrL3vVpP3307HAOpT92KVqq?usp=drive_link",
 
@@ -887,8 +917,8 @@
                 a: 2
             },
             {
-                q: "¿En qué histórico coloso mexicano se jugará el partido inaugural del Mundial el 11 de junio de 2026?",
-                o: ["Estadio Guadalajara", "Estadio Azteca", "Estadio Monterrey"],
+                q: "Estadio Azteca, sede inaugural, ¿en qué país está?",
+                o: ["Estados Unidos", "Canadá", "México"],
                 a: 1
             },
             {
@@ -902,7 +932,7 @@
                 a: 0
             },
             {
-                q: "¿Qué restricción de equipaje tiene la FIFA en los estadios para los hinchas que asistan al Mundial 2026?",
+                q: "Qué restricción de equipaje tiene la FIFA en los estadios para los hinchas que asistan al Mundial 2026?",
                 o: ["Sólo se admiten bolsos plásticos pequeños 100% transparentes", "No se permite el ingreso de teléfonos móviles", "No se permiten gorras ni sombreros"],
                 a: 0
             },
@@ -935,9 +965,13 @@
         });
 
         function inicializarConfiguracionEstática() {
-            document.getElementById("yape-num-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NUMERO;
-            document.getElementById("yape-name-txt").innerText = MUNDIALISTA_CONFIG.YAPE.NOMBRE;
-            document.getElementById("yape-price-txt").innerText = MUNDIALISTA_CONFIG.YAPE.PRECIO;
+            const numEl = document.getElementById("yape-num-txt");
+            const nameEl = document.getElementById("yape-name-txt");
+            const priceEl = document.getElementById("yape-price-txt");
+            
+            if (numEl) numEl.innerText = MUNDIALISTA_CONFIG.YAPE.NUMERO;
+            if (nameEl) nameEl.innerText = MUNDIALISTA_CONFIG.YAPE.NOMBRE;
+            if (priceEl) priceEl.innerText = MUNDIALISTA_CONFIG.YAPE.PRECIO;
         }
 
         function cambiarPlanViaAdmin(nuevoPlan) {
@@ -947,16 +981,16 @@
 
             if (nuevoPlan === "DEMO") {
                 subPlanHeader.innerText = "PLAN DEMO - CONTENIDOS RESTRINGIDOS";
-                subPlanHeader.className = "text-[10px] font-bold text-red-400 tracking-widest uppercase mt-0.5 animate-pulse";
+                subPlanHeader.className = "text-xs font-bold text-red-400 tracking-widest uppercase mt-0.5 animate-pulse";
                 if (floatText) floatText.innerText = "Activar PRO";
             } else if (nuevoPlan === "PRO") {
                 subPlanHeader.innerText = "PLAN MUNDIALISTA PRO ACTIVO";
-                subPlanHeader.className = "text-[10px] font-bold text-emerald-400 tracking-widest uppercase mt-0.5";
+                subPlanHeader.className = "text-xs font-bold text-emerald-400 tracking-widest uppercase mt-0.5";
                 if (floatText) floatText.innerText = "Activar PREMIUM";
             } else {
                 subPlanHeader.innerText = "ACCESO ILIMITADO PREMIUM VIP";
-                subPlanHeader.className = "text-[10px] font-bold text-yellow-400 tracking-widest uppercase mt-0.5";
-                if (floatText) floatText.innerText = "Gracias";
+                subPlanHeader.className = "text-xs font-bold text-yellow-400 tracking-widest uppercase mt-0.5";
+                if (floatText) floatText.innerText = "Apoyar Proyecto";
             }
         }
 
@@ -988,6 +1022,10 @@
                     text.innerText = "Como ya cuentas con el Plan PRO, solo paga la diferencia de S/ 7 soles adicionales para desbloquear de inmediato el Búnker del Coleccionista de 85GB.";
                     priceLabel.innerText = "S/ 7 SOLES (Diferencia)";
                 }
+            } else if (activePlan === "PREMIUM") {
+                title.innerText = "APOYO VOLUNTARIO VIP";
+                text.innerText = "Mundialista PRO se financia exclusivamente mediante aportes voluntarios únicos. Dependemos enteramente de la generosidad de nuestra comunidad VIP de coleccionistas para mantener las transmisiones en vivo del Mundial y los servidores de descargas veloces. ¡Tu aporte voluntario nos ayuda muchísimo a seguir creciendo!";
+                priceLabel.innerText = "APORTE VOLUNTARIO (Monto Libre)";
             }
 
             modal.classList.remove("hidden");
@@ -1016,6 +1054,7 @@
             }
         }
 
+        // Descargas del Plan PRO
         function ejecutarDescargaPro(keyLink) {
             if (activePlan === "DEMO") {
                 openUpgradeModal("PRO");
@@ -1029,6 +1068,7 @@
             }
         }
 
+        // Descargas del Plan PREMIUM
         function ejecutarDescargaPremium(keyLink) {
             if (activePlan === "DEMO" || activePlan === "PRO") {
                 openUpgradeModal("PREMIUM");
@@ -1072,7 +1112,6 @@
         }
 
         function handleReiniciar() {
-            // Se actualizó para redirigir directamente al setup de inicio
             navigate("setup");
         }
 
@@ -1089,7 +1128,6 @@
             document.getElementById("custom-modal").classList.add("hidden");
         }
 
-        // Abre el modal solicitado
         function openModal(id) {
             document.getElementById(`modal-${id}`).classList.remove("hidden");
         }
