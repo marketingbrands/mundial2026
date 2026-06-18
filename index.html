@@ -54,10 +54,10 @@
             color: #94a3b8;
             transition: all 0.2s;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 12px;
             padding: 10px 4px;
-            font-size: 11px;
+            font-size: 12px;
             display: flex;
             align-items: center; justify-content: center;
             cursor: pointer;
@@ -74,7 +74,7 @@
         .ans-btn.correct-highlight { background-color: rgba(16, 185, 129, 0.2) !important; border-color: #10b981 !important; color: #34d399 !important; }
         .ans-btn.wrong-highlight { background-color: rgba(239, 68, 68, 0.2) !important; border-color: #ef4444 !important; color: #fca5a5 !important; }
 
-        .nav-btn i { font-size: 1.3rem; transition: 0.2s; margin-bottom: 2px; }
+        .nav-btn i { font-size: 1.4rem; transition: 0.2s; margin-bottom: 2px; }
         .nav-btn[data-screen="pro"] i { color: #10b981; }
         .nav-btn[data-screen="premium"] i { color: #f59e0b; }
         .nav-btn[data-screen="stats"] i { color: #3b82f6; }
@@ -82,11 +82,11 @@
         .nav-btn.active { transform: translateY(2px); font-weight: 800; }
         .nav-btn.active span { border-bottom: 2px solid currentColor; }
 
-        .lib-section-title { font-weight: 800; font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; margin-top: 16px; border-left: 3px solid var(--primary); padding-left: 10px; }
+        .lib-section-title { font-weight: 800; font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; margin-top: 18px; border-left: 3px solid var(--primary); padding-left: 10px; }
         .premium-card {
             background: #111827;
             border-radius: 14px;
-            padding: 12px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -98,7 +98,7 @@
         .ent-card {
             background: #111827;
             border-radius: 12px;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
             border: 1px solid #1f2937;
             transition: 0.2s;
@@ -110,10 +110,10 @@
             cursor: pointer;
         }
         .ent-card:active { transform: scale(0.95); }
-        .ent-card i { font-size: 1.3rem; }
-        .ent-card h4 { font-size: 10px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: #9ca3af; }
+        .ent-card i { font-size: 1.4rem; }
+        .ent-card h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: #e2e8f0; }
 
-        .avail-text { font-size: 11px; font-weight: 900; color: #10b981; text-transform: uppercase; letter-spacing: 0.01em; }
+        .avail-text { font-size: 12px; font-weight: 900; color: #10b981; text-transform: uppercase; letter-spacing: 0.01em; }
     </style>
 </head>
 <body class="flex flex-col items-center relative">
@@ -123,34 +123,34 @@
     <main class="main-content p-4">
         
         <!-- CABECERA -->
-        <header id="app-header" class="flex items-center justify-between py-2 mb-1 w-full">
-            <div onclick="navigate('setup')" class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
-                <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
-                    <i class="fas fa-trophy text-lg"></i>
+        <header id="app-header" class="flex items-center justify-between py-2 mb-1.5 w-full border-b border-slate-800/40">
+            <div onclick="navigate('setup')" class="flex items-center gap-2.5 cursor-pointer active:scale-95 transition-transform">
+                <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
+                    <i class="fas fa-trophy text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-sm font-black text-slate-100 leading-none uppercase tracking-tighter">MUNDIALISTA PRO</h1>
-                    <p id="sub-header-plan" class="text-[6px] font-bold text-emerald-400 tracking-widest uppercase mt-0.5">EL DASHBOARD DEL COLECCIONISTA</p>
+                    <h1 class="text-base font-black text-slate-100 leading-none uppercase tracking-tighter">MUNDIALISTA PRO</h1>
+                    <p id="sub-header-plan" class="text-[9px] font-bold text-emerald-400 tracking-widest uppercase mt-1">EL DASHBOARD DEL COLECCIONISTA</p>
                 </div>
             </div>
-            <button onclick="navigate('setup')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-400 flex items-center gap-1.5 text-[8px] font-bold uppercase hover:bg-slate-700 transition">
-                <i class="fas fa-home"></i> Volver al Inicio
+            <button onclick="navigate('setup')" class="px-3 py-2 rounded-lg bg-slate-800 text-slate-300 flex items-center gap-1.5 text-xs font-black uppercase hover:bg-slate-700 transition">
+                <i class="fas fa-home"></i> INICIO
             </button>
         </header>
 
         <!-- NAVEGACION PRINCIPAL (STICKY) -->
-        <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2 flex justify-around z-50 shadow-xl rounded-2xl mb-4 hidden">
+        <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2.5 flex justify-around z-50 shadow-xl rounded-2xl mb-4 hidden">
             <button onclick="navigate('pro')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="pro">
                 <i class="fas fa-star"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
+                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
             </button>
             <button onclick="navigate('premium')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="premium">
                 <i class="fas fa-crown"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
+                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
             </button>
             <button onclick="navigate('stats')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="stats">
                 <i class="fas fa-gamepad"></i>
-                <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
+                <span class="text-[10px] font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
             </button>
         </nav>
 
@@ -158,50 +158,50 @@
         <section id="screen-setup" class="glass-card p-5 fade-in mt-2">
             <div class="mt-2 mb-5 text-center">
                 <h2 class="text-3xl font-black text-emerald-400 uppercase tracking-tighter leading-none mb-1">MUNDIALISTA PRO</h2>
-                <p class="text-[9px] font-bold text-slate-400 tracking-wider uppercase mb-3">La experiencia de coleccionismo definitiva</p>
+                <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">La experiencia de coleccionismo definitiva</p>
                 <div class="h-1 w-20 bg-emerald-500 mx-auto rounded-full shadow-sm"></div>
             </div>
             
             <div class="space-y-5 pt-1">
                 <div>
                     <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre de Entrenador:</label>
-                    <input type="text" id="user-name" placeholder="Ejemplo: Jesus" class="w-full p-3 rounded-xl border-2 border-slate-800 bg-slate-900 text-base font-bold outline-none focus:border-emerald-500 transition text-slate-100 placeholder-slate-500">
+                    <input type="text" id="user-name" placeholder="Ejemplo: Jesus" class="w-full p-3.5 rounded-xl border-2 border-slate-800 bg-slate-900 text-base font-bold outline-none focus:border-emerald-500 transition text-slate-100 placeholder-slate-500">
                 </div>
 
                 <div>
                     <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1.5 block tracking-wider">¿Cual es tu nivel de coleccionista?</label>
                     <div class="grid grid-cols-3 gap-1.5">
-                        <button onclick="selectChoice('level', 'Basico')" id="level-Basico" class="toggle-btn py-3 text-[9px] font-black uppercase active">Aficionado</button>
-                        <button onclick="selectChoice('level', 'Intermedio')" id="level-Intermedio" class="toggle-btn py-3 text-[9px] font-black uppercase">Hincha del Mundial</button>
-                        <button onclick="selectChoice('level', 'Avanzado')" id="level-Avanzado" class="toggle-btn py-3 text-[9px] font-black uppercase">Mundialista Experto</button>
+                        <button onclick="selectChoice('level', 'Basico')" id="level-Basico" class="toggle-btn py-3 uppercase active">Aficionado</button>
+                        <button onclick="selectChoice('level', 'Intermedio')" id="level-Intermedio" class="toggle-btn py-3 uppercase">Hincha del Mundial</button>
+                        <button onclick="selectChoice('level', 'Avanzado')" id="level-Avanzado" class="toggle-btn py-3 uppercase">Mundialista Experto</button>
                     </div>
                 </div>
 
                 <!-- PORTALES DE ACCESO DIRECTO (ZONAS DE DESCARGA) - SECCIÓN PRINCIPAL PRIORIZADA -->
                 <div class="pt-4 border-t border-slate-800 space-y-3">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Portales de Material Descargable</p>
+                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">Portales de Material Descargable</p>
                     
                     <!-- Tarjeta Zona PRO -->
-                    <div onclick="startTraining()" class="p-4 rounded-2xl bg-gradient-to-tr from-emerald-950/70 to-slate-900 border-2 border-emerald-500/40 cursor-pointer hover:border-emerald-400 transition transform hover:scale-[1.02] duration-200">
+                    <div onclick="startTraining()" class="p-4.5 rounded-2xl bg-gradient-to-tr from-emerald-950/70 to-slate-900 border-2 border-emerald-500/40 cursor-pointer hover:border-emerald-400 transition transform hover:scale-[1.02] duration-200">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-emerald-500 text-slate-950 rounded-xl flex items-center justify-center text-lg"><i class="fas fa-star"></i></div>
-                            <div class="text-left flex-1">
-                                <h4 class="font-black text-sm text-emerald-400 uppercase leading-none">ZONA PRO MUNDIALISTA</h4>
-                                <p class="text-[10px] text-slate-300 mt-1 leading-tight">Álbumes 2026, Especial Día del Padre, Parejas, Kit de Juegos y Excel.</p>
+                            <div class="w-12 h-12 bg-emerald-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-star"></i></div>
+                            <div class="text-left flex-1 min-w-0">
+                                <h4 class="font-black text-base text-emerald-400 uppercase leading-none">ZONA PRO MUNDIALISTA</h4>
+                                <p class="text-xs text-slate-300 mt-1.5 leading-normal">Álbumes 2026, Especial Día del Padre, Parejas, Kit de Juegos y Excel.</p>
                             </div>
-                            <i class="fas fa-chevron-right text-emerald-400"></i>
+                            <i class="fas fa-chevron-right text-emerald-400 text-lg"></i>
                         </div>
                     </div>
 
                     <!-- Tarjeta El Búnker Premium -->
-                    <div onclick="navigate('premium')" class="p-4 rounded-2xl bg-gradient-to-tr from-amber-950/70 to-slate-900 border-2 border-amber-500/40 cursor-pointer hover:border-amber-400 transition transform hover:scale-[1.02] duration-200">
+                    <div onclick="navigate('premium')" class="p-4.5 rounded-2xl bg-gradient-to-tr from-amber-950/70 to-slate-900 border-2 border-amber-500/40 cursor-pointer hover:border-amber-400 transition transform hover:scale-[1.02] duration-200">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center text-lg"><i class="fas fa-crown"></i></div>
-                            <div class="text-left flex-1">
-                                <h4 class="font-black text-sm text-amber-400 uppercase leading-none">EL BUNKER DEL COLECCIONISTA</h4>
-                                <p class="text-[10px] text-slate-300 mt-1 leading-tight">85GB Retro: Álbumes históricos, 70,000 Historietas, Series Retro y Cine Mexicano.</p>
+                            <div class="w-12 h-12 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-crown"></i></div>
+                            <div class="text-left flex-1 min-w-0">
+                                <h4 class="font-black text-base text-amber-400 uppercase leading-none">EL BUNKER DEL COLECCIONISTA</h4>
+                                <p class="text-xs text-slate-300 mt-1.5 leading-normal">85GB Retro: Álbumes históricos, 70,000 Historietas, Series Retro y Cine Mexicano.</p>
                             </div>
-                            <i class="fas fa-chevron-right text-amber-400"></i>
+                            <i class="fas fa-chevron-right text-amber-400 text-lg"></i>
                         </div>
                     </div>
                 </div>
@@ -209,46 +209,46 @@
                 <!-- SECCION INTEGRADA: APOYA AL PROYECTO CON QR -->
                 <div class="pt-4 border-t border-slate-800">
                     <div class="p-4 rounded-2xl bg-gradient-to-tr from-emerald-950/20 to-slate-900 border border-emerald-500/10 text-center">
-                        <span class="text-xl">🤝💖</span>
-                        <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
-                        <p class="text-[10px] text-slate-300 mt-2 leading-relaxed px-1">
-                            Tu aporte voluntario nos ayuda a mantener estables y activos los servidores de descarga y enlaces de transmision en vivo para toda la comunidad mundialista.
+                        <span class="text-2xl">🤝💖</span>
+                        <h4 class="text-sm font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed px-1">
+                            Tu aporte voluntario nos ayuda a mantener estables y activos los servidores de descarga y enlaces de transmisión en vivo para toda la comunidad mundialista.
                         </p>
                         
                         <div class="w-36 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-2 mt-3 shadow-lg shadow-emerald-500/5">
                             <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-32 object-contain">
-                            <span class="text-[7px] font-black text-slate-800 uppercase leading-none mt-1 tracking-widest">YAPE VOLUNTARIO</span>
+                            <span class="text-[9px] font-black text-slate-850 uppercase leading-none mt-1 tracking-widest">YAPE VOLUNTARIO</span>
                         </div>
-                        <p class="text-xs text-slate-200 mt-2.5 font-black">Yape: 983356373 - Jesus B.</p>
+                        <p class="text-sm text-slate-100 mt-2.5 font-black">Yape: 983356373 - Jesus B.</p>
                         
                         <!-- BOTON ADICIONAL DE CAPTURA WHATSAPP -->
-                        <button onclick="enviarSoporteWhatsAppPago()" class="w-full mt-3 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-sm"></i> ENVIAR CAPTURA O ACTIVAR ACCESO PRO-PREMIUM
+                        <button onclick="enviarSoporteWhatsAppPago()" class="w-full mt-3 py-3 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-base"></i> ENVIAR CAPTURA O ACTIVAR ACCESO PRO-PREMIUM
                         </button>
                     </div>
                 </div>
 
                 <!-- SECCION DE PARTIDOS DE HOY & TRANSMISIONES (REUBICADA AL FINAL) -->
                 <div class="pt-4 border-t border-slate-800 space-y-2">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Centro de Transmisiones Auxiliar</p>
+                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">Centro de Transmisiones Auxiliar</p>
                     <div class="grid grid-cols-2 gap-2">
-                        <button onclick="openModal('fixture')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-[10px] font-bold text-slate-300 flex items-center justify-center gap-1 transition">
+                        <button onclick="openModal('fixture')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition">
                             <i class="fas fa-calendar-alt text-sm"></i> 🗓️ PARTIDOS DE HOY
                         </button>
-                        <button onclick="openModal('canales1')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-[10px] font-bold text-slate-300 flex items-center justify-center gap-1 transition">
+                        <button onclick="openModal('canales1')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition">
                             <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 1
                         </button>
-                        <button onclick="openModal('canales2')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-[10px] font-bold text-slate-300 flex items-center justify-center gap-1 transition col-span-1">
+                        <button onclick="openModal('canales2')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition col-span-1">
                             <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 2
                         </button>
-                        <button onclick="openModal('canales3')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-[10px] font-bold text-slate-300 flex items-center justify-center gap-1 transition col-span-1">
+                        <button onclick="openModal('canales3')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition col-span-1">
                             <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 3
                         </button>
                     </div>
                 </div>
 
                 <div class="pt-3 text-center">
-                    <button onclick="startTriviaGame()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-950 transition rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+                    <button onclick="startTriviaGame()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-950 transition rounded-xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-2">
                         ⚽ Jugar Trivia Mundialista
                     </button>
                 </div>
@@ -259,8 +259,8 @@
         <section id="screen-game" class="hidden fade-in">
             <div class="glass-card p-5 flex flex-col justify-between bg-slate-950" style="min-height: 420px;">
                 <div class="text-center mb-3">
-                    <span id="game-category" class="px-3 py-1.5 bg-emerald-950/80 text-emerald-400 rounded-full text-[10px] font-black uppercase tracking-wider border border-emerald-900/50">Categoría</span>
-                    <p id="game-progress" class="text-[11px] font-black text-slate-400 tracking-widest uppercase mt-3 mb-0.5">RETO 1 DE 5</p>
+                    <span id="game-category" class="px-3 py-1.5 bg-emerald-950/80 text-emerald-400 rounded-full text-xs font-black uppercase tracking-wider border border-emerald-900/50">Categoría</span>
+                    <p id="game-progress" class="text-xs font-black text-slate-400 tracking-widest uppercase mt-3 mb-0.5">RETO 1 DE 5</p>
                     <h3 id="game-title" class="text-lg font-black mt-1 text-slate-100 leading-tight">Cargando...</h3>
                 </div>
                 
@@ -288,11 +288,11 @@
             <div class="grid grid-cols-2 gap-3 mb-8">
                 <div class="glass-card p-4 border-b-[4px] border-emerald-500 shadow-sm bg-slate-950">
                     <p class="text-3xl font-black text-emerald-400 mb-1">100%</p>
-                    <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">COMPLETADO</p>
+                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">COMPLETADO</p>
                 </div>
                 <div class="glass-card p-4 border-b-[4px] border-blue-500 shadow-sm bg-slate-950">
                     <p class="text-3xl font-black text-blue-400 mb-1">+50</p>
-                    <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest text-center">PUNTOS HINCHA</p>
+                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">PUNTOS HINCHA</p>
                 </div>
             </div>
 
@@ -318,75 +318,75 @@
                 <!-- ALBUM PANINI -->
                 <div class="premium-card shadow-sm">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book-open"></i></div>
+                        <div class="w-12 h-12 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book-open"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Panini Oficial 2026</h4>
+                            <h4 class="font-bold text-sm text-slate-100 uppercase leading-none mb-1">Álbum Panini Oficial 2026</h4>
                             <p class="avail-text">LÁMINAS VECTORIZADAS HD.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraPanini')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaPanini')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraPanini')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaPanini')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- ALBUM 3 REYES -->
                 <div class="premium-card shadow-sm">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-trophy"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-trophy"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-none mb-1">Álbum Edición 3 Reyes 2026</h4>
+                            <h4 class="font-bold text-sm text-slate-100 uppercase leading-none mb-1">Álbum Edición 3 Reyes 2026</h4>
                             <p class="avail-text">VERSIÓN SUDAMÉRICA.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraReyes')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaReyes')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraReyes')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaReyes')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- ALBUM DIA DEL PADRE -->
                 <div class="premium-card shadow-sm border border-yellow-500/20 bg-yellow-950/5">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-user-tie"></i></div>
+                        <div class="w-12 h-12 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-user-tie"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-yellow-300 uppercase leading-none mb-1">Álbum Mundial "Día del Padre"</h4>
+                            <h4 class="font-bold text-sm text-yellow-300 uppercase leading-none mb-1">Álbum Mundial "Día del Padre"</h4>
                             <p class="avail-text text-yellow-400 font-extrabold">¡EDICIÓN ESPECIAL REGALO!</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraDiaPadre')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaDiaPadre')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraDiaPadre')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaDiaPadre')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- ALBUM PARA PAREJAS -->
                 <div class="premium-card shadow-sm border border-red-500/20 bg-red-950/5">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-heart"></i></div>
+                        <div class="w-12 h-12 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-heart"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-red-300 uppercase leading-none mb-1">Álbum Mundial "Para Parejas"</h4>
+                            <h4 class="font-bold text-sm text-red-300 uppercase leading-none mb-1">Álbum Mundial "Para Parejas"</h4>
                             <p class="avail-text text-red-400 font-extrabold">¡COLECCIÓN DE AMOR Y FÚTBOL!</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraParejas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaParejas')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraParejas')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaParejas')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- PEQUEÑOS MUNDIALISTAS -->
                 <div class="premium-card shadow-sm">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-blue-950/50 text-blue-400 border border-blue-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-child"></i></div>
+                        <div class="w-12 h-12 bg-blue-950/50 text-blue-400 border border-blue-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-child"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-slate-100 uppercase leading-tight mb-1 truncate">Kit Pequeños Mundialistas</h4>
+                            <h4 class="font-bold text-sm text-slate-100 uppercase leading-tight mb-1 truncate">Kit Pequeños Mundialistas</h4>
                             <p class="avail-text">+50 RETOS DIDÁCTICOS.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraPequeños')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaPequeños')" class="py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraPequeños')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPro('descargaPequeños')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
             </div>
@@ -396,10 +396,10 @@
                 <div class="lib-section-title">Planilla de Control Oficial</div>
                 <div class="glass-card p-5 bg-slate-950 mt-2 text-center border border-emerald-950">
                     <div class="w-12 h-12 bg-emerald-950/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-emerald-900/40">
-                        <i class="fas fa-file-excel text-2xl text-emerald-400"></i>
+                        <i class="fas fa-file-excel text-3xl text-emerald-400"></i>
                     </div>
-                    <h4 class="text-sm font-bold text-slate-100 uppercase mb-1">Planilla Excel de Control Mundial 2026</h4>
-                    <p class="text-[11px] text-slate-400 mb-4 px-2">Lleva el control de tus láminas repetidas y faltantes con nuestro Excel automatizado en la nube.</p>
+                    <h4 class="text-base font-bold text-slate-100 uppercase mb-1">Planilla Excel de Control Mundial 2026</h4>
+                    <p class="text-xs text-slate-300 mb-4 px-2">Lleva el control de tus láminas repetidas y faltantes con nuestro Excel automatizado en la nube.</p>
                     <button onclick="abrirProExcel()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider transition font-black">
                         <i class="fas fa-external-link-alt mr-1"></i> Abrir Excel en Drive
                     </button>
@@ -416,116 +416,116 @@
                         <h3 class="text-lg font-black text-amber-400 tracking-tight uppercase leading-none">
                             EL BUNKER DEL COLECCIONISTA
                         </h3>
-                        <p class="text-[9px] text-amber-300 font-bold uppercase tracking-wider mt-1">ZONA RETRO PREMIUM: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
+                        <p class="text-xs text-amber-300 font-bold uppercase tracking-wider mt-1">ZONA RETRO PREMIUM: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
                     </div>
                 </div>
             </div>
             
-            <p class="text-[11px] text-slate-400 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
+            <p class="text-xs text-slate-300 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
 
             <div class="space-y-3">
                 <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-globe-americas"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-globe-americas"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Álbumes Retro Mundialistas</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Álbumes Retro Mundialistas</h4>
                             <p class="text-xs text-slate-200">Qatar, Francia, Brasil, Sudáfrica y más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroMundial')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroMundial')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetro')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 2. ALBUMES TODO FUTBOL -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-futbol"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-futbol"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-400 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Álbumes Todo Fútbol</h4>
                             <p class="text-xs text-slate-200">Clubes Peruanos y Sudamericanos, Álbum FIFA 365, etc.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroFutbol')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroFutbol')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroFutbol')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroFutbol')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 3. MAS DE 250 ALBUMES DE TODOS LOS TIEMPOS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+250 Álbumes de Todos los Tiempos (85GB)</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">+250 Álbumes de Todos los Tiempos (85GB)</h4>
                             <p class="text-xs text-slate-200">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más de 70,000 Historietas digitalizadas (El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más).</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroTodos')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroTodos')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroTodos')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroTodos')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 4. MAS DE 150 SERIES RETRO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">+150 Series Retro de Todos los Tiempos</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">+150 Series Retro de Todos los Tiempos</h4>
                             <p class="text-xs text-slate-200">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genia y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroSeries')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroSeries')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroSeries')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroSeries')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 5. SERIES ANIMADAS DE TV -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Series Animadas de TV</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Colección de Series Animadas de TV</h4>
                             <p class="text-xs text-slate-200">Los Picapiedra, Tom y Jerry, X-Men, La Pantera Rosa y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroAnimadas')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroAnimadas')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraRetroAnimadas')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaRetroAnimadas')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 6. PELICULAS RETRO CINE MEXICANO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Películas Retro: Lo mejor del Cine Mexicano</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Películas Retro: Lo mejor del Cine Mexicano</h4>
                             <p class="text-xs text-slate-200">Lo mejor del Cine Mexicano de Oro.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraCineMex')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaCineMex')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraCineMex')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaCineMex')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
                 <!-- 7. PELICULAS WESTERN -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-11 h-11 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-xs text-amber-300 uppercase leading-none mb-1">Colección de Películas Western</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">Colección de Películas Western</h4>
                             <p class="text-xs text-slate-200">Los grandes clásicos de vaqueros.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraWestern')" class="py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaWestern')" class="py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-[10px] font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="abrirMuestra('muestraWestern')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                        <button onclick="ejecutarDescargaPremium('descargaWestern')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
             </div>
@@ -533,12 +533,12 @@
 
         <!-- ==================== TAB 3: TRIVIA, HISTORIAL & STATS ==================== -->
         <section id="screen-stats" class="hidden fade-in mt-2 pb-8">
-            <h2 class="text-2xl font-black text-emerald-400 mb-2 uppercase tracking-tighter text-center">Habilidades del Coleccionista</h2>
-            <p class="text-xs text-slate-400 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas hoy.</p>
+            <h2 class="text-2xl font-black text-emerald-400 mb-2 uppercase tracking-tighter text-center font-sans">Habilidades del Coleccionista</h2>
+            <p class="text-sm text-slate-300 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas hoy.</p>
             
             <div class="glass-card p-5 mb-6 text-center border border-emerald-500/20 bg-slate-950">
                 <h3 class="text-sm font-bold text-slate-100 uppercase mb-3">¿Eres un Verdadero Fan de los Mundiales?</h3>
-                <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition rounded-xl font-black text-xs uppercase tracking-widest shadow-md">
+                <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition rounded-xl font-black text-sm uppercase tracking-widest shadow-md">
                     ⚽ Jugar Trivia Mundialista
                 </button>
             </div>
@@ -550,11 +550,11 @@
             <div class="grid grid-cols-2 gap-4">
                 <div class="glass-card p-5 text-center border border-slate-800 bg-slate-950">
                     <p class="text-4xl font-black text-emerald-400" id="stat-count">0</p>
-                    <p class="text-[9px] text-slate-400 font-black uppercase mt-2 tracking-widest">LOGROS HOY</p>
+                    <p class="text-xs text-slate-400 font-black uppercase mt-2 tracking-widest">LOGROS HOY</p>
                 </div>
                 <div class="glass-card p-5 text-center border border-slate-800 bg-slate-950">
                     <p class="text-4xl font-black text-blue-400">PRO</p>
-                    <p class="text-[9px] text-slate-400 font-black uppercase mt-2 tracking-widest">RANGO ACTIVO</p>
+                    <p class="text-xs text-slate-400 font-black uppercase mt-2 tracking-widest">RANGO ACTIVO</p>
                 </div>
             </div>
         </section>
@@ -562,7 +562,7 @@
     </main>
 
     <!-- BOTON FLOTANTE: MEJORAR -->
-    <button id="btn-upgrade-float" onclick="openUpgradeModal()" class="hidden fixed bottom-6 right-4 z-40 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 font-black text-[11px] uppercase tracking-widest border-2 border-amber-300">
+    <button id="btn-upgrade-float" onclick="openUpgradeModal()" class="hidden fixed bottom-6 right-4 z-40 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 font-black text-xs uppercase tracking-widest border-2 border-amber-300">
         <i class="fas fa-crown text-base"></i> <span id="float-btn-text">Mejorar</span>
     </button>
 
@@ -585,19 +585,19 @@
             <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
                 <p class="font-bold text-slate-200">Sigue en tiempo real los encuentros de la fecha del Mundial de hoy:</p>
                 <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3 font-semibold text-slate-100">
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
                         <span>🇵🇹 Portugal vs. 🇨🇬 R. Congo</span>
                         <span class="text-emerald-400 font-extrabold">12:00 PM</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
                         <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra vs. 🇭🇷 Croacia</span>
                         <span class="text-emerald-400 font-extrabold">3:00 PM</span>
                     </div>
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2">
+                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
                         <span>🇬🇭 Ghana vs. 🇵🇦 Panama</span>
                         <span class="text-emerald-400 font-extrabold">6:00 PM</span>
                     </div>
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center text-xs">
                         <span>🇺🇿 Uzbekistan vs. 🇨🇴 Colombia</span>
                         <span class="text-emerald-400 font-extrabold">9:00 PM</span>
                     </div>
@@ -733,8 +733,8 @@
                 <i class="fas fa-crown text-3xl text-amber-400"></i>
             </div>
             
-            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
-            <p class="text-[13px] text-slate-300 mb-4 font-medium leading-relaxed px-2" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
+            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight text-center" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
+            <p class="text-xs text-slate-300 mb-4 font-medium leading-relaxed px-2 text-center" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
             
             <!-- CONTENEDOR DE SELECCION EXCLUSIVO PARA CUENTA DEMO -->
             <div id="upgrade-options-selector" class="hidden space-y-3 mb-4 text-left">
@@ -743,23 +743,23 @@
                 <!-- Opción PRO -->
                 <button class="w-full p-3.5 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-750 active:scale-95 transition flex flex-col text-left" onclick="seleccionarOpcionCobro(5, 'PRO')">
                     <span class="font-black text-xs text-emerald-400 uppercase tracking-wider">⭐ ZONA PRO MUNDIALISTA - S/ 5</span>
-                    <span class="text-[10px] text-slate-300 mt-1 leading-tight font-medium">Álbumes Panini y 3 Reyes 2026, Álbum Especial Día del Padre, Álbum Parejas, Kit Mundialista KIDS, Excel de control.</span>
+                    <span class="text-xs text-slate-300 mt-1 leading-tight font-medium">Álbumes Panini y 3 Reyes 2026, Álbum Especial Día del Padre, Álbum Parejas, Kit Mundialista KIDS, Excel de control.</span>
                 </button>
                 
                 <!-- Opción PREMIUM -->
                 <button class="w-full p-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black flex flex-col text-left hover:brightness-110 active:scale-95 transition" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
                     <span class="font-black text-xs text-slate-950 uppercase tracking-wider">👑 ACTIVA LA ZONA PREMIUM - S/ 12 (incluye ACCESO A ZONA PRO)</span>
-                    <span class="text-[10px] text-slate-900 mt-1 leading-tight font-semibold">EL BUNKER DEL COLECCIONISTA: +500GB en Álbumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Películas Western y Cine Mexicano y más.</span>
+                    <span class="text-xs text-slate-900 mt-1 leading-tight font-semibold">EL BUNKER DEL COLECCIONISTA: +500GB en Álbumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Películas Western y Cine Mexicano y más.</span>
                 </button>
             </div>
 
             <div class="bg-slate-950 p-4 rounded-2xl mb-5 border border-slate-800" id="yape-qr-container">
-                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3" id="yape-instructions-label">YAPE PARA ACTIVACION INSTANTANEA</p>
+                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3" id="yape-instructions-label">YAPE PARA ACTIVACION INSTANTANEA</p>
                 <div class="w-40 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
                     <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain">
                 </div>
-                <p class="text-xs text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
-                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black font-sans">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+                <p class="text-sm text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
+                <p class="text-xs text-amber-400 mt-1.5 uppercase font-black">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
             </div>
 
             <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black">
@@ -805,7 +805,7 @@
                 muestraRetroHistorietas: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
                 muestraRetroSeries: "https://drive.google.com/drive/folders/1EHl6FzILt5OiMKLz1LCAErizeWqnJKOZ?usp=sharing",
                 muestraRetroAnimadas: "https://drive.google.com/drive/folders/1ORpnXjHe_a2gTo6O7j7u6IEZiply5sB3?usp=sharing",
-                muestraCineMex: "https://drive.google.com/drive/folders/1ymXkpdB8Mmz-9wMcCzqSOhazNFAEn7RW?usp=drive_link",
+                muestraCineMex: "https://drive.google.com/drive/folders/1ymXkpdB8Mmz-9wMcCzqSOhazNFAEn7RW?usp=sharing",
                 muestraWestern: "https://drive.google.com/drive/folders/1dt_jqIEcPFsfrncBXnQ1dMa1UhIoRAW3?usp=sharing",
 
                 // ENLACES PARA "DESCARGAR"
@@ -833,7 +833,7 @@
 
         const CONFIG_TEXTS = {
             mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones del Día del Padre, Parejas y el kit infantil de juegos!",
-            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (+500GB GB de Álbumes de todos los tiempos, Series, Historietas y Películas) - (incluye ACCESO A ZONA PRO)!"
+            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (85GB de Álbumes de todos los tiempos, Series, Historietas y Películas) - (incluye ACCESO A ZONA PRO)!"
         };
 
         // ======================================================================== //
@@ -947,15 +947,15 @@
 
             if (nuevoPlan === "DEMO") {
                 subPlanHeader.innerText = "PLAN DEMO - CONTENIDOS RESTRINGIDOS";
-                subPlanHeader.className = "text-[6px] font-bold text-red-400 tracking-widest uppercase mt-0.5 animate-pulse";
+                subPlanHeader.className = "text-[10px] font-bold text-red-400 tracking-widest uppercase mt-0.5 animate-pulse";
                 if (floatText) floatText.innerText = "Activar PRO";
             } else if (nuevoPlan === "PRO") {
                 subPlanHeader.innerText = "PLAN MUNDIALISTA PRO ACTIVO";
-                subPlanHeader.className = "text-[6px] font-bold text-emerald-400 tracking-widest uppercase mt-0.5";
+                subPlanHeader.className = "text-[10px] font-bold text-emerald-400 tracking-widest uppercase mt-0.5";
                 if (floatText) floatText.innerText = "Activar PREMIUM";
             } else {
                 subPlanHeader.innerText = "ACCESO ILIMITADO PREMIUM VIP";
-                subPlanHeader.className = "text-[6px] font-bold text-yellow-400 tracking-widest uppercase mt-0.5";
+                subPlanHeader.className = "text-[10px] font-bold text-yellow-400 tracking-widest uppercase mt-0.5";
                 if (floatText) floatText.innerText = "Gracias";
             }
         }
@@ -1151,7 +1151,7 @@
             document.getElementById("game-controls")?.classList.add("hidden");
             
             const altsHTML = roundData.o.map((option, idx) => {
-                return `<button onclick="checkTriviaAnswer(this, ${idx})" class="ans-btn py-4 w-full text-left px-4 font-bold rounded-2xl bg-slate-900 border border-slate-850 hover:bg-slate-800 transition text-sm flex items-center justify-between">
+                return `<button onclick="checkTriviaAnswer(this, ${idx})" class="ans-btn py-4 w-full text-left px-4 font-bold rounded-2xl bg-slate-900 border border-slate-850 hover:bg-slate-800 transition text-sm flex items-center justify-between text-xs sm:text-sm">
                     <span>${option}</span>
                     <span class="w-4 h-4 rounded-full border border-slate-700"></span>
                 </button>`;
@@ -1250,7 +1250,7 @@
                 options: { 
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: { r: { suggestedMin: 0, suggestedMax: 100, grid: { color: "rgba(255, 255, 255, 0.08)" }, angleLines: { color: "rgba(255, 255, 255, 0.08)" }, ticks: { display: false }, pointLabels: { font: { size: 11, weight: 'bold', family: "Outfit" } }} },
+                    scales: { r: { suggestedMin: 0, suggestedMax: 100, grid: { color: "rgba(255, 255, 255, 0.08)" }, angleLines: { color: "rgba(255, 255, 255, 0.08)" }, ticks: { display: false }, pointLabels: { font: { size: 12, weight: 'bold', family: "Outfit" }, color: "#94a3b8" }} },
                     plugins: { legend: { display: false } }
                 }
             });
