@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DASHBOARD MUNDIALISTA PRO - Miembro VIP</title>
+    <title>EL BÚNKER DIGITAL 360 - Nostalgia, Música & Fútbol</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Outfit:wght@400;600;800;900&display=swap");
@@ -48,36 +47,10 @@
             margin: 0 auto;
         }
 
-        .toggle-btn {
-            border: 2px solid #1e293b;
-            background: #0f172a;
-            color: #94a3b8;
-            transition: all 0.2s;
-            text-align: center;
-            font-weight: 700;
-            border-radius: 12px;
-            padding: 10px 4px;
-            font-size: 11px;
-            display: flex;
-            align-items: center; justify-content: center;
-            cursor: pointer;
-            min-height: 38px;
-        }
-        .toggle-btn.active {
-            border-color: var(--primary);
-            background-color: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border-width: 2px;
-        }
-
-        .ans-btn { transition: all 0.2s; border: 2px solid #1e293b; font-weight: 800; padding: 10px; border-radius: 12px; font-size: 14px; background: #0f172a; color: #f1f5f9; }
-        .ans-btn.correct-highlight { background-color: rgba(16, 185, 129, 0.2) !important; border-color: #10b981 !important; color: #34d399 !important; }
-        .ans-btn.wrong-highlight { background-color: rgba(239, 68, 68, 0.2) !important; border-color: #ef4444 !important; color: #fca5a5 !important; }
-
         .nav-btn i { font-size: 1.5rem; transition: 0.2s; margin-bottom: 2px; }
-        .nav-btn[data-screen="pro"] i { color: #10b981; }
-        .nav-btn[data-screen="premium"] i { color: #f59e0b; }
-        .nav-btn[data-screen="stats"] i { color: #3b82f6; }
+        .nav-btn[data-screen="inicio"] i { color: #10b981; }
+        .nav-btn[data-screen="bunker"] i { color: #f59e0b; }
+        .nav-btn[data-screen="vivo"] i { color: #3b82f6; }
         
         .nav-btn.active { transform: translateY(2px); font-weight: 800; }
         .nav-btn.active span { border-bottom: 2px solid currentColor; }
@@ -95,283 +68,162 @@
             transition: 0.2s;
         }
 
-        .ent-card {
-            background: #111827;
-            border-radius: 12px;
-            padding: 14px;
-            text-align: center;
-            border: 1px solid #1f2937;
-            transition: 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            cursor: pointer;
-        }
-        .ent-card:active { transform: scale(0.95); }
-        .ent-card i { font-size: 1.5rem; }
-        .ent-card h4 { font-size: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; color: #e2e8f0; }
-
         .avail-text { font-size: 13px; font-weight: 900; color: #10b981; text-transform: uppercase; letter-spacing: 0.01em; }
     </style>
 </head>
-<body class="flex flex-col items-center relative">
-
-    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-[120] w-full h-full"></canvas>
+<body class="flex flex-col items-center relative font-sans">
 
     <main class="main-content p-4">
         
         <!-- CABECERA -->
-        <header id="app-header" class="flex items-center justify-between py-2 mb-2 w-full border-b border-slate-800/40">
-            <div onclick="navigate('setup')" class="flex items-center gap-2.5 cursor-pointer active:scale-95 transition-transform">
+        <header id="app-header" class="flex items-center justify-between py-3 mb-3 w-full border-b border-slate-800/40">
+            <div onclick="navigate('inicio')" class="flex items-center gap-2.5 cursor-pointer active:scale-95 transition-transform">
                 <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
-                    <i class="fas fa-trophy text-xl"></i>
+                    <i class="fas fa-cubes text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-base font-black text-slate-100 leading-none uppercase tracking-tighter">MUNDIALISTA PRO</h1>
-                    <p id="sub-header-plan" class="text-xs font-bold text-emerald-400 tracking-widest uppercase mt-1">EL DASHBOARD DEL COLECCIONISTA</p>
+                    <h1 class="text-base font-black text-slate-100 leading-none uppercase tracking-tighter">EL BÚNKER DIGITAL 360</h1>
+                    <p id="sub-header-plan" class="text-[10px] font-bold text-emerald-400 tracking-widest uppercase mt-1">NOSTALGIA, MÚSICA & FÚTBOL</p>
                 </div>
             </div>
-            <button onclick="navigate('setup')" class="px-3.5 py-2.5 rounded-lg bg-slate-800 text-slate-300 flex items-center gap-1.5 text-xs font-black uppercase hover:bg-slate-700 transition">
-                <i class="fas fa-home"></i> VOLVER AL INICIO
+            <button onclick="navigate('inicio')" class="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-300 flex items-center gap-1.5 text-xs font-black uppercase hover:bg-slate-700 transition">
+                <i class="fas fa-home"></i> INICIO
             </button>
         </header>
 
         <!-- NAVEGACION PRINCIPAL (STICKY) -->
-        <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2.5 flex justify-around z-50 shadow-xl rounded-2xl mb-4 hidden">
-            <button onclick="navigate('pro')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="pro">
-                <i class="fas fa-star"></i>
-                <span class="text-xs font-black mt-1 uppercase tracking-widest text-emerald-400">Zona PRO</span>
+        <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2 flex justify-around z-50 shadow-xl rounded-2xl mb-4">
+            <button onclick="navigate('inicio')" class="nav-btn flex flex-col items-center w-28 py-1" data-screen="inicio">
+                <i class="fas fa-home"></i>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-emerald-400">Inicio</span>
             </button>
-            <button onclick="navigate('premium')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="premium">
-                <i class="fas fa-crown"></i>
-                <span class="text-xs font-black mt-1 uppercase tracking-widest text-amber-400">Zona Premium</span>
+            <button onclick="navigate('bunker')" class="nav-btn flex flex-col items-center w-28 py-1" data-screen="bunker">
+                <i class="fas fa-vault"></i>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-amber-400">El Búnker Digital</span>
             </button>
-            <button onclick="navigate('stats')" class="nav-btn flex flex-col items-center w-24 py-1" data-screen="stats">
-                <i class="fas fa-gamepad"></i>
-                <span class="text-xs font-black mt-1 uppercase tracking-widest text-blue-400">Trivia & Info</span>
+            <button onclick="navigate('vivo')" class="nav-btn flex flex-col items-center w-28 py-1" data-screen="vivo">
+                <i class="fas fa-play-circle"></i>
+                <span class="text-xs font-black mt-1 uppercase tracking-widest text-blue-400">Ver Mundial En Vivo</span>
             </button>
         </nav>
 
-        <!-- PANTALLA INICIO (SETUP) -->
-        <section id="screen-setup" class="glass-card p-5 fade-in mt-2">
-            <div class="mt-2 mb-5 text-center">
-                <h2 class="text-3xl font-black text-emerald-400 uppercase tracking-tighter leading-none mb-1">MUNDIALISTA PRO</h2>
-                <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">La experiencia de coleccionismo definitiva</p>
-                <div class="h-1 w-20 bg-emerald-500 mx-auto rounded-full shadow-sm"></div>
-            </div>
+        <!-- ==================== PESTAÑA 1: INICIO & PROMOCIONES ==================== -->
+        <section id="screen-inicio" class="fade-in space-y-4">
             
-            <div class="space-y-5 pt-1">
-                <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1 block">Tu Nombre de Entrenador:</label>
-                    <input type="text" id="user-name" placeholder="Ejemplo: Jesus" class="w-full p-3.5 rounded-xl border-2 border-slate-800 bg-slate-900 text-base font-bold outline-none focus:border-emerald-500 transition text-slate-100 placeholder-slate-500">
-                </div>
-
-                <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1 mb-1.5 block tracking-wider">¿Cual es tu nivel de coleccionista?</label>
-                    <div class="grid grid-cols-3 gap-1.5">
-                        <button onclick="selectChoice('level', 'Basico')" id="level-Basico" class="toggle-btn py-3 uppercase active">Aficionado</button>
-                        <button onclick="selectChoice('level', 'Intermedio')" id="level-Intermedio" class="toggle-btn py-3 uppercase">Hincha del Mundial</button>
-                        <button onclick="selectChoice('level', 'Avanzado')" id="level-Avanzado" class="toggle-btn py-3 uppercase">Mundialista Experto</button>
+            <!-- PORTAL DE ACCESO DIRECTO AL BÚNKER -->
+            <div onclick="navigate('bunker')" class="p-5 rounded-2xl bg-gradient-to-tr from-amber-950/70 to-slate-900 border-2 border-amber-500/40 cursor-pointer hover:border-amber-400 transition transform hover:scale-[1.02] duration-200">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0 shadow-md shadow-amber-500/20"><i class="fas fa-vault"></i></div>
+                    <div class="text-left flex-1 min-w-0">
+                        <h4 class="font-black text-sm sm:text-base text-amber-400 uppercase leading-none">ABRIR EL BÚNKER DIGITAL</h4>
+                        <p class="text-[13px] text-slate-300 mt-2 leading-normal">Accede a TODO en un solo lugar: Mundial 2026, Álbumes Retro de Colección, 70,000 Historietas y el nuevo Pack Musical.</p>
                     </div>
+                    <i class="fas fa-chevron-right text-amber-400 text-lg"></i>
                 </div>
+            </div>
 
-                <!-- PORTALES DE ACCESO DIRECTO (ZONAS DE DESCARGA) - SECCIÓN PRINCIPAL PRIORIZADA -->
-                <div class="pt-4 border-t border-slate-800 space-y-3">
-                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">Portales de Material Descargable</p>
-                    
-                    <!-- Tarjeta Zona PRO -->
-                    <div onclick="startTraining()" class="p-4.5 rounded-2xl bg-gradient-to-tr from-emerald-950/70 to-slate-900 border-2 border-emerald-500/40 cursor-pointer hover:border-emerald-400 transition transform hover:scale-[1.02] duration-200">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-emerald-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-star"></i></div>
-                            <div class="text-left flex-1 min-w-0">
-                                <h4 class="font-black text-sm text-emerald-400 uppercase leading-none">ZONA PRO MUNDIALISTA</h4>
-                                <p class="text-xs text-slate-300 mt-1.5 leading-normal">Álbumes 2026, Especial Día del Padre, Parejas, Kit de Juegos y Excel.</p>
-                            </div>
-                            <i class="fas fa-chevron-right text-emerald-400 text-lg"></i>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta El Búnker Premium -->
-                    <div onclick="navigate('premium')" class="p-4.5 rounded-2xl bg-gradient-to-tr from-amber-950/70 to-slate-900 border-2 border-amber-500/40 cursor-pointer hover:border-amber-400 transition transform hover:scale-[1.02] duration-200">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-crown"></i></div>
-                            <div class="text-left flex-1 min-w-0">
-                                <h4 class="font-black text-sm text-amber-400 uppercase leading-none">EL BUNKER DEL COLECCIONISTA</h4>
-                                <p class="text-xs text-slate-300 mt-1.5 leading-normal">85GB Retro: Álbumes históricos, 70,000 Historietas, Series Retro y Cine Mexicano.</p>
-                            </div>
-                            <i class="fas fa-chevron-right text-amber-400 text-lg"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECCION INTEGRADA: APOYA AL PROYECTO CON QR -->
-                <div class="pt-4 border-t border-slate-800">
-                    <div class="p-4 rounded-2xl bg-gradient-to-tr from-emerald-950/20 to-slate-900 border border-emerald-500/10 text-center">
-                        <span class="text-2xl">🤝💖</span>
-                        <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mt-1">Apoya Nuestro Proyecto</h4>
-                        <p class="text-xs text-slate-300 mt-2 leading-relaxed px-1">
-                            Tu aporte voluntario nos ayuda a mantener estables y activos los servidores de descarga y enlaces de transmisión en vivo para toda la comunidad mundialista.
-                        </p>
-                        
-                        <div class="w-36 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-2 mt-3 shadow-lg shadow-emerald-500/5">
-                            <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-32 object-contain">
-                            <span class="text-[9px] font-black text-slate-850 uppercase leading-none mt-1 tracking-widest">YAPE VOLUNTARIO</span>
-                        </div>
-                        <p class="text-sm text-slate-100 mt-2.5 font-black">Yape: 943833945 - Jesus B.</p>
-                        
-                        <!-- BOTON ADICIONAL DE CAPTURA WHATSAPP -->
-                        <button onclick="enviarSoporteWhatsAppPago()" class="w-full mt-3 py-3 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-base"></i> ENVIAR CAPTURA O ACTIVAR ACCESO PRO-PREMIUM
-                        </button>
-                    </div>
-                </div>
-
-                <!-- SECCION DE PARTIDOS DE HOY & TRANSMISIONES (REUBICADA AL FINAL) -->
-                <div class="pt-4 border-t border-slate-800 space-y-2">
-                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">Centro de Transmisiones Auxiliar</p>
-                    <div class="grid grid-cols-2 gap-2">
-                        <button onclick="openModal('fixture')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition">
-                            <i class="fas fa-calendar-alt text-sm"></i> 🗓️ PARTIDOS DE HOY
-                        </button>
-                        <button onclick="openModal('canales1')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition">
-                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 1
-                        </button>
-                        <button onclick="openModal('canales2')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 2
-                        </button>
-                        <button onclick="openModal('canales3')" class="py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-850 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-center gap-1 transition col-span-1">
-                            <i class="fas fa-tv text-sm"></i> EN VIVO OPCION 3
-                        </button>
-                    </div>
-                </div>
-
-                <div class="pt-3 text-center">
-                    <button onclick="startTriviaGame()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-950 transition rounded-xl font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2">
-                        ⚽ Jugar Trivia Mundialista
+            <!-- BOTÓN PROMO FB RESEÑA (S/ 1 SOL) - CONFIGURABLE -->
+            <div id="promo-resena-card" class="p-5 rounded-2xl bg-gradient-to-br from-blue-950/80 to-slate-900 border-2 border-blue-500/40 text-center shadow-lg relative overflow-hidden hidden">
+                <div class="absolute -top-3 -right-3 w-12 h-12 bg-yellow-500 text-slate-950 font-black flex items-center justify-center rounded-full text-xs rotate-12 shadow-md">S/ 1</div>
+                <span class="text-2xl animate-pulse inline-block mb-1">🎁 PROMO IMPERDIBLE</span>
+                <h4 class="text-base sm:text-lg font-black text-blue-300 uppercase tracking-widest">TODO POR 1 SOL</h4>
+                <p class="text-sm text-slate-200 mt-2 leading-relaxed px-1">
+                    Apoya nuestro proyecto dejando un comentario positivo en Facebook y obtén acceso total a todo el material por solo S/ 1 sol de manera instantánea. (VÁLIDO PARA LAS PRIMERAS 10 PERSONAS)
+                </p>
+                
+                <div class="grid grid-cols-2 gap-3 mt-4">
+                    <button onclick="abrirResena()" class="py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-md">
+                        <i class="fab fa-facebook text-base"></i> Dejar Reseña
+                    </button>
+                    <button onclick="enviarCapturaResena()" class="py-3 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-md">
+                        <i class="fab fa-whatsapp text-base"></i> Enviar Captura
                     </button>
                 </div>
             </div>
+
+            <!-- APORTE DIRECTO S/ 5 -->
+            <div class="p-5 rounded-2xl bg-gradient-to-tr from-emerald-950/30 to-slate-900 border border-emerald-500/20 text-center">
+                <span class="text-2xl">💳🏆 ACCESO PREMIUM DIRECTO</span>
+                <h4 class="text-base sm:text-lg font-black text-emerald-400 uppercase tracking-widest mt-1">SOLO HOY DE S/ 19 a S/ 5 SOLES SIN COMPLICACIONES</h4>
+                <p class="text-sm text-slate-200 mt-2 leading-relaxed px-1">
+                    Desbloquea de forma directa y permanente TODO el catálogo digital y el Búnker por un pago único de S/ 5 soles.
+                </p>
+                
+                <div class="w-36 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-2 mt-4 shadow-lg shadow-emerald-500/10">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-32 object-contain">
+                    <span class="text-[9px] font-black text-slate-800 uppercase leading-none mt-1 tracking-widest">YAPE DONACION</span>
+                </div>
+                <p class="text-sm text-slate-100 mt-3 font-black">Yape: 943833945 - Jesus B.</p>
+                
+                <button onclick="enviarSoporteWhatsAppPago()" class="w-full mt-3 py-3 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fab fa-whatsapp text-base"></i> Enviar Voucher de S/ 5
+                </button>
+            </div>
+
         </section>
 
-        <!-- PANTALLA JUEGO DIGITAL (CON RONDAS) -->
-        <section id="screen-game" class="hidden fade-in">
-            <div class="glass-card p-5 flex flex-col justify-between bg-slate-950" style="min-height: 420px;">
-                <div class="text-center mb-3">
-                    <span id="game-category" class="px-3 py-1.5 bg-emerald-950/80 text-emerald-400 rounded-full text-xs font-black uppercase tracking-wider border border-emerald-900/50">Categoría</span>
-                    <p id="game-progress" class="text-xs font-black text-slate-400 tracking-widest uppercase mt-3 mb-0.5">RETO 1 DE 5</p>
-                    <h3 id="game-title" class="text-lg font-black mt-1 text-slate-100 leading-tight">Cargando...</h3>
-                </div>
-                
-                <div id="game-content" class="flex-grow flex flex-col justify-center items-center bg-slate-900/60 rounded-xl p-4 border border-dashed border-slate-800 text-center mb-4"></div>
-                
-                <div id="game-feedback" class="hidden text-center p-3 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 mb-3 shadow-sm transition-all duration-300"></div>
-                
-                <div id="game-controls" class="hidden flex gap-3 mb-3">
-                    <button onclick="handleGameHelper('retry')" class="flex-1 py-3 bg-slate-900 text-emerald-400 rounded-xl font-black text-xs uppercase border border-slate-800 hover:bg-slate-800 transition shadow-sm">Reintentar</button>
-                    <button onclick="handleGameHelper('solution')" class="flex-1 py-3 bg-slate-900 text-slate-400 rounded-xl font-black text-xs uppercase border border-slate-800 hover:bg-slate-800 transition shadow-sm">Revelar</button>
-                </div>
-
-                <button id="btn-complete-game" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition rounded-xl font-black text-sm hidden shadow-md uppercase tracking-wider"></button>
-            </div>
-        </section>
-
-        <!-- PANTALLA SESION COMPLETADA -->
-        <section id="screen-finished" class="hidden fade-in text-center py-8 px-4">
-            <div class="w-20 h-20 bg-amber-950/40 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg shadow-amber-500/10">
-                <i class="fas fa-trophy text-4xl text-amber-400 animate-bounce"></i>
-            </div>
-            <h2 class="text-3xl font-black text-emerald-400 mb-2 uppercase leading-none text-center tracking-tighter" id="finished-title">¡TRIVIA COMPLETADA!</h2>
-            <p class="text-xs text-slate-400 mb-8 font-medium italic text-center leading-relaxed px-1">"La constancia llena el álbum. Sigue jugando para desbloquear más estadísticas y entrenar a tu mente con pasión mundialista."</p>
+        <!-- ==================== PESTAÑA 2: EL BÚNKER (ACCESO DIGITAL UNIFICADO) ==================== -->
+        <section id="screen-bunker" class="hidden fade-in pb-8 space-y-6">
             
-            <div class="grid grid-cols-2 gap-3 mb-8">
-                <div class="glass-card p-4 border-b-[4px] border-emerald-500 shadow-sm bg-slate-950">
-                    <p class="text-3xl font-black text-emerald-400 mb-1">100%</p>
-                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">COMPLETADO</p>
-                </div>
-                <div class="glass-card p-4 border-b-[4px] border-blue-500 shadow-sm bg-slate-950">
-                    <p class="text-3xl font-black text-blue-400 mb-1">+50</p>
-                    <p class="text-xs font-black text-slate-400 uppercase tracking-widest text-center">PUNTOS HINCHA</p>
-                </div>
-            </div>
-
+            <div class="lib-section-title">PACK MUNDIALISTA OFICIAL 2026</div>
             <div class="space-y-3">
-                <button onclick="navigate('pro')" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 transition rounded-xl font-black text-sm shadow-md uppercase tracking-widest flex justify-center items-center gap-2">
-                    <i class="fas fa-folder-open text-base"></i> Abrir Catálogo Zona PRO
-                </button>
-                <button onclick="abrirResena()" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-black text-xs shadow-sm uppercase tracking-widest flex items-center justify-center gap-2">
-                    <i class="fas fa-star text-yellow-300 text-base"></i> Deja tu reseña
-                </button>
-                <button onclick="handleReiniciar()" class="w-full py-3.5 bg-slate-900 text-emerald-400 rounded-xl font-black text-xs shadow-sm uppercase tracking-widest border border-slate-800 hover:bg-slate-800 transition">
-                    Reiniciar Trivia
-                </button>
-            </div>
-        </section>
-
-        <!-- ==================== TAB 1: ZONA PRO ==================== -->
-        <section id="screen-pro" class="hidden fade-in pb-8">
-            <h2 class="text-2xl font-black text-emerald-400 mb-1 uppercase tracking-tighter">ZONA PRO MUNDIALISTA</h2>
-            <p class="text-xs text-slate-400 mb-6 font-medium italic">Acceso a tus álbumes interactivos 2026 y planillas oficiales.</p>
-
-            <div class="space-y-3">
-                <!-- ALBUM PANINI -->
+                <!-- PANINI -->
                 <div class="premium-card shadow-sm">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-12 h-12 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book-open"></i></div>
+                        <div class="w-12 h-12 bg-emerald-950/50 text-emerald-400 border border-emerald-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"><i class="fas fa-book-open"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-sm text-slate-100 uppercase leading-none mb-1">Álbum Panini Oficial 2026</h4>
-                            <p class="avail-text">LÁMINAS VECTORIZADAS HD.</p>
+                            <p class="text-xs text-slate-300">LÁMINAS VECTORIZADAS HD.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraPanini')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaPanini')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaPanini')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
-                <!-- ALBUM 3 REYES -->
+                <!-- 3 REYES -->
                 <div class="premium-card shadow-sm">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-12 h-12 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-trophy"></i></div>
+                        <div class="w-12 h-12 bg-amber-950/50 text-amber-400 border border-amber-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"><i class="fas fa-trophy"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-sm text-slate-100 uppercase leading-none mb-1">Álbum Edición 3 Reyes 2026</h4>
-                            <p class="avail-text">VERSIÓN SUDAMÉRICA.</p>
+                            <p class="text-xs text-slate-300">VERSIÓN SUDAMÉRICA.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraReyes')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaReyes')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaReyes')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
-                <!-- ALBUM DIA DEL PADRE -->
+                <!-- DIA DEL PADRE -->
                 <div class="premium-card shadow-sm border border-yellow-500/20 bg-yellow-950/5">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-12 h-12 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-user-tie"></i></div>
+                        <div class="w-12 h-12 bg-yellow-950/50 text-yellow-400 border border-yellow-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"><i class="fas fa-user-tie"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-sm text-yellow-300 uppercase leading-none mb-1">Álbum Mundial "Día del Padre"</h4>
-                            <p class="avail-text text-yellow-400 font-extrabold">¡EDICIÓN ESPECIAL REGALO!</p>
+                            <p class="text-xs text-yellow-400 font-extrabold">¡EDICIÓN ESPECIAL REGALO!</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraDiaPadre')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaDiaPadre')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaDiaPadre')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
-                <!-- ALBUM PARA PAREJAS -->
+                <!-- PARA PAREJAS -->
                 <div class="premium-card shadow-sm border border-red-500/20 bg-red-950/5">
                     <div class="flex items-center gap-3 w-full">
-                        <div class="w-12 h-12 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-heart"></i></div>
+                        <div class="w-12 h-12 bg-red-950/50 text-red-400 border border-red-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"><i class="fas fa-heart"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-sm text-red-300 uppercase leading-none mb-1">Álbum Mundial "Para Parejas"</h4>
-                            <p class="avail-text text-red-400 font-extrabold">¡COLECCIÓN DE AMOR Y FÚTBOL!</p>
+                            <p class="text-xs text-red-400 font-extrabold">¡COLECCIÓN DE AMOR Y FÚTBOL!</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraParejas')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaParejas')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaParejas')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
                 </div>
 
@@ -381,49 +233,32 @@
                         <div class="w-12 h-12 bg-blue-950/50 text-blue-400 border border-blue-900/30 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-child"></i></div>
                         <div class="flex-1 min-w-0">
                             <h4 class="font-bold text-sm text-slate-100 uppercase leading-tight mb-1 truncate">Kit Pequeños Mundialistas</h4>
-                            <p class="avail-text">+50 RETOS DIDÁCTICOS.</p>
+                            <p class="text-xs text-slate-300">+50 RETOS DIDÁCTICOS.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
                         <button onclick="abrirMuestra('muestraPequeños')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPro('descargaPequeños')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                        <button onclick="ejecutarDescargaPremium('descargaPequeños')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
                     </div>
+                </div>
+
+                <!-- EXCEL DE CONTROL -->
+                <div class="premium-card shadow-sm border border-slate-700 bg-slate-900">
+                    <div class="flex items-center gap-3 w-full">
+                        <div class="w-12 h-12 bg-slate-800 text-slate-300 border border-slate-700 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-file-excel"></i></div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-sm text-slate-100 uppercase leading-none mb-1">Planilla Excel de Control Mundial 2026</h4>
+                            <p class="text-xs text-slate-300">Lleva el control de tus láminas repetidas.</p>
+                        </div>
+                    </div>
+                    <button onclick="abrirProExcel()" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Abrir Excel en Drive</button>
                 </div>
             </div>
 
-            <!-- ENLACE DIRECTO A LA PLANILLA DE EXCEL -->
-            <div class="mt-6">
-                <div class="lib-section-title">Planilla de Control Oficial</div>
-                <div class="glass-card p-5 bg-slate-950 mt-2 text-center border border-emerald-950">
-                    <div class="w-12 h-12 bg-emerald-950/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-emerald-900/40">
-                        <i class="fas fa-file-excel text-2xl text-emerald-400"></i>
-                    </div>
-                    <h4 class="text-base font-bold text-slate-100 uppercase mb-1">Planilla Excel de Control Mundial 2026</h4>
-                    <p class="text-xs text-slate-300 mb-4 px-2">Lleva el control de tus láminas repetidas y faltantes con nuestro Excel automatizado en la nube.</p>
-                    <button onclick="abrirProExcel()" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider transition font-black">
-                        <i class="fas fa-external-link-alt mr-1"></i> Abrir Excel en Drive
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== TAB 2: EL BUNKER DEL COLECCIONISTA (ZONA RETRO PREMIUM) ==================== -->
-        <section id="screen-premium" class="hidden fade-in pb-8">
-            <div class="p-4 rounded-3xl bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-transparent border-2 border-amber-400/40 pl-4 mb-4 mt-2 shadow-lg shadow-amber-500/5">
-                <div class="flex items-center gap-2">
-                    <span class="text-2xl animate-bounce">👑</span>
-                    <div>
-                        <h3 class="text-lg font-black text-amber-400 tracking-tight uppercase leading-none">
-                            EL BUNKER DEL COLECCIONISTA
-                        </h3>
-                        <p class="text-xs text-amber-300 font-bold uppercase tracking-wider mt-1">ZONA RETRO PREMIUM: ÁLBUMES, SERIES Y PELÍCULAS (85GB)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-sm text-slate-200 mb-4 leading-relaxed">Acceso premium e ilimitado a la biblioteca retro y coleccionismo más espectacular del continente. Todo digitalizado en alta resolución listo para descargar.</p>
-
+            <!-- EL BÚNKER RETRO PREMIUM -->
+            <div class="lib-section-title">EL BÚNKER PREMIUM DE NOSTALGIA</div>
             <div class="space-y-3">
+                
                 <!-- 1. ALBUMES RETRO MUNDIALISTAS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
@@ -454,13 +289,13 @@
                     </div>
                 </div>
 
-                <!-- 3. MAS DE 250 ALBUMES DE TODOS LOS TIEMPOS -->
+                <!-- 3. MAS DE 250 ALBUMES DE TODOS LOS TIEMPOS & HISTORIETAS -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-history"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">3. +250 Álbumes de Todos los Tiempos (85GB)</h4>
-                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">3. +250 Álbumes de Todos los Tiempos & Historietas (85GB)</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Colecciones completas de Dragon Ball, Mazinger, Caballeros del Zodiaco, Candy, y más de 70,000 Historietas digitalizadas (El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más).</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -469,28 +304,13 @@
                     </div>
                 </div>
 
-                <!-- 4. MAS DE 70,000 HISTORIETAS DIGITALIZADAS -->
-                <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
-                    <div class="flex items-center gap-3 w-full">
-                        <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-book"></i></div>
-                        <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">4. +70,000 Historietas Digitalizadas</h4>
-                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">El Zorro, Dr. Mortis, Agente 007, La Pequeña Lulú y muchos más.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2 w-full pt-1">
-                        <button onclick="abrirMuestra('muestraRetroHistorietas')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
-                        <button onclick="ejecutarDescargaPremium('descargaRetroHistorietas')" class="py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
-                    </div>
-                </div>
-
-                <!-- 5. MAS DE 150 SERIES RETRO -->
+                <!-- 4. MAS DE 150 SERIES RETRO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-tv"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">5. +150 Series Retro de Todos los Tiempos</h4>
-                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genio y muchos más.</p>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">4. +150 Series Retro de Todos los Tiempos</h4>
+                            <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los Años Maravillosos, Superman, Días Felices, El Zorro, Salvado por la Campana, Mi Bella Genia y muchos más.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 w-full pt-1">
@@ -499,12 +319,12 @@
                     </div>
                 </div>
 
-                <!-- 6. SERIES ANIMADAS DE TV -->
+                <!-- 5. SERIES ANIMADAS DE TV -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-dragon"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">6. Colección de Series Animadas de TV</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">5. Colección de Series Animadas de TV</h4>
                             <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los Picapiedra, Tom y Jerry, X-Men, La Pantera Rosa y muchos más.</p>
                         </div>
                     </div>
@@ -514,12 +334,12 @@
                     </div>
                 </div>
 
-                <!-- 7. PELICULAS RETRO CINE MEXICANO -->
+                <!-- 6. PELICULAS RETRO CINE MEXICANO -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-film"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">7. Películas Retro: Lo mejor del Cine Mexicano</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">6. Películas Retro: Lo mejor del Cine Mexicano</h4>
                             <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Lo mejor del Cine Mexicano de Oro.</p>
                         </div>
                     </div>
@@ -529,12 +349,12 @@
                     </div>
                 </div>
 
-                <!-- 8. PELICULAS WESTERN -->
+                <!-- 7. PELICULAS WESTERN -->
                 <div class="premium-card shadow-sm border border-amber-500/30 bg-amber-950/10">
                     <div class="flex items-center gap-3 w-full">
                         <div class="w-12 h-12 bg-amber-950/80 text-amber-400 border border-amber-900/40 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"><i class="fas fa-hat-cowboy"></i></div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">8. Colección de Películas Western</h4>
+                            <h4 class="font-bold text-sm text-amber-300 uppercase leading-none mb-1">7. Colección de Películas Western</h4>
                             <p class="text-xs text-slate-200 leading-relaxed mt-1 font-medium">Los grandes clásicos de vaqueros.</p>
                         </div>
                     </div>
@@ -544,60 +364,92 @@
                     </div>
                 </div>
             </div>
+
+            <!-- MEGAPACK MUSICAL -->
+            <div class="lib-section-title">MEGAPACK MUSICAL PREMIUM</div>
+            <div class="premium-card shadow-sm border-2 border-emerald-500/35 bg-emerald-950/10">
+                <div class="flex items-center gap-3 w-full">
+                    <div class="w-12 h-12 bg-emerald-500 text-slate-950 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 shadow-md shadow-emerald-500/20"><i class="fas fa-music"></i></div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-sm text-emerald-400 uppercase leading-none mb-1">8. MegaPack Musical Premium</h4>
+                        <p class="text-xs text-slate-200 leading-relaxed mt-1 font-semibold">Más de 70,000 canciones, 2000 videos HD, 2000 karaokes y recursos completos para DJ (listas por BPM, Efectos, etc).</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                    <button onclick="abrirMuestra('muestraMusical')" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-black uppercase rounded-lg transition">👁️ Ver Muestra</button>
+                    <button onclick="ejecutarDescargaPremium('descargaMusical')" class="py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase rounded-lg transition">📥 Descargar</button>
+                </div>
+            </div>
             
-            <!-- SECCIÓN: APOYO VOLUNTARIO EXCLUSIVA PREMIUM -->
-            <div class="p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6">
+            <!-- SECCIÓN NUEVA: APOYO VOLUNTARIO EXCLUSIVA PREMIUM CON MENSAJE DE COMPARTIR DEMO -->
+            <div class="p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6 hidden" id="seccion-donacion-premium">
                 <span class="text-2xl animate-pulse">💖🏆</span>
-                <h4 class="text-sm font-black text-amber-400 uppercase tracking-widest mt-1.5 font-sans">Mantenimiento de Transmisiones</h4>
+                <h4 class="text-sm font-black text-amber-400 uppercase tracking-widest mt-1.5">Mantenimiento de Servidores</h4>
                 <p class="text-xs text-slate-200 mt-2 leading-relaxed px-1">
-                    Mundialista PRO se financia mediante un <strong>pago único de por vida (sin membresías ni suscripciones mensuales)</strong>. 
-                    Por ello, dependemos directamente de los aportes voluntarios de nuestra comunidad de coleccionistas VIP para mantener en línea los servidores de alta velocidad, links de Drive y las señales en vivo del mundial. ¡Muchas gracias por tu apoyo!
+                    El Búnker Digital 360 se mantiene vivo gracias al apoyo de nuestra comunidad. Si disfrutas de este enorme catálogo y quieres que siga creciendo, te invitamos a sumarte con tu aporte voluntario.
                 </p>
-                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-3 shadow-md">
+                
+                <div class="mt-3 bg-red-950/40 border border-red-900/50 rounded-xl p-3 text-left">
+                    <p class="text-[11px] text-red-200 leading-relaxed font-semibold">
+                        ⚠️ <strong>Por favor no compartas el link de acceso premium.</strong> AYÚDANOS compartiendo el link de la versión DEMO que ya tiene mucho contenido gratuito de valor y nos ayudará a que más personas puedan sumarse a nuestra comunidad.
+                    </p>
+                </div>
+
+                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-4 shadow-md">
                     <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR" class="w-full h-28 object-contain">
                     <span class="text-[7px] font-black text-slate-800 uppercase leading-none tracking-widest mt-1">YAPE DONACION</span>
                 </div>
-                <p class="text-xs text-slate-100 mt-2 font-black">Yape: 983356373 - Jesus B.</p>
+                <p class="text-xs text-slate-100 mt-2 font-black">Yape: 943833945 - Jesus B.</p>
+                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black">APORTE VOLUNTARIO (Monto Libre)</p>
+                
+                <button onclick="compartirVersionDemo()" class="w-full mt-4 py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fas fa-copy text-base text-blue-400"></i> COPIAR LINK DE VERSIÓN DEMO
+                </button>
             </div>
         </section>
 
-        <!-- ==================== TAB 3: TRIVIA, HISTORIAL & STATS ==================== -->
-        <section id="screen-stats" class="hidden fade-in mt-2 pb-8">
-            <h2 class="text-2xl font-black text-emerald-400 mb-2 uppercase tracking-tighter text-center font-sans">Habilidades del Coleccionista</h2>
-            <p class="text-sm text-slate-300 mb-6 text-center leading-relaxed">Mide tu agilidad mental y nivel de conocimientos mundialistas hoy.</p>
+        <!-- ==================== PESTAÑA 3: MUNDIAL EN VIVO ==================== -->
+        <section id="screen-vivo" class="hidden fade-in space-y-4">
             
-            <div class="glass-card p-5 mb-6 text-center border border-emerald-500/20 bg-slate-950">
-                <h3 class="text-sm font-bold text-slate-100 uppercase mb-3">¿Eres un Verdadero Fan de los Mundiales?</h3>
-                <button onclick="startTriviaGame()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition rounded-xl font-black text-sm uppercase tracking-widest shadow-md">
-                    ⚽ Jugar Trivia Mundialista
-                </button>
+            <div class="glass-card p-5">
+                <h3 class="text-sm font-black text-emerald-400 mb-3 uppercase tracking-wider flex items-center gap-1.5"><i class="fas fa-calendar-day"></i> 🗓️ PARTIDOS DE HOY</h3>
+                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3 font-semibold text-slate-100" id="partidos-hoy-list">
+                    <!-- Se cargan dinámicamente desde MUNDIALISTA_CONFIG -->
+                </div>
+                <p class="text-[10px] text-slate-400 italic text-center mt-3">Los horarios corresponden a la hora de Lima, Perú.</p>
             </div>
 
-            <div class="glass-card p-4 mb-6 border-l-[6px] border-emerald-500 shadow-xl bg-slate-950">
-                <canvas id="statsChart" height="260"></canvas>
+            <div class="glass-card p-5 space-y-3">
+                <h3 class="text-sm font-black text-emerald-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fas fa-tv"></i> ⚽ TRANSMISIONES EN VIVO</h3>
+                <p class="text-xs text-slate-400 mb-2">Accede a las señales autorizadas para seguir cada encuentro. *(Requiere Acceso Premium):</p>
+                
+                <div class="grid grid-cols-1 gap-2.5">
+                    <button onclick="abrirStreamCanal('envivo1')" class="py-3.5 px-4 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-between transition">
+                        <span>📺 SEÑAL ABIERTA - OPCIÓN 1</span>
+                        <i class="fas fa-play text-emerald-400 text-xs"></i>
+                    </button>
+                    <button onclick="abrirStreamCanal('envivo2')" class="py-3.5 px-4 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-between transition">
+                        <span>🌐 PLATAFORMA DIGITAL - OPCIÓN 2</span>
+                        <i class="fas fa-play text-emerald-400 text-xs"></i>
+                    </button>
+                    <button onclick="abrirStreamCanal('envivo3')" class="py-3.5 px-4 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl text-xs font-bold text-slate-200 flex items-center justify-between transition">
+                        <span>🌎 COBERTURA SATELITAL - OPCIÓN 3</span>
+                        <i class="fas fa-play text-emerald-400 text-xs"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
-                <div class="glass-card p-5 text-center border border-slate-800 bg-slate-950">
-                    <p class="text-4xl font-black text-emerald-400" id="stat-count">0</p>
-                    <p class="text-xs text-slate-400 font-black uppercase mt-2 tracking-widest">LOGROS HOY</p>
-                </div>
-                <div class="glass-card p-5 text-center border border-slate-800 bg-slate-950">
-                    <p class="text-4xl font-black text-blue-400">PRO</p>
-                    <p class="text-xs text-slate-400 font-black uppercase mt-2 tracking-widest">RANGO ACTIVO</p>
-                </div>
-            </div>
         </section>
 
     </main>
 
     <!-- BOTON FLOTANTE: MEJORAR / DONAR -->
     <button id="btn-upgrade-float" onclick="openUpgradeModal()" class="hidden fixed bottom-6 right-4 z-40 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-transform hover:scale-105 font-black text-xs uppercase tracking-widest border-2 border-amber-300">
-        <i class="fas fa-crown text-base"></i> <span id="float-btn-text">Mejorar</span>
+        <i class="fas fa-crown text-base"></i> <span id="float-btn-text">Activar Premium</span>
     </button>
 
     <!-- MODAL DE MENSAJES -->
-    <div id="custom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 fade-in font-sans">
+    <div id="custom-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 fade-in">
         <div class="bg-slate-900 text-slate-100 rounded-2xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full text-center">
             <div class="w-16 h-16 bg-emerald-950/50 border border-emerald-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i class="fas fa-info-circle text-3xl text-emerald-400"></i>
@@ -607,192 +459,34 @@
         </div>
     </div>
 
-    <!-- MODALES DE FIXTURE / PARTIDOS DE HOY Y EN VIVO -->
-<div id="modal-fixture" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('fixture')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-calendar-day"></i> 🗓️ PARTIDOS DE HOY</h3>
-            <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
-                <p class="font-bold text-slate-200">Sigue en tiempo real los encuentros de la fecha del Mundial de hoy:</p>
-                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3 font-semibold text-slate-100">
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
-                        <span>🇺🇸 Estados Unidos vs. 🇦🇺 Australia</span>
-                        <span class="text-emerald-400 font-extrabold">2:00 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
-                        <span>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia vs. 🇲🇦 Marruecos</span>
-                        <span class="text-emerald-400 font-extrabold">5:00 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center border-b border-slate-850 pb-2 text-xs">
-                        <span>🇧🇷 Brasil vs. 🇭🇹 Haití</span>
-                        <span class="text-emerald-400 font-extrabold">7:30 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center text-xs">
-                        <span>🇹🇷 Turquía vs. 🇵🇾 Paraguay</span>
-                        <span class="text-emerald-400 font-extrabold">10:00 PM</span>
-                    </div>
-                </div>
-                <p class="text-[10px] text-slate-400 italic text-center">Los horarios corresponden a la hora de Lima, Perú. Revisa los canales de transmisión a continuación.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- TRANSMISION OPCION 1 -->
-    <div id="modal-canales1" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('canales1')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 1</h3>
-            <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
-                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                    <span class="text-emerald-400 font-bold block text-sm mb-1">📺 America Television (Canal 4)</span>
-                    <p class="mb-2">La senal oficial abierta y gratuita mas importante en el Peru para disfrutar la Copa del Mundo.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
-                        <li>Transmision en directo del Partido Inaugural.</li>
-                        <li>Partidos clave de Fase de Grupos.</li>
-                        <li>Sigue en senal abierta toda la Fase Eliminatoria Final.</li>
-                    </ul>
-                </div>
-                <button onclick="abrirStreamCanal('envivo1')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Ir a America TV GO</button>
-                
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
-                    <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- TRANSMISION OPCION 2 -->
-    <div id="modal-canales2" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('canales2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 2</h3>
-            <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
-                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                    <span class="text-emerald-400 font-bold block text-sm mb-1">🌐 Plataformas Libres Alternativas</span>
-                    <p class="mb-2">Canales alternativos autorizados para la cobertura de estadisticas, resumenes y emisiones digitales en alta definicion.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
-                        <li>Transmision oficial de radio y streaming.</li>
-                        <li>Resumenes oficiales inmediatos de la jornada.</li>
-                        <li>Debates, analisis tactico y interviews en vivo.</li>
-                    </ul>
-                </div>
-                <button onclick="abrirStreamCanal('envivo2')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Ver Canal Digital Alternativo</button>
-                
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
-                    <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- TRANSMISION OPCION 3 -->
-    <div id="modal-canales3" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('canales3')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-emerald-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-tv"></i> Ver Mundial en Vivo - Opcion 3</h3>
-            <div class="space-y-3 text-xs text-slate-300 max-h-96 overflow-y-auto pr-1">
-                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                    <span class="text-emerald-400 font-bold block text-sm mb-1">🌎 Coberturas Satelitales e Internacionales</span>
-                    <p class="mb-2">Acceso a las transmisiones internacionales de cadenas premium sudamericanas.</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-400 text-xs font-semibold">
-                        <li>Senales de alta definicion.</li>
-                        <li>Repeticiones de jugadas interactivas.</li>
-                        <li>Estadisticas de jugadores en tiempo real.</li>
-                    </ul>
-                </div>
-                <button onclick="abrirStreamCanal('envivo3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center uppercase tracking-wider transition font-black font-sans">Acceder a Cobertura Global</button>
-                
-                <button onclick="openModal('dmca')" class="w-full py-2 bg-slate-800 hover:bg-slate-750 text-slate-400 text-xs font-bold rounded-xl border border-slate-700/50 mt-2 transition flex items-center justify-center gap-1.5 font-bold font-sans">
-                    <i class="fas fa-balance-scale"></i> DMCA y Contenido de Terceros
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DE DMCA Y CONTENIDO DE TERCEROS -->
-    <div id="modal-dmca" class="hidden fixed inset-0 z-[130] flex items-center justify-center bg-black/85 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border border-slate-800 max-w-sm w-full relative">
-            <button onclick="closeModal('dmca')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
-            <h3 class="text-lg font-black text-amber-400 mb-3 uppercase tracking-tight flex items-center gap-1.5"><i class="fas fa-shield-alt"></i> DMCA y Contenido de Terceros</h3>
+    <!-- MODAL DE PAGO / UPGRADE (UN SOLO PAGO TOTAL) -->
+    <div id="upgrade-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4 fade-in">
+        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border-2 border-amber-500/30 max-w-sm w-full text-center relative">
+            <button onclick="closeUpgradeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center"><i class="fas fa-times"></i></button>
             
-            <div class="space-y-3 text-xs text-slate-300 max-h-[360px] overflow-y-auto pr-1 leading-relaxed text-left font-sans">
-                <p class="text-[10px] text-slate-500 italic text-center">Ultima actualizacion: 11 de junio de 2026</p>
-                
-                <div class="bg-blue-950/40 p-3 rounded-xl border border-blue-900/50 text-blue-300 font-bold flex flex-col gap-1.5 shadow-sm font-sans">
-                    <span class="text-[11px] tracking-wide uppercase text-center font-bold"><i class="fas fa-envelope-open text-blue-400 mr-1 font-sans"></i> RECOMENDACION DE SEGURIDAD:</span>
-                    <span class="font-normal text-slate-200">Recomendamos firmemente utilizar una <strong>cuenta de correo electronico de Gmail alternativa (secundaria)</strong> para registrarte o acceder a cualquier plataforma de terceros, protegiendo asi tu correo personal principal.</span>
-                </div>
-
-                <p>Mundialito funciona como una plataforma de entretenimiento. En algunas secciones puede mostrar enlaces o contenido embebido mediante iframe desde servidores de terceros.</p>
-                
-                <div>
-                    <span class="text-emerald-400 font-bold block font-sans">1. Sin alojamiento directo</span>
-                    Mundialito no aloja ni transmite directamente el contenido audiovisual de terceros mostrado por enlace o iframe. Dicho contenido es servido por proveedores externos bajo su propia responsabilidad.
-                </div>
-                <div>
-                    <span class="text-emerald-400 font-bold block font-sans">2. Uso referencial</span>
-                    Cualquier marca, logo o nombre comercial mostrado junto al contenido embebido se usa de forma descriptiva y referencial, y pertenece a sus titulares legitimos.
-                </div>
-                <div>
-                    <span class="text-emerald-400 font-bold block font-sans">3. Notificacion de infraccion (DMCA)</span>
-                    Si eres titular de derechos de autor y consideras que un contenido infringido esta enlazado, envianos una notificacion con:
-                    <ul class="list-disc pl-4 mt-1 space-y-1 text-slate-400 text-xs font-semibold font-sans">
-                        <li>Identificacion de la obra protegida.</li>
-                        <li>Identificacion del material cuestionado y la URL.</li>
-                        <li>Datos de contacto del reclamante.</li>
-                        <li>Declaracion de buena fe sobre la falta de autorizacion.</li>
-                        <li>Declaracion de veracidad y firma.</li>
-                    </ul>
-                </div>
-                <div>
-                    <span class="text-emerald-400 font-bold block font-sans">4. Uso del usuario</span>
-                    El acceso y uso del contenido embebido es responsabilidad del usuario. Debes cumplir las leyes aplicables en tu jurisdiccion.
-                </div>
+            <div class="w-16 h-16 bg-amber-950/50 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
+                <i class="fas fa-crown text-3xl text-amber-400"></i>
             </div>
             
-            <button onclick="closeModal('dmca')" class="w-full mt-4 py-2.5 bg-slate-800 hover:bg-slate-750 text-slate-200 font-bold rounded-xl text-center uppercase tracking-wider text-xs transition">Entendido</button>
-        </div>
-    </div>
-
-    <!-- MODAL DE PAGO / UPGRADE MULTI-OPCIONES (CERO CONFUSION) -->
-    <div id="upgrade-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/75 backdrop-blur-sm px-4 fade-in font-sans">
-        <div class="bg-slate-900 text-slate-100 rounded-3xl p-6 shadow-2xl border-2 border-amber-500/30 max-w-sm w-full text-center relative font-sans">
-            <button onclick="closeUpgradeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 bg-slate-800 rounded-full w-8 h-8 flex items-center justify-center font-sans"><i class="fas fa-times"></i></button>
+            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight text-center" id="upgrade-title">ACCESO PREMIUM TOTAL</h3>
+            <p class="text-xs text-slate-300 mb-4 font-semibold leading-relaxed px-2 text-center" id="upgrade-text">Activa tu cuenta ahora para acceder a TODO el material del Búnker.</p>
             
-            <div class="w-16 h-16 bg-amber-950/50 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner font-sans">
-                <i class="fas fa-crown text-3xl text-amber-400 font-sans"></i>
-            </div>
-            
-            <h3 class="text-xl font-black text-amber-400 mb-2 uppercase tracking-tighter leading-tight text-center font-sans" id="upgrade-title">DESBLOQUEAR CONTENIDOS</h3>
-            <p class="text-xs text-slate-300 mb-4 font-semibold leading-relaxed px-2 text-center font-sans" id="upgrade-text">Activa tu cuenta ahora para acceder a todo el material.</p>
-            
-            <!-- CONTENEDOR DE SELECCION EXCLUSIVO PARA CUENTA DEMO -->
-            <div id="upgrade-options-selector" class="hidden space-y-3 mb-4 text-left font-sans">
-                <p class="text-xs text-slate-200 font-bold mb-2 text-center leading-normal font-sans">Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:</p>
-                
-                <!-- Opción PRO -->
-                <button class="w-full p-4 rounded-2xl bg-slate-800 border border-slate-700 hover:bg-slate-750 active:scale-95 transition flex flex-col text-left font-sans" onclick="seleccionarOpcionCobro(5, 'PRO')">
-                    <span class="font-black text-xs text-emerald-400 uppercase tracking-wider font-sans">⭐ ZONA PRO MUNDIALISTA - S/ 5</span>
-                    <span class="text-xs text-slate-200 mt-1.5 leading-normal font-bold font-sans">Álbumes Panini y 3 Reyes 2026, Album Especial Día del Padre, Album Parejas, Kit Mundialista KIDS, Excel de control.</span>
-                </button>
-                
-                <!-- Opción PREMIUM -->
-                <button class="w-full p-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-black flex flex-col text-left hover:brightness-110 active:scale-95 transition font-sans" onclick="seleccionarOpcionCobro(12, 'PREMIUM')">
-                    <span class="font-black text-xs text-slate-950 uppercase tracking-wider font-sans">👑 ACTIVA LA ZONA PREMIUM - S/ 12 (incluye ACCESO A ZONA PRO)</span>
-                    <span class="text-xs text-slate-900 mt-1.5 leading-normal font-extrabold font-sans">EL BUNKER DEL COLECCIONISTA: +500gb en Albumes Retro: Álbumes históricos, 70,000 Historietas, Series TV Retro, Series Animadas y Peliculas Western y Cine Mexicano, y más.</span>
-                </button>
-            </div>
-
-            <div class="bg-slate-950 p-4 rounded-2xl mb-5 border border-slate-800" id="yape-qr-container">
-                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 font-sans" id="yape-instructions-label">YAPE PARA ACTIVACION INSTANTANEA</p>
+            <div class="bg-slate-950 p-4 rounded-2xl mb-4 border border-slate-800" id="yape-qr-container">
+                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">YAPE PARA ACTIVACION INSTANTANEA</p>
                 <div class="w-40 h-40 bg-white mx-auto rounded-xl border border-slate-800 flex items-center justify-center shadow-md overflow-hidden p-2">
-                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain font-sans">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR Yape" class="w-full h-full object-contain">
                 </div>
-                <p class="text-sm text-slate-200 mt-3 font-black font-sans">Yape: <span id="yape-num-txt">983356373</span> - <span id="yape-name-txt">Jesus B.</span></p>
-                <p class="text-[10px] text-amber-400 mt-1.5 uppercase font-black font-sans">VALOR A TRANSFERIR: <span id="yape-price-txt">S/ 5 SOLES</span></p>
+                <p class="text-sm text-slate-200 mt-3 font-black">Yape: <span id="yape-num-txt">943833945</span> - <span id="yape-name-txt">Jesus B.</span></p>
+                <p class="text-[10px] text-amber-400 mt-1.5 uppercase font-black">PAGO UNICO TOTAL: <span id="yape-price-txt">S/ 5 SOLES</span></p>
             </div>
 
-            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black font-sans">
+            <!-- Opción PROMO RESEÑA (Ocultable dinámicamente) DENTRO DEL MODAL -->
+            <button id="upgrade-promo-btn" class="w-full mb-4 p-3.5 rounded-xl bg-slate-800 border border-blue-500/40 hover:bg-slate-750 active:scale-95 transition flex flex-col text-center hidden" onclick="abrirResena()">
+                <span class="font-black text-xs text-blue-400 uppercase tracking-wider mx-auto">🎁 TODO POR S/ 1 SOL DEJANDO TU COMENTARIO POSITIVO</span>
+                <span class="text-[10px] text-slate-300 mt-1 leading-normal font-bold mx-auto">Haz clic aquí para dejar tu comentario en Facebook.</span>
+            </button>
+
+            <button onclick="enviarSoporteWhatsAppPago()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition font-black">
                 <i class="fab fa-whatsapp text-xl"></i> Enviar Captura de Pago
             </button>
         </div>
@@ -800,26 +494,43 @@
 
     <script>
         // ======================================================================== //
-        // ZONA DE CONFIGURACION CENTRALIZADA
+        // ZONA DE CONFIGURACION CENTRALIZADA (EDITA AQUÍ)
         // ======================================================================== //
         
         const MUNDIALISTA_CONFIG = {
-            // VERSION ACTIVA PREDETERMINADA: 'DEMO', 'PRO' o 'PREMIUM'
+            // VERSION ACTIVA PREDETERMINADA: 'DEMO' o 'PREMIUM'
+            // 'DEMO'    -> Descargas bloqueadas, abre asistente inteligente de pago.
+            // 'PREMIUM' -> Todo absolutamente desbloqueado de por vida.
             PLAN_POR_DEFECTO: "DEMO",
-            CONTRASEÑA_DEMO: "messi3goles", // Contraseña para Fliplink de muestras diarias
 
-            // DATOS DE YAPE Y SOPORTE (Actualizado a 983356373)
+            // CONFIGURACION DE VISIBILIDAD DE LA PROMO DE S/ 1 SOL (CONFIGURACIÓN FÁCIL)
+            // Cambiar a false para ocultar la promo de S/ 1 sol en toda la aplicación (Inicio y Ventana de Pago)
+            MOSTRAR_PROMO_RESEÑA_1_SOL: true,
+
+            // LINK PARA COMPARTIR CON AMIGOS (VERSION DEMO)
+            LINK_COMPARTIR_DEMO: "https://marketingbrands.github.io/mundial2026/",
+
+            // CONFIGURACION DE PARTIDOS DE HOY (EDITABLE DIARIAMENTE)
+            PARTIDOS_HOY: [
+                { equipo1: "Estados Unidos", bandera1: "🇺🇸", equipo2: "Australia", bandera2: "🇦🇺", hora: "2:00 PM" },
+                { equipo1: "Escocia", bandera1: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", equipo2: "Marruecos", bandera2: "🇲🇦", hora: "5:00 PM" },
+                { equipo1: "Brasil", bandera1: "🇧🇷", equipo2: "Haití", bandera2: "🇭🇹", hora: "7:30 PM" },
+                { equipo1: "Turquía", bandera1: "🇹🇷", equipo2: "Paraguay", bandera2: "🇵🇾", hora: "10:00 PM" }
+            ],
+
+            // DATOS DE YAPE (Yape: 943833945, sin mención a Plin)
             YAPE: {
-                NUMERO: "983356373",
+                NUMERO: "943833945",
                 NOMBRE: "Jesus B.",
                 PRECIO: "S/ 5 soles"
             },
 
-            // ENLACES EXTERNOS A LOS RECURSOS MUNDIALISTAS (GOOGLE DRIVE / EXCEL)
+            // ENLACES EXTERNOS A LOS RECURSOS MUNDIALISTAS (WhatsApp: 983356373)
             ENLACES: {
-                whatsappSoporte: "https://wa.me/51983356373?text=Hola%20Jesus,%20envio%20mi%20captura%20de%20pago%20para%20activar%20mi%20acceso%20Pro-Premium.",
+                whatsappSoporte: "https://wa.me/51983356373?text=Hola%20Jesus,%20envio%20mi%20captura%20de%20pago%20para%20activar%20mi%20acceso%20Premium%20Total.",
+                whatsappResena: "https://wa.me/51983356373?text=Hola%20deje%20mi%20comentario%20positivo%20en%20facebook%20envio%20mi%20captura%20para%20acceder%20a%20todo%20el%20material%20por%20s%2F1%20sol.",
+                facebookReview: "https://www.facebook.com/share/p/1BjiEZQpZX/",
                 planillaExcel: "https://docs.google.com/spreadsheets/d/17Ax5i04R774zJUbo2ggVuYLn39BoZX5W/edit?usp=sharing&ouid=103010470252722148115&rtpof=true&sd=true",
-                facebookReview: "https://www.facebook.com/share/p/",
                 driveFolderGeneral: "https://drive.google.com/drive/folders/1aJElQJIvQ4vKCLC5ErMRpqnaSBCnDzOr?usp=sharing",
 
                 // ENLACES PARA "VER MUESTRA"
@@ -837,6 +548,10 @@
                 muestraRetroAnimadas: "https://drive.google.com/drive/folders/1ORpnXjHe_a2gTo6O7j7u6IEZiply5sB3?usp=sharing",
                 muestraCineMex: "https://drive.google.com/drive/folders/1ymXkpdB8Mmz-9wMcCzqSOhazNFAEn7RW?usp=sharing",
                 muestraWestern: "https://drive.google.com/drive/folders/1dt_jqIEcPFsfrncBXnQ1dMa1UhIoRAW3?usp=sharing",
+                
+                // MEGAPACK MUSICAL LINKS
+                muestraMusical: "https://drive.google.com/drive/folders/1LhasQplPQC1JY551cdhK_YFl6NakUCv0?usp=sharing",
+                descargaMusical: "https://drive.google.com/drive/folders/1MV-IZQQHXkg_9pTMmvn_sgFQCBXmr4yf?usp=sharing",
 
                 // ENLACES PARA "DESCARGAR"
                 descargaPanini: "https://drive.google.com/drive/folders/12F7EqrURIpsDEUzkg-3Lkt5FG0EkSDyQ?usp=sharing",
@@ -861,103 +576,11 @@
             }
         };
 
-        const CONFIG_TEXTS = {
-            mensajePro: "¡Activa tu Plan PRO por solo S/ 5 para desbloquear los Álbumes Oficiales 2026, las ediciones del Día del Padre, Parejas y el kit infantil de juegos!",
-            mensajePremium: "¡Activa la ZONA PREMIUM por solo S/ 12 para desbloquear el Bunker del Coleccionista Retro (85GB de Álbumes de todos los tiempos, Series, Historietas y Películas) - (incluye ACCESO A ZONA PRO)!"
-        };
-
         // ======================================================================== //
         // FIN DE LA ZONA DE CONFIGURACION CENTRALIZADA
         // ======================================================================== //
 
-        const TRIVIA_POOL = [
-            {
-                q: "¿Cada cuántos años se realiza tradicionalmente un Mundial de la FIFA?",
-                o: ["Cada 2 años", "Cada 3 años", "Cada 4 años"],
-                a: 2
-            },
-            {
-                q: "¿Qué selección nacional posee más títulos de Copas Mundiales ganados?",
-                o: ["Alemania", "Argentina", "Brasil"],
-                a: 2
-            },
-            {
-                q: "¿Cuántos jugadores de cada equipo disputan activamente un partido oficial de fútbol en cancha?",
-                o: ["11 jugadores", "10 jugadores", "22 jugadores"],
-                a: 0
-            },
-            {
-                q: "La FIFA fue fundada en París en el año de 1904. ¿Cuál de estos años fue su creación?",
-                o: ["1930", "1904", "1920"],
-                a: 1
-            },
-            {
-                q: "¿Cuántas selecciones nacionales jugarán en el formato ampliado del Mundial 2026?",
-                o: ["32 selecciones", "48 selecciones", "64 selecciones"],
-                a: 1
-            },
-            {
-                q: "¿Qué selección nacional se consagró campeona en el recordado Mundial de Qatar 2022?",
-                o: ["Francia", "Croacia", "Argentina"],
-                a: 2
-            },
-            {
-                q: "¿Qué legendario futbolista brasileño es apodado como 'El Rey' del fútbol?",
-                o: ["Ronaldo Nazário", "Pelé", "Ronaldinho"],
-                a: 1
-            },
-            {
-                q: "Quién ostenta el récord absoluto de más goles anotados en toda la historia de los mundiales?",
-                o: ["Miroslav Klose", "Pelé", "Cristiano Ronaldo"],
-                a: 0
-            },
-            {
-                q: "De que material precioso esta fabricada la Copa Mundial?",
-                o: ["Plata maciza", "Bronce bañado", "Oro de 18 quilates"],
-                a: 2
-            },
-            {
-                q: "Estadio Azteca, sede inaugural, ¿en qué país está?",
-                o: ["Estados Unidos", "Canadá", "México"],
-                a: 1
-            },
-            {
-                q: "Por reglas de exclusividad de patrocinadores de la FIFA, ¿qué estadio de EE.UU. debió tapar su letrero principal con una tela blanca?",
-                o: ["Dallas Stadium", "Levi's Stadium", "BC Place Vancouver"],
-                a: 1
-            },
-            {
-                q: "¿Por qué señal de televisión abierta se podrán ver gratis los partidos de hoy clave en Perú?",
-                o: ["América Televisión", "Latina", "ATV"],
-                a: 0
-            },
-            {
-                q: "Qué restricción de equipaje tiene la FIFA en los estadios para los hinchas que asistan al Mundial 2026?",
-                o: ["Sólo se admiten bolsos plásticos pequeños 100% transparentes", "No se permite el ingreso de teléfonos móviles", "No se permiten gorras ni sombreros"],
-                a: 0
-            },
-            {
-                q: "¿Cuántos partidos totales históricos se disputarán en la Copa del Mundo de 2026?",
-                o: ["64 partidos", "80 partidos", "104 partidos"],
-                a: 2
-            },
-            {
-                q: "La Copa del Mundo 2026 establecerá un nuevo récord. ¿Cuál será la duración máxima en días del certamen?",
-                o: ["30 días", "39 días", "45 días"],
-                a: 1
-            }
-        ];
-
         let activePlan = MUNDIALISTA_CONFIG.PLAN_POR_DEFECTO;
-
-        let state = {
-            name: "",
-            level: "Basico",
-            completedTasks: 0,
-            totalTasks: 5,
-            isFinished: false,
-            activeGame: { cat: "", currentRound: 1, totalRounds: 5, correct: null, pool: [], answer: [], isSolShown: false }
-        };
 
         document.addEventListener("DOMContentLoaded", () => {
             inicializarConfiguracionEstática();
@@ -967,82 +590,89 @@
         function inicializarConfiguracionEstática() {
             const numEl = document.getElementById("yape-num-txt");
             const nameEl = document.getElementById("yape-name-txt");
-            const priceEl = document.getElementById("yape-price-txt");
             
             if (numEl) numEl.innerText = MUNDIALISTA_CONFIG.YAPE.NUMERO;
             if (nameEl) nameEl.innerText = MUNDIALISTA_CONFIG.YAPE.NOMBRE;
-            if (priceEl) priceEl.innerText = MUNDIALISTA_CONFIG.YAPE.PRECIO;
+
+            // Renderizar los partidos de hoy automáticamente
+            renderPartidosHoy();
+
+            // Lógica para ocultar o mostrar los cuadros de promoción S/ 1 sol según la configuración
+            const cardPromoInicio = document.getElementById("promo-resena-card");
+            const btnPromoModal = document.getElementById("upgrade-promo-btn");
+            
+            if (MUNDIALISTA_CONFIG.MOSTRAR_PROMO_RESEÑA_1_SOL) {
+                if (cardPromoInicio) cardPromoInicio.classList.remove("hidden");
+                if (btnPromoModal) btnPromoModal.classList.remove("hidden");
+            } else {
+                if (cardPromoInicio) cardPromoInicio.classList.add("hidden");
+                if (btnPromoModal) btnPromoModal.classList.add("hidden");
+            }
+        }
+
+        function renderPartidosHoy() {
+            const container = document.getElementById("partidos-hoy-list");
+            if (!container) return;
+            
+            if (!MUNDIALISTA_CONFIG.PARTIDOS_HOY || MUNDIALISTA_CONFIG.PARTIDOS_HOY.length === 0) {
+                container.innerHTML = `<p class="text-xs text-slate-400 text-center italic">No hay partidos programados para hoy.</p>`;
+                return;
+            }
+
+            container.innerHTML = MUNDIALISTA_CONFIG.PARTIDOS_HOY.map((partido, index) => {
+                const borderClass = index === MUNDIALISTA_CONFIG.PARTIDOS_HOY.length - 1 ? "" : "border-b border-slate-850 pb-2";
+                return `
+                    <div class="flex justify-between items-center ${borderClass} text-xs">
+                        <span>${partido.bandera1} ${partido.equipo1} vs. ${partido.bandera2} ${partido.equipo2}</span>
+                        <span class="text-emerald-400 font-extrabold">${partido.hora}</span>
+                    </div>
+                `;
+            }).join("");
         }
 
         function cambiarPlanViaAdmin(nuevoPlan) {
             activePlan = nuevoPlan;
-            const subPlanHeader = document.getElementById("sub-header-plan");
             const floatText = document.getElementById("float-btn-text");
+            const btnDonacion = document.getElementById("seccion-donacion-premium");
 
             if (nuevoPlan === "DEMO") {
-                subPlanHeader.innerText = "PLAN DEMO - CONTENIDOS RESTRINGIDOS";
-                subPlanHeader.className = "text-xs font-bold text-red-400 tracking-widest uppercase mt-0.5 animate-pulse";
-                if (floatText) floatText.innerText = "Activar PRO";
-            } else if (nuevoPlan === "PRO") {
-                subPlanHeader.innerText = "PLAN MUNDIALISTA PRO ACTIVO";
-                subPlanHeader.className = "text-xs font-bold text-emerald-400 tracking-widest uppercase mt-0.5";
-                if (floatText) floatText.innerText = "Activar PREMIUM";
+                if (floatText) floatText.innerText = "Activar Premium";
+                if (btnDonacion) btnDonacion.classList.add("hidden");
             } else {
-                subPlanHeader.innerText = "ACCESO ILIMITADO PREMIUM VIP";
-                subPlanHeader.className = "text-xs font-bold text-yellow-400 tracking-widest uppercase mt-0.5";
                 if (floatText) floatText.innerText = "Apoyar Proyecto";
+                if (btnDonacion) btnDonacion.classList.remove("hidden");
             }
         }
 
-        function openUpgradeModal(tier = "PRO") {
-            const modal = document.getElementById("upgrade-modal");
-            const title = document.getElementById("upgrade-title");
-            const text = document.getElementById("upgrade-text");
-            const priceLabel = document.getElementById("yape-price-txt");
-            const optionsSelector = document.getElementById("upgrade-options-selector");
-            const qrContainer = document.getElementById("yape-qr-container");
-
-            optionsSelector.classList.add("hidden");
-            qrContainer.classList.remove("hidden");
-
-            if (activePlan === "DEMO") {
-                if (tier === "PRO") {
-                    title.innerText = "ACTIVA TU PLAN PRO";
-                    text.innerText = CONFIG_TEXTS.mensajePro;
-                    priceLabel.innerText = "S/ 5 SOLES";
-                } else if (tier === "PREMIUM") {
-                    title.innerText = "ACTIVA LA ZONA PREMIUM";
-                    text.innerText = "Estás intentando acceder al Búnker del Coleccionista. Selecciona una opción para acceder:";
-                    optionsSelector.classList.remove("hidden");
-                    qrContainer.classList.add("hidden");
-                }
-            } else if (activePlan === "PRO") {
-                if (tier === "PREMIUM") {
-                    title.innerText = "ACTIVA LA ZONA PREMIUM";
-                    text.innerText = "Como ya cuentas con el Plan PRO, solo paga la diferencia de S/ 7 soles adicionales para desbloquear de inmediato el Búnker del Coleccionista de 85GB.";
-                    priceLabel.innerText = "S/ 7 SOLES (Diferencia)";
-                }
-            } else if (activePlan === "PREMIUM") {
-                title.innerText = "APOYO VOLUNTARIO VIP";
-                text.innerText = "Mundialista PRO se financia exclusivamente mediante aportes voluntarios únicos. Dependemos enteramente de la generosidad de nuestra comunidad VIP de coleccionistas para mantener las transmisiones en vivo del Mundial y los servidores de descargas veloces. ¡Tu aporte voluntario nos ayuda muchísimo a seguir creciendo!";
-                priceLabel.innerText = "APORTE VOLUNTARIO (Monto Libre)";
+        function openUpgradeModal() {
+            if (activePlan === "PREMIUM") {
+                // Si ya es Premium y pulsa Apoyar Proyecto, scrollear a la tarjeta de donación del búnker
+                navigate('bunker');
+                setTimeout(() => {
+                    const donacionDiv = document.getElementById('seccion-donacion-premium');
+                    if (donacionDiv) donacionDiv.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+                return;
             }
-
-            modal.classList.remove("hidden");
-        }
-
-        function seleccionarOpcionCobro(precio, tier) {
-            const qrContainer = document.getElementById("yape-qr-container");
-            const priceLabel = document.getElementById("yape-price-txt");
-            const text = document.getElementById("upgrade-text");
             
-            qrContainer.classList.remove("hidden");
-            priceLabel.innerText = `S/ ${precio} SOLES`;
-            text.innerText = tier === "PREMIUM" ? CONFIG_TEXTS.mensajePremium : CONFIG_TEXTS.mensajePro;
+            const modal = document.getElementById("upgrade-modal");
+            modal.classList.remove("hidden");
         }
 
         function closeUpgradeModal() {
             document.getElementById("upgrade-modal").classList.add("hidden");
+        }
+
+        function compartirVersionDemo() {
+             // Función robusta para copiar al portapapeles en cualquier navegador o visor
+             const tempInput = document.createElement("input");
+             tempInput.value = MUNDIALISTA_CONFIG.LINK_COMPARTIR_DEMO;
+             document.body.appendChild(tempInput);
+             tempInput.select();
+             document.execCommand("copy");
+             document.body.removeChild(tempInput);
+             
+             showMessage("¡El link de la Versión Demo ha sido copiado! Pégalo en WhatsApp o Facebook y compártelo con tus amigos para que se unan al proyecto.");
         }
 
         function abrirMuestra(keyLink) {
@@ -1054,24 +684,10 @@
             }
         }
 
-        // Descargas del Plan PRO
-        function ejecutarDescargaPro(keyLink) {
-            if (activePlan === "DEMO") {
-                openUpgradeModal("PRO");
-            } else {
-                const url = MUNDIALISTA_CONFIG.ENLACES[keyLink];
-                if (url) {
-                    window.open(url, "_blank");
-                } else {
-                    showMessage("Enlace de descarga no configurado.");
-                }
-            }
-        }
-
-        // Descargas del Plan PREMIUM
+        // Descargas del Plan Unificado PREMIUM
         function ejecutarDescargaPremium(keyLink) {
-            if (activePlan === "DEMO" || activePlan === "PRO") {
-                openUpgradeModal("PREMIUM");
+            if (activePlan === "DEMO") {
+                openUpgradeModal();
             } else {
                 const url = MUNDIALISTA_CONFIG.ENLACES[keyLink];
                 if (url) {
@@ -1084,26 +700,22 @@
 
         function abrirProExcel() {
             if (activePlan === "DEMO") {
-                openUpgradeModal("PRO");
+                openUpgradeModal();
             } else {
                 window.open(MUNDIALISTA_CONFIG.ENLACES.planillaExcel, "_blank");
             }
         }
 
-        function abrirPremium() {
-            if (activePlan === "DEMO" || activePlan === "PRO") {
-                openUpgradeModal("PREMIUM");
-            } else {
-                window.open(MUNDIALISTA_CONFIG.ENLACES.driveFolderGeneral, "_blank");
-            }
-        }
-
         function abrirStreamCanal(keyCanal) {
-            const url = MUNDIALISTA_CONFIG.ENLACES[keyCanal];
-            if (url) {
-                window.open(url, "_blank");
+            if (activePlan === "DEMO") {
+                openUpgradeModal();
             } else {
-                showMessage("Canal de streaming no configurado.");
+                const url = MUNDIALISTA_CONFIG.ENLACES[keyCanal];
+                if (url) {
+                    window.open(url, "_blank");
+                } else {
+                    showMessage("Canal de streaming no configurado.");
+                }
             }
         }
 
@@ -1111,8 +723,31 @@
             window.open(MUNDIALISTA_CONFIG.ENLACES.whatsappSoporte, "_blank");
         }
 
-        function handleReiniciar() {
-            navigate("setup");
+        function enviarCapturaResena() {
+            window.open(MUNDIALISTA_CONFIG.ENLACES.whatsappResena, "_blank");
+        }
+
+        function abrirResena() {
+            window.open(MUNDIALISTA_CONFIG.ENLACES.facebookReview, "_blank");
+        }
+
+        function navigate(screen) {
+            const scrs = ["inicio", "bunker", "vivo"];
+            scrs.forEach(s => {
+                const el = document.getElementById(`screen-${s}`);
+                if(el) el.classList.add("hidden");
+            });
+
+            const activeScreen = document.getElementById(`screen-${screen}`);
+            if(activeScreen) activeScreen.classList.remove("hidden");
+            
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(b => { if(b) b.classList.remove("active"); });
+            
+            const activeNav = document.querySelector(`.nav-btn[data-screen="${screen}"]`);
+            if(activeNav) activeNav.classList.add("active");
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
         function showMessage(text) {
@@ -1135,217 +770,6 @@
         function closeModal(id) {
             document.getElementById(`modal-${id}`).classList.add("hidden");
         }
-
-        function selectChoice(type, val) {
-            state[type] = val;
-            const buttons = document.querySelectorAll(`[id^="${type}-"]`);
-            buttons.forEach(b => { if(b) b.classList.remove("active"); });
-            const el = document.getElementById(`${type}-${val}`);
-            if(el) el.classList.add("active");
-        }
-
-        function startTraining() {
-            state.name = document.getElementById("user-name").value || "MUNDIALISTA";
-            navigate("pro");
-        }
-
-        function abrirResena() {
-            window.open(MUNDIALISTA_CONFIG.ENLACES.facebookReview, "_blank");
-        }
-
-        function startTriviaGame() {
-            state.name = document.getElementById("user-name").value || "Mundialista";
-            const shuffledQuestions = [...TRIVIA_POOL].sort(() => 0.5 - Math.random()).slice(0, 5);
-            
-            state.activeGame = { 
-                cat: "Trivia Mundialista", 
-                currentRound: 1,
-                totalRounds: 5,
-                correct: null,
-                pool: shuffledQuestions,
-                answer: [],
-                isSolShown: false
-            };
-            
-            state.totalTasks = 5;
-            state.completedTasks = 0;
-            state.isFinished = false;
-
-            navigate("game");
-            runTriviaRound();
-        }
-
-        function runTriviaRound() {
-            state.activeGame.isSolShown = false;
-            const roundData = state.activeGame.pool[state.activeGame.currentRound - 1];
-            state.activeGame.correct = roundData.a;
-
-            document.getElementById("game-category").innerText = "Trivia Mundialista";
-            document.getElementById("game-progress").innerText = `PREGUNTA ${state.activeGame.currentRound} DE 5 • ¡VAMOS, ${state.name.toUpperCase()}!`;
-            document.getElementById("game-title").innerText = roundData.q;
-            
-            document.getElementById("btn-complete-game")?.classList.add("hidden");
-            document.getElementById("game-feedback")?.classList.add("hidden");
-            document.getElementById("game-controls")?.classList.add("hidden");
-            
-            const altsHTML = roundData.o.map((option, idx) => {
-                return `<button onclick="checkTriviaAnswer(this, ${idx})" class="ans-btn py-4 w-full text-left px-4 font-bold rounded-2xl bg-slate-900 border border-slate-850 hover:bg-slate-800 transition text-sm flex items-center justify-between text-xs sm:text-sm">
-                    <span>${option}</span>
-                    <span class="w-4 h-4 rounded-full border border-slate-700"></span>
-                </button>`;
-            }).join("");
-
-            const content = document.getElementById("game-content");
-            if(content) {
-                content.innerHTML = `<div class="flex flex-col gap-2 w-full">${altsHTML}</div>`;
-            }
-        }
-
-        function checkTriviaAnswer(btn, selectedIdx) {
-            if(state.activeGame.isSolShown) return;
-            state.activeGame.isSolShown = true;
-
-            const correctIdx = state.activeGame.correct;
-            const content = document.getElementById("game-content");
-            const buttons = content.querySelectorAll("button");
-
-            if(selectedIdx === correctIdx) {
-                btn.classList.add("correct-highlight");
-                btn.innerHTML += `<span class="text-xs font-black text-emerald-400">¡Correcto!</span>`;
-                state.completedTasks++;
-                triggerConfetti();
-            } else {
-                btn.classList.add("wrong-highlight");
-                btn.innerHTML += `<span class="text-xs font-black text-red-400">Incorrecto</span>`;
-                buttons[correctIdx].classList.add("correct-highlight");
-            }
-
-            setTimeout(() => {
-                if(state.activeGame.currentRound < 5) {
-                    state.activeGame.currentRound++;
-                    runTriviaRound();
-                } else {
-                    state.isFinished = true;
-                    document.getElementById("finished-title").innerText = `¡LO LOGRASTE, ${state.name.toUpperCase()}!`;
-                    navigate("finished");
-                }
-            }, 1800);
-        }
-
-        function navigate(screen) {
-            const floatBtn = document.getElementById("btn-upgrade-float");
-            if (screen !== "setup") {
-                const nav = document.getElementById("main-nav");
-                if (nav) nav.classList.remove("hidden");
-                if (floatBtn) floatBtn.classList.remove("hidden");
-            } else {
-                if (floatBtn) floatBtn.classList.add("hidden");
-            }
-
-            if (state.isFinished && screen === "plan") {
-                screen = "finished";
-            }
-
-            const scrs = ["setup", "pro", "premium", "game", "stats", "finished"];
-            scrs.forEach(s => {
-                const el = document.getElementById(`screen-${s}`);
-                if(el) el.classList.add("hidden");
-            });
-            const activeScreen = document.getElementById(`screen-${screen}`);
-            if(activeScreen) activeScreen.classList.remove("hidden");
-            
-            const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(b => { if(b) b.classList.remove("active"); });
-            const activeNav = document.querySelector(`.nav-btn[data-screen="${screen}"]`);
-            if(activeNav) activeNav.classList.add("active");
-
-            if(screen === "stats") initChart();
-            const statCountEl = document.getElementById("stat-count");
-            if (statCountEl) { statCountEl.innerText = state.completedTasks; }
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        function initChart() {
-            const canvas = document.getElementById("statsChart");
-            if(!canvas) return;
-            const ctx = canvas.getContext("2d");
-            if(window.myChart) window.myChart.destroy();
-            window.myChart = new Chart(ctx, {
-                type: "radar",
-                data: {
-                    labels: ["Historia Mundial", "Análisis Táctico", "Atención Visual", "Destreza Manual", "Lógica de Reglas"],
-                    datasets: [{
-                        data: [75, 80, 85, 90, 95],
-                        backgroundColor: "rgba(16, 185, 129, 0.15)",
-                        borderColor: "#10b981",
-                        borderWidth: 3,
-                        pointRadius: 5,
-                        pointBackgroundColor: "#10b981",
-                        pointBorderColor: "#08090d",
-                        pointBorderWidth: 2
-                    }]
-                },
-                options: { 
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: { r: { suggestedMin: 0, suggestedMax: 100, grid: { color: "rgba(255, 255, 255, 0.08)" }, angleLines: { color: "rgba(255, 255, 255, 0.08)" }, ticks: { display: false }, pointLabels: { font: { size: 12, weight: 'bold', family: "Outfit" }, color: "#94a3b8" }} },
-                    plugins: { legend: { display: false } }
-                }
-            });
-        }
-
-        function triggerConfetti() {
-            const canvas = document.getElementById("confetti-canvas");
-            const ctx = canvas.getContext("2d");
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            let particles = [];
-            for (let i = 0; i < 75; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height - canvas.height,
-                    r: Math.random() * 6 + 4,
-                    d: Math.random() * canvas.height,
-                    color: `hsl(${Math.random() * 360}, 90%, 50%)`,
-                    tilt: Math.random() * 10 - 5,
-                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
-                    tiltAngle: 0
-                });
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, index) => {
-                    p.tiltAngle += p.tiltAngleIncremental;
-                    p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
-                    p.x += Math.sin(p.tiltAngle);
-                    p.tilt = Math.sin(p.tiltAngle - index / 3) * 15;
-
-                    ctx.beginPath();
-                    ctx.lineWidth = p.r / 2;
-                    ctx.strokeStyle = p.color;
-                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
-                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
-                    ctx.stroke();
-                });
-
-                if (particles.some(p => p.y < canvas.height)) {
-                    requestAnimationFrame(draw);
-                } else {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                }
-            }
-            draw();
-        }
-
-        window.addEventListener("resize", () => {
-            const canvas = document.getElementById("confetti-canvas");
-            if(canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-        });
     </script>
 </body>
 </html>
