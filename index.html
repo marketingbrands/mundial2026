@@ -93,7 +93,7 @@
 
         <!-- NAVEGACION PRINCIPAL (STICKY) -->
         <nav id="main-nav" class="sticky top-2 bg-slate-950/95 backdrop-blur-md border border-slate-850 p-2 flex justify-around z-50 shadow-xl rounded-2xl mb-4">
-            <button onclick="navigate('inicio')" class="nav-btn flex flex-col items-center w-28 py-1" data-screen="inicio">
+            <button id="nav-btn-inicio" onclick="navigate('inicio')" class="nav-btn flex flex-col items-center w-28 py-1" data-screen="inicio">
                 <i class="fas fa-home"></i>
                 <span class="text-xs font-black mt-1 uppercase tracking-widest text-emerald-400">Inicio</span>
             </button>
@@ -382,27 +382,27 @@
             </div>
             
             <!-- SECCIÓN NUEVA: APOYO VOLUNTARIO EXCLUSIVA PREMIUM CON MENSAJE DE COMPARTIR DEMO -->
-            <div class="p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6 hidden" id="seccion-donacion-premium">
+            <div class="seccion-donacion-premium p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6 hidden" id="seccion-donacion-premium-bunker">
                 <span class="text-2xl animate-pulse">💖🏆</span>
                 <h4 class="text-sm font-black text-amber-400 uppercase tracking-widest mt-1.5">Mantenimiento de Servidores</h4>
                 <p class="text-xs text-slate-200 mt-2 leading-relaxed px-1">
                     El Búnker Digital 360 se mantiene vivo gracias al apoyo de nuestra comunidad. Si disfrutas de este enorme catálogo y quieres que siga creciendo, te invitamos a sumarte con tu aporte voluntario.
                 </p>
                 
-                <div class="mt-3 bg-red-950/40 border border-red-900/50 rounded-xl p-3 text-left">
-                    <p class="text-[11px] text-red-200 leading-relaxed font-semibold">
+                <div class="mt-4 bg-red-950/40 border border-red-900/50 rounded-xl p-4 text-left shadow-inner">
+                    <p class="text-xs text-red-200 leading-relaxed font-semibold">
                         ⚠️ <strong>Por favor no compartas el link de acceso premium.</strong> AYÚDANOS compartiendo el link de la versión DEMO que ya tiene mucho contenido gratuito de valor y nos ayudará a que más personas puedan sumarse a nuestra comunidad.
                     </p>
                 </div>
 
-                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-4 shadow-md">
+                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-5 shadow-md">
                     <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR" class="w-full h-28 object-contain">
                     <span class="text-[7px] font-black text-slate-800 uppercase leading-none tracking-widest mt-1">YAPE DONACION</span>
                 </div>
                 <p class="text-xs text-slate-100 mt-2 font-black">Yape: 943833945 - Jesus B.</p>
                 <p class="text-[10px] text-amber-400 mt-1 uppercase font-black">APORTE VOLUNTARIO (Monto Libre)</p>
                 
-                <button onclick="compartirVersionDemo()" class="w-full mt-4 py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
+                <button onclick="compartirVersionDemo()" class="w-full mt-5 py-3.5 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
                     <i class="fas fa-copy text-base text-blue-400"></i> COPIAR LINK DE VERSIÓN DEMO
                 </button>
             </div>
@@ -437,6 +437,32 @@
                         <i class="fas fa-play text-emerald-400 text-xs"></i>
                     </button>
                 </div>
+            </div>
+
+            <!-- SECCIÓN NUEVA: APOYO VOLUNTARIO EXCLUSIVA PREMIUM CON MENSAJE DE COMPARTIR DEMO -->
+            <div class="seccion-donacion-premium p-5 rounded-3xl bg-gradient-to-tr from-amber-950/40 to-slate-900 border border-amber-500/20 text-center mt-6 hidden" id="seccion-donacion-premium-vivo">
+                <span class="text-2xl animate-pulse">💖🏆</span>
+                <h4 class="text-sm font-black text-amber-400 uppercase tracking-widest mt-1.5">Mantenimiento de Servidores</h4>
+                <p class="text-xs text-slate-200 mt-2 leading-relaxed px-1">
+                    El Búnker Digital 360 se mantiene vivo gracias al apoyo de nuestra comunidad. Si disfrutas de este enorme catálogo y quieres que siga creciendo, te invitamos a sumarte con tu aporte voluntario.
+                </p>
+                
+                <div class="mt-4 bg-red-950/40 border border-red-900/50 rounded-xl p-4 text-left shadow-inner">
+                    <p class="text-xs text-red-200 leading-relaxed font-semibold">
+                        ⚠️ <strong>Por favor no compartas el link de acceso premium.</strong> AYÚDANOS compartiendo el link de la versión DEMO que ya tiene mucho contenido gratuito de valor y nos ayudará a que más personas puedan sumarse a nuestra comunidad.
+                    </p>
+                </div>
+
+                <div class="w-32 h-36 bg-white mx-auto rounded-xl border border-slate-800 flex flex-col items-center justify-center overflow-hidden p-1.5 mt-5 shadow-md">
+                    <img src="https://raw.githubusercontent.com/marketingbrands/neuroactivo/2abb93a17455b77ccda7b87ec7be9e9505363e3f/NEURO%20ACTIVO%2050%2B%20(2).png" alt="Codigo QR" class="w-full h-28 object-contain">
+                    <span class="text-[7px] font-black text-slate-800 uppercase leading-none tracking-widest mt-1">YAPE DONACION</span>
+                </div>
+                <p class="text-xs text-slate-100 mt-2 font-black">Yape: 943833945 - Jesus B.</p>
+                <p class="text-[10px] text-amber-400 mt-1 uppercase font-black">APORTE VOLUNTARIO (Monto Libre)</p>
+                
+                <button onclick="compartirVersionDemo()" class="w-full mt-5 py-3.5 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
+                    <i class="fas fa-copy text-base text-blue-400"></i> COPIAR LINK DE VERSIÓN DEMO
+                </button>
             </div>
 
         </section>
@@ -500,7 +526,7 @@
         const MUNDIALISTA_CONFIG = {
             // VERSION ACTIVA PREDETERMINADA: 'DEMO' o 'PREMIUM'
             // 'DEMO'    -> Descargas bloqueadas, abre asistente inteligente de pago.
-            // 'PREMIUM' -> Todo absolutamente desbloqueado de por vida.
+            // 'PREMIUM' -> Todo absolutamente desbloqueado de por vida. Pestaña de ventas se oculta automáticamente.
             PLAN_POR_DEFECTO: "DEMO",
 
             // CONFIGURACION DE VISIBILIDAD DE LA PROMO DE S/ 1 SOL (CONFIGURACIÓN FÁCIL)
@@ -633,23 +659,27 @@
         function cambiarPlanViaAdmin(nuevoPlan) {
             activePlan = nuevoPlan;
             const floatText = document.getElementById("float-btn-text");
-            const btnDonacion = document.getElementById("seccion-donacion-premium");
+            const btnsDonacion = document.querySelectorAll(".seccion-donacion-premium");
+            const navInicio = document.getElementById("nav-btn-inicio");
 
             if (nuevoPlan === "DEMO") {
                 if (floatText) floatText.innerText = "Activar Premium";
-                if (btnDonacion) btnDonacion.classList.add("hidden");
+                btnsDonacion.forEach(btn => btn.classList.add("hidden"));
+                if (navInicio) navInicio.classList.remove("hidden");
+                navigate("inicio");
             } else {
                 if (floatText) floatText.innerText = "Apoyar Proyecto";
-                if (btnDonacion) btnDonacion.classList.remove("hidden");
+                btnsDonacion.forEach(btn => btn.classList.remove("hidden"));
+                if (navInicio) navInicio.classList.add("hidden"); // Se oculta la pestaña inicio de ventas
+                navigate("bunker"); // Va de frente al Búnker y Catálogo
             }
         }
 
         function openUpgradeModal() {
             if (activePlan === "PREMIUM") {
-                // Si ya es Premium y pulsa Apoyar Proyecto, scrollear a la tarjeta de donación del búnker
-                navigate('bunker');
+                // Si ya es Premium y pulsa Apoyar Proyecto, scrollear a la tarjeta de donación de la pestaña actual
                 setTimeout(() => {
-                    const donacionDiv = document.getElementById('seccion-donacion-premium');
+                    const donacionDiv = document.querySelector('section:not(.hidden) .seccion-donacion-premium');
                     if (donacionDiv) donacionDiv.scrollIntoView({ behavior: 'smooth' });
                 }, 300);
                 return;
@@ -664,7 +694,6 @@
         }
 
         function compartirVersionDemo() {
-             // Función robusta para copiar al portapapeles en cualquier navegador o visor
              const tempInput = document.createElement("input");
              tempInput.value = MUNDIALISTA_CONFIG.LINK_COMPARTIR_DEMO;
              document.body.appendChild(tempInput);
@@ -684,7 +713,6 @@
             }
         }
 
-        // Descargas del Plan Unificado PREMIUM
         function ejecutarDescargaPremium(keyLink) {
             if (activePlan === "DEMO") {
                 openUpgradeModal();
@@ -732,6 +760,11 @@
         }
 
         function navigate(screen) {
+            // Si el plan es PREMIUM, bloquear la pestaña inicio y forzar el búnker
+            if (activePlan === "PREMIUM" && screen === "inicio") {
+                screen = "bunker";
+            }
+
             const scrs = ["inicio", "bunker", "vivo"];
             scrs.forEach(s => {
                 const el = document.getElementById(`screen-${s}`);
